@@ -74,6 +74,14 @@
 - Never guess or invent information.
 - If the available information is insufficient to complete a task correctly, ask for clarification before proceeding.
 
+## Task Registration (#task)
+
+- When a user prompt starts with `#task`, register it immediately as a task file in `utils/tasks/` — like creating a Jira/Trello ticket, in any agent/chat, without interrupting the current context.
+- Register it only; do NOT execute the task unless explicitly asked.
+- File name: kebab-case from the `#task` line title (e.g. `#task be contrato tipo letra` → `utils/tasks/be-contrato-tipo-letra.md`).
+- File content: the title as a level-1 heading, prefixed with "FrontEnd - " when the title starts with `fe` or "BackEnd - " when it starts with `be` — that `fe`/`be` token is removed from the title and the first letter after the prefix is capitalized — followed by the rest of the prompt, without adding anything.
+- Confirm briefly after registering.
+
 ---
 
 # Project Overview
