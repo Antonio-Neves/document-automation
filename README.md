@@ -1,6 +1,6 @@
 # Document Automation
 
-Document generator (contracts and other documents).
+Document generator (contracts and other documents).  
 Fills in document templates with data entered in a form and generates a downloadable PDF (e.g. vehicle purchase and sale contracts).
 
 AI-assisted development with OpenCode and agentic programming, using a step-by-step, human-controlled workflow rather than delegating the entire development process to agents.
@@ -18,7 +18,7 @@ AI-assisted development with OpenCode and agentic programming, using a step-by-s
 
 ## Automação de Documentos
 
-Gerador de documentos (contratos e outros documentos).
+Gerador de documentos (contratos e outros documentos).  
 Preenche modelos de documentos com os dados informados em um formulário e gera um PDF para download (ex.: contratos de compra e venda de veículos).
 
 Desenvolvimento assistido por IA com OpenCode e programação agêntica, utilizando um fluxo passo a passo, controlado pelo desenvolvedor, em vez de delegar todo o processo de desenvolvimento aos agentes.
