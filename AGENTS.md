@@ -114,3 +114,7 @@ Do not remove, rename, or repurpose files or directories solely because they app
 - Database: SQLite
 - Frontend: Django templates and tags, Bootstrap 5, HTML, CSS, JavaScript
 - PDF generation: WeasyPrint, rendering HTML templates (Django templates) to PDF
+
+## Project Orientation
+
+- After reading the rules in this file, also read `docs/resume.md` at the start of every chat for the project direction, current state, and module conventions.
