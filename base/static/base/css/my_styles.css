@@ -309,3 +309,81 @@
         background: white;
     }
 }
+
+/* ==========================================================================
+   Contract (contrato_compra_venda_veiculo.html) -- Scoped under .contrato
+   ========================================================================== */
+
+.contrato {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+}
+
+.contrato .contrato-titulo {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 18pt;
+}
+
+.contrato p {
+    margin: 0 0 6pt;
+    text-align: left;
+}
+
+.contrato .clausula {
+    margin-bottom: 12pt;
+}
+
+.contrato .clausula-titulo {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 4pt;
+}
+
+.contrato .clausula-check {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.contrato .clausula .clausula-titulo {
+    display: inline;
+}
+
+.contrato .assinatura-check {
+    margin-bottom: 4pt;
+}
+
+.contrato input[type="text"],
+.contrato textarea {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 0 3px;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: #000;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+.contrato textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.contrato .contrato-local-data {
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+}
+
+.contrato .assinatura {
+    margin-bottom: 24pt;
+}
+
+.contrato .assinatura p {
+    margin-bottom: 12pt;
+    text-align: left;
+}
