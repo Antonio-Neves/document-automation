@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% include 'base/_base_head.html' %}
+    </head>
+    <body>
+        <!-- Content -->
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'base/_base_sidebar.html' %}
+                 <!-- Main Content -->
+                <main class="col-md-10 ms-sm-auto content-wrapper">
+                    <div class="container-fluid py-4">
+                        <!-- Page Content -->
+                        {% include 'base/_messages.html' %}
+                        {% block body_content %}{% endblock %}
+                    </div>
+                </main>
+
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            {% include 'base/_base_footer.html' %}
+        </footer>
+        <!-- Scripts -->
+        {% include 'base/_base_script.html' %}
+    </body>
+</html>
