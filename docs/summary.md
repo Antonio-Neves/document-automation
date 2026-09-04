@@ -3,20 +3,6 @@
 > Read this file at the start of every chat, before working on any task.
 > General rules live in `AGENTS.md`; this file shows the project direction, current state, and module conventions.
 
-## What the project is
-
-- Document generator (contracts and other documents).
-- Fills HTML templates with data entered in a form and generates a downloadable PDF.
-- No document templates or form data are persisted — everything is used in memory per request and discarded after the PDF is generated.
-- The only planned exception: generated PDFs will be saved in a future `created_docs` folder (kept for 10 days, then deleted).
-
-## Tech stack
-
-- Backend: Django 5.2, Python 3.12
-- Database: SQLite
-- Frontend: Django templates and tags, Bootstrap 5, HTML, CSS, JavaScript
-- PDF generation: WeasyPrint (not yet in `requirements.txt`)
-
 ## Current state (Sep 2026)
 
 - `config/urls.py` routes admin and includes `dashboard.urls` at the root.
@@ -35,7 +21,7 @@
 
 ## Key locations
 
-- `contracts_files/models/` — reference originals (`.docx`, `.pdf`, `.txt`, kept in Portuguese).
+- `contract_files/models/` — reference originals (`.docx`, `.pdf`, `.txt`, kept in Portuguese).
 - `dashboard/views.py` — one CBV per contract (plus `IndexView` for the home page); each view sets `template_name` and `page_title`.
 - `dashboard/urls.py` — URL `name` always matches the template name (e.g. `contract_sale_vehicle`), path in kebab-case (`contract-sale-vehicle/`).
 - `dashboard/templates/dashboard/contract_sale_vehicle.html` — page template with the vehicle sale contract HTML inline.
