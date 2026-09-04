@@ -120,4 +120,4 @@ Do not remove, rename, or repurpose files or directories solely because they app
 
 ## Project Orientation
 
-- After reading the rules in this file, also read `docs/resume.md` at the start of every chat for the project direction, current state, and module conventions.
+- After reading the rules in this file, also read `docs/summary.md` at the start of every chat for the project direction, current state, and module conventions.
