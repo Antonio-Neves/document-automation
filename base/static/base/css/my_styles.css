@@ -311,79 +311,87 @@
 }
 
 /* ==========================================================================
-   Contract (contrato_compra_venda_veiculo.html) -- Scoped under .contrato
+   Contract (contract_sale_vehicle.html) -- Scoped under .contract
    ========================================================================== */
 
-.contrato {
+.contract {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    padding: 20mm;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
     font-size: 12pt;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #000;
 }
 
-.contrato .contrato-titulo {
+.contract .contract-title {
     text-align: center;
     font-size: 14pt;
     font-weight: bold;
     margin-bottom: 18pt;
 }
 
-.contrato p {
-    margin: 0 0 6pt;
+.contract p {
+    margin: 0 0 12pt;
     text-align: left;
 }
 
-.contrato .clausula {
-    margin-bottom: 12pt;
+.contract .clause {
+    margin-bottom: 18pt;
 }
 
-.contrato .clausula-titulo {
+.contract .clause-title {
     font-size: 12pt;
     font-weight: bold;
     margin-bottom: 4pt;
 }
 
-.contrato .clausula-check {
+.contract .clause-check {
     margin-right: 6px;
     vertical-align: middle;
 }
 
-.contrato .clausula .clausula-titulo {
+.contract .clause .clause-title {
     display: inline;
 }
 
-.contrato .assinatura-check {
+.contract .signature-check {
     margin-bottom: 4pt;
 }
 
-.contrato input[type="text"],
-.contrato textarea {
+.contract input[type="text"],
+.contract textarea {
     border: none;
     border-bottom: 1px solid #000;
     padding: 0 3px;
     background: transparent;
     font-family: inherit;
     font-size: inherit;
+    line-height: inherit;
     color: #000;
     vertical-align: baseline;
     box-sizing: border-box;
 }
 
-.contrato textarea {
+.contract textarea {
     resize: none;
     overflow: hidden;
 }
 
-.contrato .contrato-local-data {
+.contract .contract-place-date {
     margin-top: 24pt;
     margin-bottom: 12pt;
 }
 
-.contrato .assinatura {
+.contract .signature {
     margin-bottom: 24pt;
 }
 
-.contrato .assinatura p {
-    margin-bottom: 12pt;
+.contract .signature p {
+    margin-bottom: 6pt;
     text-align: left;
 }
