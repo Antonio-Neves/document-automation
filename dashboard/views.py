@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def index(request):
-    return render(request, 'dashboard/index.html')
+class IndexView(TemplateView):
+    template_name = 'dashboard/index.html'
 
 
-def vehicle(request):
-    return render(request, 'dashboard/veiculo.html')
+class ContractSaleVehicleView(TemplateView):
+    template_name = 'dashboard/contract_sale_vehicle.html'
+    page_title = 'Veículo'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        return context
