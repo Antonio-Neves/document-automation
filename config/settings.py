@@ -73,7 +73,7 @@ INSTALLED_APPS = [
 
     # --- System Apps --- #
     'base',
-
+    'dashboard',
 
 ]
 
