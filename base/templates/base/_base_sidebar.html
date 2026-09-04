@@ -3,74 +3,42 @@
 <nav class="col-md-2 d-md-block sidebar px-0">
     <div class="position-sticky pt-3">
         <div class="text-center mb-4">
-            <h4 class="text-white">Sistema de Gestão</h4>
+            <h4 class="text-white">Documentos</h4>
         </div>
 
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"
+                <a class="nav-link"
                    href="{% url 'dashboard' %}">
-                    <i class="bi bi-speedometer2"></i>
-                    Tela Principal
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {% if 'product' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'product_list' %}">
-                    <i class="bi bi-box-seam"></i>
-                    Produtos
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {% if 'category' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'category_list' %}">
-                    <i class="bi bi-tags"></i>
-                    Categorias
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {% if 'customer' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'customer_list' %}">
-                    <i class="bi bi-people"></i>
-                    Clientes
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {% if 'sale' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'sale_list' %}">
-                    <i class="bi bi-cart-check"></i>
-                    Vendas
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {% if 'stock' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'stock_movements' %}">
-                    <i class="bi bi-arrow-left-right"></i>
-                    Movimentos de Estoque
+                    <i class="bi bi-house-door"></i>
+                    Página Inicial
                 </a>
             </li>
 
             <li class="nav-item mt-4">
-                <a class="nav-link" href="{% url 'admin:index' %}">
-                    <i class="bi bi-gear"></i>
-                    Admin Panel
+                <a class="nav-link"
+                   href="{% url 'contract_sale_vehicle' %}">
+                    <i class="bi bi-car-front"></i>
+                    Veículo
                 </a>
             </li>
 
-            <li class="nav-item">
-                <form method="post" action="{% url 'admin:logout' %}" style="margin: 0;">
-                    {% csrf_token %}
-                    <button type="submit" class="nav-link btn btn-link text-start w-100" style="border: none; background: none; color: rgba(255, 255, 255, 0.8); padding: 12px 20px;">
-                        <i class="bi bi-box-arrow-right" style="margin-right: 10px; width: 20px;"></i>
-                        Sair
-                    </button>
-                </form>
-            </li>
+{#            <li class="nav-item mt-4">#}
+{#                <a class="nav-link" href="{% url 'admin:index' %}">#}
+{#                    <i class="bi bi-gear"></i>#}
+{#                    Admin Panel#}
+{#                </a>#}
+{#            </li>#}
+{##}
+{#            <li class="nav-item">#}
+{#                <form method="post" action="{% url 'admin:logout' %}" style="margin: 0;">#}
+{#                    {% csrf_token %}#}
+{#                    <button type="submit" class="nav-link btn btn-link text-start w-100" style="border: none; background: none; color: rgba(255, 255, 255, 0.8); padding: 12px 20px;">#}
+{#                        <i class="bi bi-box-arrow-right" style="margin-right: 10px; width: 20px;"></i>#}
+{#                        Sair#}
+{#                    </button>#}
+{#                </form>#}
+{#            </li>#}
         </ul>
     </div>
 </nav>
