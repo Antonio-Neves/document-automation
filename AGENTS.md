@@ -3,6 +3,7 @@
 ## Code Language
 
 - All code must be written in **English (US)**, including variable names, functions, classes, comments, commit messages, technical documentation, and everything related to code.
+- All internal identifiers must also be in English: file names, CSS classes, HTML ids, URL paths/slugs, and form input `name` attributes. The only exception is the reference originals in `contract_files/models`, which stay in Portuguese.
 - Follow the standard conventions and naming patterns of the language or framework in use.
 
 ## Frontend User-Facing Content Language
