@@ -26,6 +26,7 @@
 - Write clean, readable, and well-structured code.
 - Prioritize simple and efficient solutions.
 - Maintain consistency with the existing project style.
+- URL names must always match their template names (e.g. template `contract_sale_vehicle.html` → `name='contract_sale_vehicle'`).
 
 ## Security
 
