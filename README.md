@@ -1,4 +1,4 @@
-# Document Automation
+## Document Automation
 
 Document generator (contracts and other documents).  
 Fills in document templates with data entered in a form and generates a downloadable PDF (e.g. vehicle purchase and sale contracts).
@@ -12,7 +12,11 @@ AI-assisted development with OpenCode and agentic programming, using a step-by-s
 - Frontend: Bootstrap 5
 - PDF generation: WeasyPrint
 - Templates and form data are used in memory only — no data is stored.
-- Generated PDFs are kept for 10 days and then deleted.
+- Generated PDFs are kept for 10 days and then deleted.  
+
+### Documentation
+
+Developer documentation (in English): [`docs/documentation/`](docs/documentation/)
 
 ---
 
@@ -30,7 +34,11 @@ Desenvolvimento assistido por IA com OpenCode e programação agêntica, utiliza
 - Frontend: Bootstrap 5
 - Geração de PDF: WeasyPrint
 - Modelos e dados dos formulários são usados apenas em memória — nenhum dado fica guardado.
-- Os PDFs gerados ficam guardados por 10 dias e depois são eliminados.
+- Os PDFs gerados ficam guardados por 10 dias e depois são eliminados.  
+
+### Documentação
+
+Documentação para desenvolvedores (em inglês): [`docs/documentation/`](docs/documentation/)
 
 ---
 
