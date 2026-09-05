@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load contract_filters %}
+<head>
+<meta charset="utf-8">
+<title>Contrato Particular de Compra e Venda de Veículo Automotor</title>
+<style>
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    p {
+        line-height: 1.5;
+    }
+    .contract-title {
+        text-align: center;
+        font-size: 13pt;
+    }
+    .clause, .signature {
+        break-inside: avoid;
+    }
+    .clause-title {
+        font-size: 12pt;
+    }
+    .signature {
+        margin-top: 2.5em;
+    }
+    .contract-place-date {
+        margin-top: 2em;
+    }
+</style>
+</head>
+<body>
+
+    <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE VEÍCULO AUTOMOTOR</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):
+        NOME COMPLETO: {{ fields.seller_name|fill:52 }},
+        nacionalidade: {{ fields.seller_nationality|fill:20 }}, estado civil: {{ fields.seller_marital_status|fill:20 }},
+        profissão: {{ fields.seller_profession|fill:20 }}, com o CPF nº {{ fields.seller_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_rg|fill:20 }}, residente e domiciliado(a) na
+        {{ fields.seller_address|fill:70 }}
+        Município: {{ fields.seller_city|fill:20 }}, Estado: {{ fields.seller_state|fill:20 }};
+    </p>
+
+    <p>
+        E, de outro lado, como COMPRADOR(A):
+        NOME COMPLETO: {{ fields.buyer_name|fill:52 }},
+        nacionalidade: {{ fields.buyer_nationality|fill:20 }}, estado civil: {{ fields.buyer_marital_status|fill:20 }},
+        profissão: {{ fields.buyer_profession|fill:20 }}, com o CPF nº {{ fields.buyer_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.buyer_rg|fill:20 }}, residente e domiciliado(a) na
+        {{ fields.buyer_address|fill:70 }}
+        Município: {{ fields.buyer_city|fill:20 }}, Estado: {{ fields.buyer_state|fill:20 }};
+    </p>
+
+    <p>
+        Têm entre si, de maneira justa e contratada, o presente CONTRATO PARTICULAR DE
+        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regerá pelas cláusulas
+        seguintes.
+    </p>
+
+    {% if fields.include_clause_1 %}
+    <div class="clause">
+        <h2 class="clause-title">1. DO VEÍCULO</h2>
+        <p>
+            O(A) VENDEDOR(A) vende ao(à) COMPRADOR(A), que compra, o veículo abaixo
+            identificado:
+        </p>
+        <p>
+            Tipo: {{ fields.vehicle_type|fill:15 }}, marca: {{ fields.vehicle_brand|fill:16 }}, modelo: {{ fields.vehicle_model|fill:17 }},
+            ano de fabricação: {{ fields.vehicle_manufacture_year|fill:8 }}, cor: {{ fields.vehicle_color|fill:16 }}, placa: {{ fields.vehicle_plate|fill:19 }},
+            combustível: {{ fields.vehicle_fuel|fill:20 }}, RENAVAM: {{ fields.vehicle_renavam|fill:27 }},
+            chassi: {{ fields.vehicle_chassis|fill:63 }},
+            quilometragem indicada no momento da venda: {{ fields.vehicle_mileage|fill:18 }} km.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_2 %}
+    <div class="clause">
+        <h2 class="clause-title">2. DO PREÇO E PAGAMENTO</h2>
+        <p>
+            O preço certo e ajustado da venda é de R$ {{ fields.price|fill:30 }}
+            ({{ fields.price_in_words|fill:68 }}).
+            O pagamento será realizado da seguinte forma: {{ fields.payment_terms|fill:31 }}
+            {{ fields.payment_details|fill:69|linebreaksbr }}.
+            O(A) VENDEDOR(A) somente dará quitação integral após a efetiva compensação de
+            todos os valores ajustados.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_3 %}
+    <div class="clause">
+        <h2 class="clause-title">3. DA ENTREGA DO VEÍCULO</h2>
+        <p>
+            O veículo será entregue ao(à) COMPRADOR(A)
+            em {{ fields.delivery_day|fill:4 }}/{{ fields.delivery_month|fill:4 }}/{{ fields.delivery_year|fill:8 }}, às: {{ fields.delivery_time|fill:6 }} horas, em {{ fields.delivery_place|fill:19 }}/{{ fields.delivery_place_uf|fill:6 }},
+            no local: {{ fields.delivery_location|fill:62 }}.
+            Na entrega serão disponibilizados os documentos e acessórios existentes e
+            expressamente combinados entre as partes. A partir da efetiva entrega do veículo e da
+            quitação da parcela ou do valor correspondente à posse, o(a) COMPRADOR(A) passa
+            a responder pela guarda, conservação, utilização, multas, despesas e demais
+            consequências decorrentes do uso do veículo, ressalvadas as obrigações anteriores à
+            entrega.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_4 %}
+    <div class="clause">
+        <h2 class="clause-title">4. DOS DÉBITOS, MULTAS E RESTRIÇÕES</h2>
+        <p>
+            O(A) VENDEDOR(A) declara que, até a data e hora da entrega, são de sua
+            responsabilidade os débitos, multas, tributos, taxas, restrições e demais obrigações cujo
+            fato gerador seja anterior à entrega, salvo aqueles expressamente assumidos pelo(a)
+            COMPRADOR(A) neste contrato.
+        </p>
+        <p>
+            Se houver qualquer débito ou restrição conhecido pelas partes e aceito pelo(a)
+            COMPRADOR(A), deverá ser descrito aqui: {{ fields.known_debts|fill:34 }}
+            {{ fields.known_debts_details|fill:69|linebreaksbr }}.
+            O(A) VENDEDOR(A) declara ainda que informará qualquer gravame, bloqueio judicial,
+            administrativo ou financeiro incidente sobre o veículo.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_5 %}
+    <div class="clause">
+        <h2 class="clause-title">5. DO ESTADO DO VEÍCULO E DA VISTORIA</h2>
+        <p>
+            O(A) COMPRADOR(A) declara que examinou o veículo, tomou conhecimento de seu
+            estado de conservação e funcionamento e teve oportunidade de realizar teste e, se
+            desejasse, submetê-lo à avaliação de mecânico ou profissional de sua confiança. A
+            venda é realizada no estado em que o veículo se encontra, sem prejuízo da
+            responsabilidade legal por vícios ocultos, dolo, fraude ou informações falsas.
+        </p>
+        <p>
+            Defeitos, avarias ou condições preexistentes, expressamente declaradas e aceitas
+            pelo(a) COMPRADOR(A): {{ fields.known_defects|fill:48 }}
+            {{ fields.known_defects_details|fill:69|linebreaksbr }}.
+        </p>
+        <p>
+            Acessórios e itens que acompanham o veículo: {{ fields.accessories|fill:31 }}
+            {{ fields.accessories_details|fill:69|linebreaksbr }}.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_6 %}
+    <div class="clause">
+        <h2 class="clause-title">6. DA DOCUMENTAÇÃO E DA TRANSFERÊNCIA</h2>
+        <p>
+            As partes se obrigam a fornecer e assinar os documentos necessários à transferência
+            de propriedade, inclusive a CRV / ATPV-e, conforme o documento e procedimento
+            aplicáveis ao veículo.
+        </p>
+        <p>
+            O(A) COMPRADOR(A) ficará responsável por realizar a transferência de propriedade
+            dentro do prazo legal e por pagar as despesas que legalmente lhe couberem. Caso o(a)
+            COMPRADOR(A) não efetive a transferência no prazo legal, responderá integralmente
+            pelas multas, tributos e demais encargos cujos fatos geradores ocorram após a entrega
+            do veículo.
+        </p>
+        <p>
+            O(A) VENDEDOR(A) deverá colaborar com os atos necessários à transferência,
+            observado o disposto na cláusula 7 quanto à comunicação de venda. Nos veículos cujo
+            documento de transferência seja digital (CRV-e / ATPV-e), as assinaturas eletrônicas
+            serão realizadas pelos meios oficiais disponibilizados pelo órgão de trânsito (ex.:
+            aplicativo Carteira Digital de Trânsito), servindo este contrato particular como
+            instrumento complementar de prova do negócio jurídico e da data da entrega.
+        </p>
+        <p>Este contrato particular não substitui o CRV / ATPV-e nem a comunicação de venda.</p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_7 %}
+    <div class="clause">
+        <h2 class="clause-title">7. DA COMUNICAÇÃO DE VENDA</h2>
+        <p>
+            As partes reconhecem que a comunicação de venda é providência própria perante o
+            DETRAN e não se confunde com este contrato. O(A) VENDEDOR(A) deverá
+            providenciá-la pelos meios disponibilizados pelo órgão, preservando o comprovante da
+            comunicação. O DETRAN mantém formulário específico para comunicação de venda e,
+            em seus procedimentos, exige a documentação correspondente à transferência.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_8 %}
+    <div class="clause">
+        <h2 class="clause-title">8. DO INADIMPLEMENTO</h2>
+        <p>
+            O descumprimento de qualquer obrigação assumida neste contrato autoriza a parte
+            prejudicada a exigir o cumprimento da obrigação, a rescisão do contrato e, quando
+            cabível, perdas e danos, sem prejuízo das medidas administrativas e judiciais previstas
+            em lei.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_9 %}
+    <div class="clause">
+        <h2 class="clause-title">9. DA PROPRIEDADE E ORIGEM</h2>
+        <p>
+            O(A) VENDEDOR(A) declara ser legítimo(a) proprietário(a) do veículo e ter capacidade
+            e poderes para realizar a venda. Declara também que, até onde sabe e sob sua
+            responsabilidade, o veículo não é produto de furto, roubo, fraude ou outro fato ilícito e
+            que informará qualquer restrição ou gravame existente. Caso surja impedimento jurídico
+            ou documental anterior à venda e imputável ao(à) VENDEDOR(A), este(a) deverá
+            providenciar sua regularização ou responder pelos prejuízos causados ao(à)
+            COMPRADOR(A), conforme a legislação aplicável.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_10 %}
+    <div class="clause">
+        <h2 class="clause-title">10. DO FORO</h2>
+        <p>
+            Fica eleito o foro da Comarca de {{ fields.forum_city|fill:29 }}, no Estado do
+            {{ fields.forum_state|fill:18 }}, para dirimir questões decorrentes deste contrato, ressalvadas
+            as hipóteses em que a legislação estabeleça foro diverso.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_11 %}
+    <div class="clause">
+        <h2 class="clause-title">11. DISPOSIÇÕES FINAIS</h2>
+        <p>
+            As partes declaram que leram este contrato, compreenderam suas condições e o
+            assinam de livre e espontânea vontade, em 2 (duas) vias de igual teor e forma.
+            Juntamente com 2 (duas) testemunhas.
+        </p>
+    </div>
+    {% endif %}
+
+    <p class="contract-place-date">
+        {{ fields.place_city|fill:21 }} - {{ fields.place_state|fill:5 }}, {{ fields.place_day|fill:4 }} de {{ fields.place_month|fill:23 }} de {{ fields.place_year|fill:8 }}.
+    </p>
+
+    {% if fields.include_signature_seller %}
+    <div class="signature">
+        <p>VENDEDOR(A): ________________________________________________________</p>
+        <p>Nome: ________________________________________________________________</p>
+        <p>CPF: _________________________</p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_signature_buyer %}
+    <div class="signature">
+        <p>COMPRADOR(A): ________________________________________________________</p>
+        <p>Nome: ________________________________________________________________</p>
+        <p>CPF: _________________________</p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_witness_1 %}
+    <div class="signature">
+        <p>TESTEMUNHA 1: ________________________________________________________</p>
+        <p>Nome: ________________________________________________________________</p>
+        <p>CPF: _________________________</p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_witness_2 %}
+    <div class="signature">
+        <p>TESTEMUNHA 2: ________________________________________________________</p>
+        <p>Nome: ________________________________________________________________</p>
+        <p>CPF: _________________________</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
