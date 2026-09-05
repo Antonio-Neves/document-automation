@@ -3,6 +3,8 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body_content %}
+<form method="post">
+{% csrf_token %}
 <div class="contract" id="contract-sale-vehicle">
 
     <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE VEÍCULO AUTOMOTOR</h1>
@@ -29,12 +31,12 @@
 
     <p>
         Têm entre si, de maneira justa e contratada, o presente CONTRATO PARTICULAR DE<br>
-        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regirá pelas cláusulas<br>
+        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regerá pelas cláusulas<br>
         seguintes.
     </p>
 
     <div class="clause" id="clause-1">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_1" value="1" class="clause-check" checked>
         <h2 class="clause-title">1. DO VEÍCULO</h2>
         <p>
             O(A) VENDEDOR(A) vende ao(à) COMPRADOR(A), que compra, o veículo abaixo<br>
@@ -50,7 +52,7 @@
     </div>
 
     <div class="clause" id="clause-2">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_2" value="1" class="clause-check" checked>
         <h2 class="clause-title">2. DO PREÇO E PAGAMENTO</h2>
         <p>
             O preço certo e ajustado da venda é de R$ <input type="text" name="price" style="width: 30ch"><br>
@@ -63,7 +65,7 @@
     </div>
 
     <div class="clause" id="clause-3">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_3" value="1" class="clause-check" checked>
         <h2 class="clause-title">3. DA ENTREGA DO VEÍCULO</h2>
         <p>
             O veículo será entregue ao(à) COMPRADOR(A)<br>
@@ -79,7 +81,7 @@
     </div>
 
     <div class="clause" id="clause-4">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_4" value="1" class="clause-check" checked>
         <h2 class="clause-title">4. DOS DÉBITOS, MULTAS E RESTRIÇÕES</h2>
         <p>
             O(A) VENDEDOR(A) declara que, até a data e hora da entrega, são de sua<br>
@@ -97,7 +99,7 @@
     </div>
 
     <div class="clause" id="clause-5">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_5" value="1" class="clause-check" checked>
         <h2 class="clause-title">5. DO ESTADO DO VEÍCULO E DA VISTORIA</h2>
         <p>
             O(A) COMPRADOR(A) declara que examinou o veículo, tomou conhecimento de seu<br>
@@ -118,7 +120,7 @@
     </div>
 
     <div class="clause" id="clause-6">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_6" value="1" class="clause-check" checked>
         <h2 class="clause-title">6. DA DOCUMENTAÇÃO E DA TRANSFERÊNCIA</h2>
         <p>
             As partes se obrigam a fornecer e assinar os documentos necessários à transferência<br>
@@ -144,7 +146,7 @@
     </div>
 
     <div class="clause" id="clause-7">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_7" value="1" class="clause-check" checked>
         <h2 class="clause-title">7. DA COMUNICAÇÃO DE VENDA</h2>
         <p>
             As partes reconhecem que a comunicação de venda é providência própria perante o<br>
@@ -156,7 +158,7 @@
     </div>
 
     <div class="clause" id="clause-8">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_8" value="1" class="clause-check" checked>
         <h2 class="clause-title">8. DO INADIMPLEMENTO</h2>
         <p>
             O descumprimento de qualquer obrigação assumida neste contrato autoriza a parte<br>
@@ -167,7 +169,7 @@
     </div>
 
     <div class="clause" id="clause-9">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_9" value="1" class="clause-check" checked>
         <h2 class="clause-title">9. DA PROPRIEDADE E ORIGEM</h2>
         <p>
             O(A) VENDEDOR(A) declara ser legítimo(a) proprietário(a) do veículo e ter capacidade<br>
@@ -181,7 +183,7 @@
     </div>
 
     <div class="clause" id="clause-10">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_10" value="1" class="clause-check" checked>
         <h2 class="clause-title">10. DO FORO</h2>
         <p>
             Fica eleito o foro da Comarca de <input type="text" name="forum_city" style="width: 29ch">, no Estado do<br>
@@ -191,7 +193,7 @@
     </div>
 
     <div class="clause" id="clause-11">
-        <input type="checkbox" class="clause-check" checked>
+        <input type="checkbox" name="include_clause_11" value="1" class="clause-check" checked>
         <h2 class="clause-title">11. DISPOSIÇÕES FINAIS</h2>
         <p>
             As partes declaram que leram este contrato, compreenderam suas condições e o<br>
@@ -205,32 +207,34 @@
     </p>
 
     <div class="signature" id="signature-seller">
-        <input type="checkbox" class="signature-check" checked>
+        <input type="checkbox" name="include_signature_seller" value="1" class="signature-check" checked>
         <p>VENDEDOR(A): ________________________________________________________</p>
         <p>Nome: ________________________________________________________________</p>
         <p>CPF: _________________________</p>
     </div>
 
     <div class="signature" id="signature-buyer">
-        <input type="checkbox" class="signature-check" checked>
+        <input type="checkbox" name="include_signature_buyer" value="1" class="signature-check" checked>
         <p>COMPRADOR(A): ________________________________________________________</p>
         <p>Nome: ________________________________________________________________</p>
         <p>CPF: _________________________</p>
     </div>
 
     <div class="signature" id="witness-1">
-        <input type="checkbox" class="signature-check" checked>
+        <input type="checkbox" name="include_witness_1" value="1" class="signature-check" checked>
         <p>TESTEMUNHA 1: ________________________________________________________</p>
         <p>Nome: ________________________________________________________________</p>
         <p>CPF: _________________________</p>
     </div>
 
     <div class="signature" id="witness-2">
-        <input type="checkbox" class="signature-check" checked>
+        <input type="checkbox" name="include_witness_2" value="1" class="signature-check" checked>
         <p>TESTEMUNHA 2: ________________________________________________________</p>
         <p>Nome: ________________________________________________________________</p>
         <p>CPF: _________________________</p>
     </div>
 
 </div>
+<button type="submit" class="btn btn-primary">Gerar PDF</button>
+</form>
 {% endblock %}
