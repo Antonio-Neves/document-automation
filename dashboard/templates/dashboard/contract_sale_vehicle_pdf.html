@@ -19,7 +19,7 @@
     }
     .contract-title {
         text-align: center;
-        font-size: 13pt;
+        font-size: 12pt;
     }
     .clause, .signature {
         break-inside: avoid;
@@ -29,6 +29,13 @@
     }
     .signature {
         margin-top: 2.5em;
+    }
+    .signature-columns {
+        display: flex;
+        gap: 20pt;
+    }
+    .signature-columns .signature {
+        flex: 1;
     }
     .contract-place-date {
         margin-top: 2em;
@@ -230,40 +237,45 @@
     {% endif %}
 
     <p class="contract-place-date">
-        {{ fields.place_city|fill:21 }} - {{ fields.place_state|fill:5 }}, {{ fields.place_day|fill:4 }} de {{ fields.place_month|fill:23 }} de {{ fields.place_year|fill:8 }}.
+{#        {{ fields.place_city|fill:21 }} - {{ fields.place_state|fill:5 }}, {{ fields.place_day|fill:4 }} de {{ fields.place_month|fill:23 }} de {{ fields.place_year|fill:8 }}.#}
+        _____________________, _____ de _________________________ de __________
     </p>
 
-    {% if fields.include_signature_seller %}
-    <div class="signature">
-        <p>VENDEDOR(A): ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
-    </div>
-    {% endif %}
+    <div class="signature-columns">
+        {% if fields.include_signature_seller %}
+        <div class="signature">
+            <p>VENDEDOR(A): ______________________________</p>
+            <p>Nome: ______________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+        {% endif %}
 
-    {% if fields.include_signature_buyer %}
-    <div class="signature">
-        <p>COMPRADOR(A): ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
+        {% if fields.include_signature_buyer %}
+        <div class="signature">
+            <p>COMPRADOR(A): ______________________________</p>
+            <p>Nome: ______________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 
-    {% if fields.include_witness_1 %}
-    <div class="signature">
-        <p>TESTEMUNHA 1: ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
-    </div>
-    {% endif %}
+    <div class="signature-columns">
+        {% if fields.include_witness_1 %}
+        <div class="signature">
+            <p>TESTEMUNHA 1: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+        {% endif %}
 
-    {% if fields.include_witness_2 %}
-    <div class="signature">
-        <p>TESTEMUNHA 2: ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
+        {% if fields.include_witness_2 %}
+        <div class="signature">
+            <p>TESTEMUNHA 2: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 
 </body>
 </html>

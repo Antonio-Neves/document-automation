@@ -169,35 +169,39 @@
     </div>
 
     <p class="contract-place-date">
-        <input type="text" name="place_city" style="width: 21ch"> - <input type="text" name="place_state" style="width: 5ch">, <input type="text" name="place_day" style="width: 4ch"> de <input type="text" name="place_month" style="width: 23ch"> de <input type="text" name="place_year" style="width: 8ch">.
+        _____________________, _____ de _________________________ de __________
     </p>
 
-    <div class="signature" id="signature-seller">
-        <input type="checkbox" name="include_signature_seller" value="1" class="signature-check" checked>
-        <p>VENDEDOR(A): ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
+    <div class="signature-columns">
+        <div class="signature" id="signature-seller">
+            <input type="checkbox" name="include_signature_seller" value="1" class="signature-check" checked>
+            <p>VENDEDOR(A): ______________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+        <div class="signature" id="signature-buyer">
+            <input type="checkbox" name="include_signature_buyer" value="1" class="signature-check" checked>
+            <p>COMPRADOR(A): _____________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
     </div>
 
-    <div class="signature" id="signature-buyer">
-        <input type="checkbox" name="include_signature_buyer" value="1" class="signature-check" checked>
-        <p>COMPRADOR(A): ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
-    </div>
+    <div class="signature-columns">
+        <div class="signature" id="witness-1">
+            <input type="checkbox" name="include_witness_1" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 1: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
 
-    <div class="signature" id="witness-1">
-        <input type="checkbox" name="include_witness_1" value="1" class="signature-check" checked>
-        <p>TESTEMUNHA 1: ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
-    </div>
-
-    <div class="signature" id="witness-2">
-        <input type="checkbox" name="include_witness_2" value="1" class="signature-check" checked>
-        <p>TESTEMUNHA 2: ________________________________________________________</p>
-        <p>Nome: ________________________________________________________________</p>
-        <p>CPF: _________________________</p>
+        <div class="signature" id="witness-2">
+            <input type="checkbox" name="include_witness_2" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 2: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
     </div>
 
 </div>

@@ -330,7 +330,7 @@
 
 .contract .contract-title {
     text-align: center;
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: bold;
     margin-bottom: 18pt;
 }
@@ -394,4 +394,13 @@
 .contract .signature p {
     margin-bottom: 6pt;
     text-align: left;
+}
+
+.contract .signature-columns {
+    display: flex;
+    gap: 20pt;
+}
+
+.contract .signature-columns .signature {
+    flex: 1;
 }
