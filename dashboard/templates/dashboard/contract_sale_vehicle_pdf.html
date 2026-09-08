@@ -1,53 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-{% load contract_filters %}
+{% load contract_filters static %}
 <head>
 <meta charset="utf-8">
-<title>Contrato Particular de Compra e Venda de Veículo Automotor</title>
-<style>
-    @page {
-        size: A4;
-        margin: 2cm;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        font-size: 12pt;
-        line-height: 1.5;
-    }
-    p {
-        line-height: 1.5;
-    }
-    .contract-title {
-        text-align: center;
-        font-size: 12pt;
-    }
-    .clause, .signature {
-        break-inside: avoid;
-    }
-    .clause-title {
-        font-size: 12pt;
-    }
-    .signature {
-        margin-top: 2.5em;
-    }
-    .signature-columns {
-        display: flex;
-        gap: 20pt;
-    }
-    .signature-columns .signature {
-        flex: 1;
-    }
-    .contract-place-date {
-        margin-top: 2em;
-    }
-</style>
+<title>Contrato Compra e Venda de Veículo Automotor</title>
+<link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
 </head>
-<body>
+<body class="contract-pdf">
 
     <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE VEÍCULO AUTOMOTOR</h1>
 
     <p>
-        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
         {{ fields.seller_name|fill:52 }},
         {{ fields.seller_nationality|fill:20 }},
         {{ fields.seller_marital_status|fill:20 }},
@@ -60,7 +24,7 @@
     </p>
 
     <p>
-        E, de outro lado, como COMPRADOR(A):
+        E, de outro lado, como COMPRADOR(A):<br>
         {{ fields.buyer_name|fill:52 }},
         {{ fields.buyer_nationality|fill:20 }},
         {{ fields.buyer_marital_status|fill:20 }},
@@ -244,17 +208,19 @@
     <div class="signature-columns">
         {% if fields.include_signature_seller %}
         <div class="signature">
-            <p>VENDEDOR(A): ______________________________</p>
-            <p>Nome: ______________________________</p>
-            <p>CPF: ___________________</p>
+            <p>VENDEDOR(A):<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
         </div>
         {% endif %}
 
         {% if fields.include_signature_buyer %}
         <div class="signature">
-            <p>COMPRADOR(A): ______________________________</p>
-            <p>Nome: ______________________________</p>
-            <p>CPF: ___________________</p>
+            <p>COMPRADOR(A):<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
         </div>
         {% endif %}
     </div>
@@ -262,17 +228,19 @@
     <div class="signature-columns">
         {% if fields.include_witness_1 %}
         <div class="signature">
-            <p>TESTEMUNHA 1: ___________________</p>
-            <p>Nome: ____________________________</p>
-            <p>CPF: ___________________</p>
+            <p>TESTEMUNHA 1:<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
         </div>
         {% endif %}
 
         {% if fields.include_witness_2 %}
         <div class="signature">
-            <p>TESTEMUNHA 2: ___________________</p>
-            <p>Nome: ____________________________</p>
-            <p>CPF: ___________________</p>
+            <p>TESTEMUNHA 2:<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
         </div>
         {% endif %}
     </div>
