@@ -170,7 +170,18 @@
     margin: 2cm;
 }
 
+@page contract-page {
+    @bottom-right {
+        content: "Página " counter(page) " de " counter(pages);
+        font-family: Arial, sans-serif;
+        font-size: 9pt;
+        color: #000;
+        margin-bottom: 5mm;
+    }
+}
+
 .contract-pdf {
+    page: contract-page;
     font-family: Arial, sans-serif;
     font-size: 12pt;
     line-height: 1.5;
