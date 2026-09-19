@@ -80,5 +80,9 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
 ## Documentation
 
 - Technical documentation (this folder) is written in English (US).
-- `docs/summary.md` is read at the start of every chat for the current project
-  state; keep it current when the project structure changes.
+- `docs/documentation/README.md` is read at the start of every chat (see
+  `AGENTS.md`); keep it and the relevant chapters current when the project
+  structure changes.
+- Describe **patterns and structure**, never volatile counts: do not record how
+  many clauses/paragraphs a document type has. Those numbers change per
+  contract and go stale.

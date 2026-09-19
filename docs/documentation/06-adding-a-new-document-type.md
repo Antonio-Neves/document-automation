@@ -31,7 +31,7 @@ Create `dashboard/templates/dashboard/<type>.html`:
   `#signature-buyer`, `#witness-1`, `#witness-2` (or your own set) with
   `.signature-check` checkboxes.
 - Fields are `<input type="text" name="...">` (long free text =
-  `<textarea name="..." rows="1">`) with English snake_case names grouped by
+  `<textarea name="..." rows="2">`) with English snake_case names grouped by
   entity (see the field-prefix table in
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md)).
 - Input widths in `ch` units matching the original document's underscore count.
@@ -40,11 +40,12 @@ Create `dashboard/templates/dashboard/<type>.html`:
 
 Create `dashboard/templates/dashboard/<type>_pdf.html`:
 
-- Full standalone HTML document (not extending the base), `{% load contract_filters %}`.
-- Inline `<style>` with `@page { size: A4; margin: 2cm; }`, Arial 12pt,
-  `break-inside: avoid` on `.clause` / `.signature`.
-- Fill every field with `{{ fields.<name>|fill:<width> }}`; textareas also get
-  `|linebreaksbr`.
+- Full standalone HTML document (not extending the base),
+  `{% load contract_filters static %}`.
+- `<link>` to `base/css/my_styles.css`: the `.contract-pdf` section there
+  provides the `@page` rules (A4, margins, page counter), Arial 12pt, and
+  `break-inside: avoid` on `.clause` / `.signature`. Do not duplicate styles inline.
+- Fill every field with `{{ fields.<name>|fill:<width> }}`.
 - Wrap each optional section in `{% if fields.include_... %}`.
 
 ## Step 4 — Add the CBV
@@ -101,7 +102,9 @@ section.
 ## Step 8 — Update the docs
 
 - Add the new route to the table in [01-getting-started.md](01-getting-started.md).
-- Update `docs/summary.md` (views, URLs, key locations).
+- Update the views section in
+  [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md) and the
+  "Current state" section in [README.md](README.md).
 - Update [02-architecture.md](02-architecture.md) and
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md) if the
   pattern changes.

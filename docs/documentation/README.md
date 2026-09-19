@@ -7,9 +7,25 @@ developers (and AI agents) who need to understand, maintain, or extend the
 codebase. All documentation is written in English (US), as required by
 [AGENTS.md](../../AGENTS.md).
 
-> **Heads up for agents**: the file `docs/summary.md` (one level up) is a
-> fast-moving project summary read at the start of every chat. This folder is
-> the longer-form, human-oriented documentation.
+> **Entry point for agents**: this README is read at the start of every chat
+> (see `AGENTS.md`). Follow the links to the chapter relevant to the task:
+> [03](03-dashboard-and-contract-flow.md) for the contract flow,
+> [06](06-adding-a-new-document-type.md) when adding a document type, and
+> [08](08-roadmap-and-open-questions.md) for pending work and open decisions.
+
+## Current state
+
+- The project generates legal documents (contracts) as downloadable PDFs,
+  filled from an in-memory form and rendered with WeasyPrint.
+- Every document type uses two sibling templates (a page form and a standalone
+  PDF template) and one class-based view.
+- The vehicle purchase and sale contract is the document type implemented so
+  far; new types are added following
+  [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).
+- Nothing about the templates or the form data is persisted — only the
+  generated PDFs are written to `contract_files/created_contracts/`.
+- Pending work and open decisions live in
+  [08-roadmap-and-open-questions.md](08-roadmap-and-open-questions.md).
 
 ---
 
@@ -30,7 +46,7 @@ codebase. All documentation is written in English (US), as required by
 
 ## How this documentation is kept up to date
 
-The codebase evolves rapidly (see `docs/summary.md`). The current policy is:
+The codebase evolves rapidly. The current policy is:
 
 - Documentation is **written at milestones** — when a feature lands and
   stabilizes, its docs are updated in the same change.
@@ -53,4 +69,4 @@ policy section to change.
 | How do I add a new contract type? | [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md) |
 | Why is this file here / why is it unused? | [02-architecture.md](02-architecture.md) (legacy artifacts) |
 | What are the rules I must follow? | [05-conventions.md](05-conventions.md) and `AGENTS.md` |
-| What changed recently? | `docs/summary.md` (kept current by the AI workflow) |
+| What is the current state / what's next? | "Current state" above and [08-roadmap-and-open-questions.md](08-roadmap-and-open-questions.md) |

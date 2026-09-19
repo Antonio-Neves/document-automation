@@ -34,6 +34,7 @@ The project CSS is organized in **scoped sections**, one per module:
 Base Layout                → sidebar, buttons, badges (store-system legacy)
 .receipt-page              → legacy sale-receipt styles (kept, unused today)
 .contract                  → the contract form page styles
+.contract-pdf              → the PDF document styles (print)
 ```
 
 Rules:
@@ -43,8 +44,9 @@ Rules:
 - **New modules append a new scoped section at the end of the file**, following
   the `.receipt-page` / `.contract` pattern. Never interleave styles into other
   sections.
-- A global `@page { size: A4; margin: 0; }` exists near the legacy receipt
-  section; the PDF template itself defines its own `@page` rules inline.
+- The `.contract-pdf` section defines the print `@page` rules (A4, 2cm margins)
+  and a named `contract-page` page with a page counter. The PDF template links
+  this stylesheet instead of carrying inline styles.
 
 ### The `.contract` section
 

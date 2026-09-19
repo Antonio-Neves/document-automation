@@ -120,4 +120,5 @@ Do not remove, rename, or repurpose files or directories solely because they app
 
 ## Project Orientation
 
-- After reading the rules in this file, also read `docs/summary.md` at the start of every chat for the project direction, current state, and module conventions.
+- After reading the rules in this file, also read `docs/documentation/README.md` at the start of every chat for the project direction, current state, and module conventions.
+- Follow the links from that README as needed: `03-dashboard-and-contract-flow.md` for the contract flow, `06-adding-a-new-document-type.md` when adding a document type, and `08-roadmap-and-open-questions.md` for pending work and open decisions.

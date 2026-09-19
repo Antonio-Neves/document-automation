@@ -22,8 +22,7 @@ document_automation/
 │   ├── urls.py                  # One route per document type
 │   └── views.py                 # One CBV per document type
 ├── docs/
-│   ├── summary.md               # AI-oriented, always-current project summary
-│   └── documentation/           # This documentation set (for humans)
+│   └── documentation/           # This documentation set (for humans and agents)
 ├── utils/
 │   ├── pages_photos/            # Screenshots of the original document model
 │   └── tasks/                   # Task tickets registered from "#" prompts

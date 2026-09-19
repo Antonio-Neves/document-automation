@@ -17,7 +17,7 @@ Class attributes on `ContractSaleVehicleView`:
 |-----------|-------|
 | `template_name` | `dashboard/contract_sale_vehicle.html` (form page) |
 | `pdf_template_name` | `dashboard/contract_sale_vehicle_pdf.html` (document to convert) |
-| `page_title` | `'Veículo'` (shown in the browser tab) |
+| `page_title` | `'Veículo Completo'` (shown in the browser tab) |
 
 `get_context_data()` only adds `page_title`. There are no model forms — the
 form is plain HTML inside the template.
@@ -29,7 +29,7 @@ Every document type uses **two sibling templates**:
 1. **Page template** (`contract_sale_vehicle.html`) — what the user sees.
    It renders the contract layout with real form controls:
    - `<input type="text" name="...">` for single-line fields,
-   - `<textarea name="..." rows="1">` for long free-text fields,
+   - `<textarea name="..." rows="2">` for long free-text fields,
    - `<input type="checkbox" class="clause-check|signature-check">` to exclude
      whole sections.
    Field `name` attributes are in English and are the contract between the form
@@ -37,9 +37,10 @@ Every document type uses **two sibling templates**:
 
 2. **PDF template** (`contract_sale_vehicle_pdf.html`) — pure print HTML, no
    form controls. It receives `fields` (a dict of POST values) and fills them
-   with the `fill` template filter. It carries its own inline `<style>` with
-   `@page` rules (A4, 2cm margins, Arial 12pt, `break-inside: avoid` on
-   clauses/signatures).
+   with the `fill` template filter. It links the project stylesheet
+   (`base/css/my_styles.css`), whose `.contract-pdf` section provides the
+   `@page` rules (A4, 2cm margins, page counter), Arial 12pt, and
+   `break-inside: avoid` on clauses/signatures.
 
 Input widths in the page template use `ch` units matching the original
 document's underscore count (e.g. name = `52ch`, address = `70ch`), so the
@@ -110,7 +111,6 @@ def fill(value, width=20):
 Used everywhere in the PDF template as `{{ fields.<name>|fill:<width> }}`.
 An empty field renders as a run of underscores (the "print-empty" style) so the
 client can fill the printed contract by hand; a filled field renders its value.
-Textareas additionally use `|linebreaksbr` so line breaks survive in the PDF.
 
 ## Clause and signature exclusion
 
