@@ -19,9 +19,9 @@ codebase. All documentation is written in English (US), as required by
   filled from an in-memory form and rendered with WeasyPrint.
 - Every document type uses two sibling templates (a page form and a standalone
   PDF template) and one class-based view.
-- The vehicle purchase and sale contract is the document type implemented so
-  far; new types are added following
-  [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).
+- The vehicle purchase and sale contract and the property purchase and sale
+  contract are the document types implemented so far; new types are added
+  following [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).
 - Nothing about the templates or the form data is persisted — only the
   generated PDFs are written to `contract_files/created_contracts/`.
 - Pending work and open decisions live in
