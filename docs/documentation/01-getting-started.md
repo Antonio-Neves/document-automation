@@ -61,6 +61,7 @@ Then open the home page. The routes registered today:
 |------|------|---------|
 | `/` | `dashboard` | Home page (`dashboard/templates/dashboard/index.html`) |
 | `/contract-sale-vehicle/` | `contract_sale_vehicle` | Vehicle purchase and sale contract form |
+| `/contract-sale-property/` | `contract_sale_property` | Property purchase and sale contract form |
 | `/admin/` | — | Django admin |
 
 > Note: URL `name`s always match their template names

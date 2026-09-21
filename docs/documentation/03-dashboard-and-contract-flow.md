@@ -1,8 +1,10 @@
 # 3. Dashboard and Contract Flow
 
-This chapter describes how document pages work end to end, using the only
-document type implemented so far: the vehicle purchase and sale contract
-("Contrato Particular de Compra e Venda de Veículo Automotor").
+This chapter describes how document pages work end to end, using the vehicle
+purchase and sale contract ("Contrato Particular de Compra e Venda de Veículo
+Automotor") as the reference. The property purchase and sale contract
+("Contrato Particular de Compra e Venda de Imóvel") follows the exact same
+pattern, only with its own templates, view, and route.
 
 ## Views (`dashboard/views.py`)
 
@@ -10,6 +12,8 @@ document type implemented so far: the vehicle purchase and sale contract
   (`dashboard/index.html`).
 - **`ContractSaleVehicleView`** — `TemplateView` that handles both GET and POST
   for the vehicle contract.
+- **`ContractSalePropertyView`** — same pipeline for the property contract
+  (`dashboard/contract_sale_property.html` / `_pdf.html`, `page_title = 'Imóvel'`).
 
 Class attributes on `ContractSaleVehicleView`:
 
