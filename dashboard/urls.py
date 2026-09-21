@@ -9,4 +9,9 @@ urlpatterns = [
         views.ContractSaleVehicleView.as_view(),
         name='contract_sale_vehicle',
     ),
+    path(
+        'contract-sale-property/',
+        views.ContractSalePropertyView.as_view(),
+        name='contract_sale_property',
+    ),
 ]
