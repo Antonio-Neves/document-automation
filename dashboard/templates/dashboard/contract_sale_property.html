@@ -1,0 +1,217 @@
+{% extends 'base/_base_index.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body_content %}
+<form method="post">
+{% csrf_token %}
+<div class="contract" id="contract-sale-property">
+
+    <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
+        NOME COMPLETO: <input type="text" name="seller_name" style="width: 52ch">,<br>
+        nacionalidade: <input type="text" name="seller_nationality" style="width: 20ch">, estado civil: <input type="text" name="seller_marital_status" style="width: 20ch">,<br>
+        profissão: <input type="text" name="seller_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_cpf" style="width: 20ch">,<br>
+        portador(a) do RG nº <input type="text" name="seller_rg" style="width: 20ch">, residente e domiciliado(a) na<br>
+        <input type="text" name="seller_address" style="width: 70ch"> Município: <input type="text" name="seller_city" style="width: 20ch">, Estado: <input type="text" name="seller_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        E, de outro lado, como COMPRADOR(A):<br>
+        NOME COMPLETO: <input type="text" name="buyer_name" style="width: 52ch">,<br>
+        nacionalidade: <input type="text" name="buyer_nationality" style="width: 20ch">, estado civil: <input type="text" name="buyer_marital_status" style="width: 20ch">,<br>
+        profissão: <input type="text" name="buyer_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="buyer_cpf" style="width: 20ch">,<br>
+        portador(a) do RG nº <input type="text" name="buyer_rg" style="width: 20ch">, residente e domiciliado(a) na<br>
+        <input type="text" name="buyer_address" style="width: 70ch"> Município: <input type="text" name="buyer_city" style="width: 20ch">, Estado: <input type="text" name="buyer_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        Têm entre si, de maneira justa e contratada, o presente Contrato Particular de<br>
+        Compra e Venda de Imóvel, regido pelo Código Civil, mediante as cláusulas e condições seguintes:
+    </p>
+
+    <div class="clause" id="clause-1">
+        <input type="checkbox" name="include_clause_1" value="1" class="clause-check" checked>
+        <h2 class="clause-title">1. DO OBJETO</h2>
+        <p>
+            O(A) VENDEDOR(A) vende AO(À) COMPRADOR(A) o imóvel situado em
+            <input type="text" name="property_address" style="width: 60ch">,<br>
+            nº <input type="text" name="property_number" style="width: 8ch">, complemento <input type="text" name="property_complement" style="width: 12ch">, bairro <input type="text" name="property_neighborhood" style="width: 14ch">,<br>
+            cidade <input type="text" name="property_city" style="width: 14ch">, estado <input type="text" name="property_state" style="width: 14ch">, CEP <input type="text" name="property_zip" style="width: 10ch">,<br>
+            com área total de <input type="text" name="property_area" style="width: 12ch"> m², registrado sob a matrícula nº <input type="text" name="property_registration" style="width: 14ch">,<br>
+            inscrição imobiliária nº <input type="text" name="property_tax_id" style="width: 18ch">, do Cartório de Registro de Imóveis de<br>
+            <input type="text" name="property_registry_office" style="width: 40ch">.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-2">
+        <input type="checkbox" name="include_clause_2" value="1" class="clause-check" checked>
+        <h2 class="clause-title">2. DO PREÇO E DA FORMA DE PAGAMENTO</h2>
+        <p>
+            O preço total, certo e ajustado é de R$ <input type="text" name="price" style="width: 21ch"><br>
+            (<input type="text" name="price_in_words" style="width: 70ch">), que O(A) COMPRADOR(A) pagará<br>
+            AO(À) VENDEDOR(A) da seguinte forma: <input type="text" name="payment_terms" style="width: 30ch">.
+        </p>
+        <p>
+            Havendo parcelamento, R$ <input type="text" name="down_payment" style="width: 13ch"> a título de entrada/sinal, e o saldo<br>
+            de R$ <input type="text" name="balance" style="width: 13ch">, será pago em <input type="text" name="installments_count" style="width: 8ch"> parcelas de R$ <input type="text" name="installment_value" style="width: 14ch">,<br>
+            vencendo a primeira em <input type="text" name="first_due_date" style="width: 12ch">. Sujeitando o atraso a juros de mora de<br>
+            1% (um por cento) ao mês e correção monetária.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-3">
+        <input type="checkbox" name="include_clause_3" value="1" class="clause-check" checked>
+        <h2 class="clause-title">3. DA SITUAÇÃO DO IMÓVEL E DOS DÉBITOS EXISTENTES</h2>
+        <p>
+            O(A) VENDEDOR(A) declara que o imóvel se encontra livre e desembaraçado de ônus reais,
+            hipotecas, penhoras, ações e dívidas de IPTU ou condomínio, obrigando-se a apresentar
+            as certidões negativas exigidas para a escritura.
+        </p>
+        <p>
+            Eventuais débitos anteriores a <input type="text" name="debts_responsibility_date" style="width: 14ch"> são de responsabilidade exclusiva<br>
+            DO(DA) VENDEDOR(A).
+        </p>
+    </div>
+
+    <div class="clause" id="clause-4">
+        <input type="checkbox" name="include_clause_4" value="1" class="clause-check">
+        <h2 class="clause-title">3. DA SITUAÇÃO DO IMÓVEL E DOS DÉBITOS EXISTENTES</h2>
+        <p>
+            O(A) VENDEDOR(A) declara e informa AO(À) COMPRADOR(A) a existência de quaisquer ônus,
+            débitos, tributos, taxas ou demais obrigações incidentes sobre o imóvel até a data da
+            entrega da posse.
+        </p>
+        <p>
+            O(A) COMPRADOR(A) declara ter ciência e assumir expressamente os seguintes débitos<br>
+            anteriores à entrega da posse: <textarea name="assumed_debts" rows="2" style="width: 67ch"></textarea>
+        </p>
+        <p>
+            Credor: <input type="text" name="debt_creditor" style="width: 30ch"> Valor: R$ <input type="text" name="debt_value" style="width: 14ch">.
+        </p>
+        <p>
+            Os demais débitos e obrigações cujo fato gerador seja anterior à entrega da posse
+            permanecerão sob responsabilidade do VENDEDOR(A).
+        </p>
+        <p>
+            A responsabilidade assumida pelo COMPRADOR(A) neste contrato produz efeitos entre as
+            partes, sem prejuízo de eventual responsabilidade perante o Poder Público, condomínio
+            ou terceiros, quando determinada por lei.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-5">
+        <input type="checkbox" name="include_clause_5" value="1" class="clause-check" checked>
+        <h2 class="clause-title">4. DA POSSE</h2>
+        <p>
+            A posse do imóvel será transmitida AO(À) COMPRADOR(A) em <input type="text" name="possession_date" style="width: 14ch">,<br>
+            livre de pessoas e coisas, no estado de conservação em que foi vistoriado.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-6">
+        <input type="checkbox" name="include_clause_6" value="1" class="clause-check">
+        <h2 class="clause-title">4. DA POSSE E DAS LOCAÇÕES EXISTENTES</h2>
+        <p>
+            A posse do imóvel será transmitida AO(À) COMPRADOR(A) em <input type="text" name="possession_date" style="width: 14ch">,
+            juntamente com os contratos de locação, ocupantes e inquilinos existentes na data da
+            assinatura deste instrumento, os quais O(A) COMPRADOR(A) declara ter ciência e concordar
+            em assumir, passando a responder, a partir da imissão na posse, pelos direitos e
+            obrigações decorrentes das respectivas locações, na forma da legislação aplicável.
+        </p>
+        <p>
+            O(A) COMPRADOR(A) declara ter conhecimento da situação de ocupação do imóvel, bem como
+            das condições dos contratos de locação existentes, comprometendo-se a respeitar os
+            direitos dos respectivos locatários, inclusive quanto aos prazos e demais condições
+            contratuais, quando aplicáveis.
+        </p>
+        <p>
+            A partir da transmissão da posse, caberá AO(À) COMPRADOR(A) a administração dos imóveis
+            e o recebimento dos aluguéis, bem como a responsabilidade pelos encargos e obrigações
+            que lhe couberem na qualidade de proprietário e locador, observada a data efetiva da
+            transmissão da posse.
+        </p>
+        <p>
+            O imóvel será entregue no estado de conservação em que foi previamente vistoriado e
+            aceito pelo COMPRADOR(A), considerando-se igualmente reconhecida a existência dos
+            inquilinos e das respectivas ocupações na data da transmissão da posse.
+        </p>
+        <p>
+            O(A) VENDEDOR(A) obriga-se a entregar AO(À) COMPRADOR(A), até a data da transmissão da
+            posse, cópia dos contratos de locação vigentes e demais documentos relacionados às
+            locações, bem como informar os valores dos aluguéis, eventuais garantias locatícias,
+            encargos, pagamentos antecipados, débitos ou outras obrigações existentes relacionadas
+            aos respectivos contratos.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-7">
+        <input type="checkbox" name="include_clause_7" value="1" class="clause-check" checked>
+        <h2 class="clause-title">5. DO FORO</h2>
+        <p>
+            Fica eleito o foro da Comarca de <input type="text" name="forum_city" style="width: 29ch">, no Estado do<br>
+            <input type="text" name="forum_state" style="width: 18ch">, para dirimir questões decorrentes deste contrato, ressalvadas<br>
+            as hipóteses em que a legislação estabeleça foro diverso.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-8">
+        <input type="checkbox" name="include_clause_8" value="1" class="clause-check" checked>
+        <h2 class="clause-title">6. DISPOSIÇÕES FINAIS</h2>
+        <p>
+            As partes declaram que leram este contrato, compreenderam suas condições e o
+            assinam de livre e espontânea vontade, em 2 (duas) vias de igual teor e forma.
+        </p>
+    </div>
+
+    <p class="contract-place-date">
+        _____________________, _____ de _________________________ de __________
+    </p>
+
+    <div class="signature-columns">
+        <div class="signature" id="signature-seller">
+            <input type="checkbox" name="include_signature_seller" value="1" class="signature-check" checked>
+            <p>VENDEDOR(A): ______________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+        <div class="signature" id="signature-seller-spouse">
+            <input type="checkbox" name="include_signature_seller_spouse" value="1" class="signature-check" checked>
+            <p>CÔNJUGE DO(A) VENDEDOR(A): _________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+    <div class="signature-columns">
+        <div class="signature" id="signature-buyer">
+            <input type="checkbox" name="include_signature_buyer" value="1" class="signature-check" checked>
+            <p>COMPRADOR(A): _____________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+    <div class="signature-columns">
+        <div class="signature" id="witness-1">
+            <input type="checkbox" name="include_witness_1" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 1: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+        <div class="signature" id="witness-2">
+            <input type="checkbox" name="include_witness_2" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 2: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+</div>
+<button type="submit" class="btn btn-primary">Gerar PDF</button>
+</form>
+{% endblock %}

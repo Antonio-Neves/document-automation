@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load contract_filters static %}
+<head>
+<meta charset="utf-8">
+<title>Contrato Compra e Venda de Imóvel</title>
+<link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
+</head>
+<body class="contract-pdf">
+
+    <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
+        NOME COMPLETO: {{ fields.seller_name|fill:52 }},
+        nacionalidade: {{ fields.seller_nationality|fill:20 }},
+        estado civil: {{ fields.seller_marital_status|fill:20 }},
+        profissão: {{ fields.seller_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
+        residente e domiciliado(a) na {{ fields.seller_address|fill:70 }}
+        Município: {{ fields.seller_city|fill:20 }},
+        Estado: {{ fields.seller_state|fill:20 }}.
+    </p>
+
+    <p>
+        E, de outro lado, como COMPRADOR(A):<br>
+        NOME COMPLETO: {{ fields.buyer_name|fill:52 }},
+        nacionalidade: {{ fields.buyer_nationality|fill:20 }},
+        estado civil: {{ fields.buyer_marital_status|fill:20 }},
+        profissão: {{ fields.buyer_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
+        residente e domiciliado(a) na {{ fields.buyer_address|fill:70 }}
+        Município: {{ fields.buyer_city|fill:20 }},
+        Estado: {{ fields.buyer_state|fill:20 }}.
+    </p>
+
+    <p>
+        Têm entre si, de maneira justa e contratada, o presente Contrato Particular de
+        Compra e Venda de Imóvel, regido pelo Código Civil, mediante as cláusulas e condições seguintes:
+    </p>
+
+    {% if fields.include_clause_1 %}
+    <div class="clause">
+        <h2 class="clause-title">1. DO OBJETO</h2>
+        <p>
+            O(A) VENDEDOR(A) vende AO(À) COMPRADOR(A) o imóvel situado em
+            {{ fields.property_address|fill:60 }},
+            nº {{ fields.property_number|fill:8 }},
+            complemento {{ fields.property_complement|fill:12 }},
+            bairro {{ fields.property_neighborhood|fill:14 }},
+            cidade {{ fields.property_city|fill:14 }},
+            estado {{ fields.property_state|fill:14 }},
+            CEP {{ fields.property_zip|fill:10 }},
+            com área total de {{ fields.property_area|fill:12 }} m²,
+            registrado sob a matrícula nº {{ fields.property_registration|fill:14 }},
+            inscrição imobiliária nº {{ fields.property_tax_id|fill:18 }},
+            do Cartório de Registro de Imóveis de {{ fields.property_registry_office|fill:40 }}.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_2 %}
+    <div class="clause">
+        <h2 class="clause-title">2. DO PREÇO E DA FORMA DE PAGAMENTO</h2>
+        <p>
+            O preço total, certo e ajustado é de R$ {{ fields.price|fill:21 }}
+            ({{ fields.price_in_words|fill:70 }}), que O(A) COMPRADOR(A) pagará
+            AO(À) VENDEDOR(A) da seguinte forma: {{ fields.payment_terms|fill:30 }}.
+        </p>
+        <p>
+            Havendo parcelamento, R$ {{ fields.down_payment|fill:13 }} a título de entrada/sinal, e o saldo
+            de R$ {{ fields.balance|fill:13 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de R$ {{ fields.installment_value|fill:14 }},
+            vencendo a primeira em {{ fields.first_due_date|fill:12 }}. Sujeitando o atraso a juros de mora de
+            1% (um por cento) ao mês e correção monetária.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_3 %}
+    <div class="clause">
+        <h2 class="clause-title">3. DA SITUAÇÃO DO IMÓVEL E DOS DÉBITOS EXISTENTES</h2>
+        <p>
+            O(A) VENDEDOR(A) declara que o imóvel se encontra livre e desembaraçado de ônus reais,
+            hipotecas, penhoras, ações e dívidas de IPTU ou condomínio, obrigando-se a apresentar
+            as certidões negativas exigidas para a escritura.
+        </p>
+        <p>
+            Eventuais débitos anteriores a {{ fields.debts_responsibility_date|fill:14 }} são de responsabilidade exclusiva
+            DO(DA) VENDEDOR(A).
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_4 %}
+    <div class="clause">
+        <h2 class="clause-title">3. DA SITUAÇÃO DO IMÓVEL E DOS DÉBITOS EXISTENTES</h2>
+        <p>
+            O(A) VENDEDOR(A) declara e informa AO(À) COMPRADOR(A) a existência de quaisquer ônus,
+            débitos, tributos, taxas ou demais obrigações incidentes sobre o imóvel até a data da
+            entrega da posse.
+        </p>
+        <p>
+            O(A) COMPRADOR(A) declara ter ciência e assumir expressamente os seguintes débitos
+            anteriores à entrega da posse: {{ fields.assumed_debts|fill:67 }}
+        </p>
+        <p>
+            Credor: {{ fields.debt_creditor|fill:30 }} Valor: R$ {{ fields.debt_value|fill:14 }}.
+        </p>
+        <p>
+            Os demais débitos e obrigações cujo fato gerador seja anterior à entrega da posse
+            permanecerão sob responsabilidade do VENDEDOR(A).
+        </p>
+        <p>
+            A responsabilidade assumida pelo COMPRADOR(A) neste contrato produz efeitos entre as
+            partes, sem prejuízo de eventual responsabilidade perante o Poder Público, condomínio
+            ou terceiros, quando determinada por lei.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_5 %}
+    <div class="clause">
+        <h2 class="clause-title">4. DA POSSE</h2>
+        <p>
+            A posse do imóvel será transmitida AO(À) COMPRADOR(A) em {{ fields.possession_date|fill:14 }},
+            livre de pessoas e coisas, no estado de conservação em que foi vistoriado.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_6 %}
+    <div class="clause">
+        <h2 class="clause-title">4. DA POSSE E DAS LOCAÇÕES EXISTENTES</h2>
+        <p>
+            A posse do imóvel será transmitida AO(À) COMPRADOR(A) em {{ fields.possession_date|fill:14 }},
+            juntamente com os contratos de locação, ocupantes e inquilinos existentes na data da
+            assinatura deste instrumento, os quais O(A) COMPRADOR(A) declara ter ciência e concordar
+            em assumir, passando a responder, a partir da imissão na posse, pelos direitos e
+            obrigações decorrentes das respectivas locações, na forma da legislação aplicável.
+        </p>
+        <p>
+            O(A) COMPRADOR(A) declara ter conhecimento da situação de ocupação do imóvel, bem como
+            das condições dos contratos de locação existentes, comprometendo-se a respeitar os
+            direitos dos respectivos locatários, inclusive quanto aos prazos e demais condições
+            contratuais, quando aplicáveis.
+        </p>
+        <p>
+            A partir da transmissão da posse, caberá AO(À) COMPRADOR(A) a administração dos imóveis
+            e o recebimento dos aluguéis, bem como a responsabilidade pelos encargos e obrigações
+            que lhe couberem na qualidade de proprietário e locador, observada a data efetiva da
+            transmissão da posse.
+        </p>
+        <p>
+            O imóvel será entregue no estado de conservação em que foi previamente vistoriado e
+            aceito pelo COMPRADOR(A), considerando-se igualmente reconhecida a existência dos
+            inquilinos e das respectivas ocupações na data da transmissão da posse.
+        </p>
+        <p>
+            O(A) VENDEDOR(A) obriga-se a entregar AO(À) COMPRADOR(A), até a data da transmissão da
+            posse, cópia dos contratos de locação vigentes e demais documentos relacionados às
+            locações, bem como informar os valores dos aluguéis, eventuais garantias locatícias,
+            encargos, pagamentos antecipados, débitos ou outras obrigações existentes relacionadas
+            aos respectivos contratos.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_7 %}
+    <div class="clause">
+        <h2 class="clause-title">5. DO FORO</h2>
+        <p>
+            Fica eleito o foro da Comarca de {{ fields.forum_city|fill:29 }}, no Estado do
+            {{ fields.forum_state|fill:18 }}, para dirimir questões decorrentes deste contrato, ressalvadas
+            as hipóteses em que a legislação estabeleça foro diverso.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_8 %}
+    <div class="clause">
+        <h2 class="clause-title">6. DISPOSIÇÕES FINAIS</h2>
+        <p>
+            As partes declaram que leram este contrato, compreenderam suas condições e o
+            assinam de livre e espontânea vontade, em 2 (duas) vias de igual teor e forma.
+        </p>
+    </div>
+    {% endif %}
+
+    <p class="contract-place-date">
+        _____________________, _____ de _________________________ de __________
+    </p>
+
+    <div class="signature-columns">
+        {% if fields.include_signature_seller %}
+        <div class="signature">
+            <p>VENDEDOR(A):<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
+        </div>
+        {% endif %}
+
+        {% if fields.include_signature_seller_spouse %}
+        <div class="signature">
+            <p>CÔNJUGE DO(A) VENDEDOR(A):<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="signature-columns">
+        {% if fields.include_signature_buyer %}
+        <div class="signature">
+            <p>COMPRADOR(A):<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="signature-columns">
+        {% if fields.include_witness_1 %}
+        <div class="signature">
+            <p>TESTEMUNHA 1:<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
+        </div>
+        {% endif %}
+
+        {% if fields.include_witness_2 %}
+        <div class="signature">
+            <p>TESTEMUNHA 2:<br><br>
+                _________________________________________</p>
+            <p>Nome: ___________________________________</p>
+            <p>CPF: ____________________________________</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
