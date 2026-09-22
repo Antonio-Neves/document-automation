@@ -12,31 +12,30 @@
 
     <p>
         Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
-        NOME COMPLETO: {{ fields.seller_name|fill:52 }},
-        nacionalidade: {{ fields.seller_nationality|fill:20 }},
-        estado civil: {{ fields.seller_marital_status|fill:20 }},
+        {{ fields.seller_name|fill:52 }},
+        {{ fields.seller_nationality|fill:20 }},
+        {{ fields.seller_marital_status|fill:20 }},
         profissão: {{ fields.seller_profession|fill:20 }},
         inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
         portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
         residente e domiciliado(a) na {{ fields.seller_address|fill:70 }}
-        Município: {{ fields.seller_city|fill:20 }},
-        Estado: {{ fields.seller_state|fill:20 }}.
+        {{ fields.seller_city|fill:20 }},
+        {{ fields.seller_state|fill:20 }}.
     </p>
 
     <p>
         E, de outro lado, como COMPRADOR(A):<br>
-        NOME COMPLETO: {{ fields.buyer_name|fill:52 }},
-        nacionalidade: {{ fields.buyer_nationality|fill:20 }},
-        estado civil: {{ fields.buyer_marital_status|fill:20 }},
-        profissão: {{ fields.buyer_profession|fill:20 }},
+        {{ fields.buyer_name|fill:52 }},
+        {{ fields.buyer_nationality|fill:20 }},
+        {{ fields.buyer_marital_status|fill:20 }},
+        {{ fields.buyer_profession|fill:20 }},
         inscrito(a) no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
         portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
         residente e domiciliado(a) na {{ fields.buyer_address|fill:70 }}
-        Município: {{ fields.buyer_city|fill:20 }},
-        Estado: {{ fields.buyer_state|fill:20 }}.
+        {{ fields.buyer_city|fill:20 }},
+        {{ fields.buyer_state|fill:20 }}.
     </p>
-
-    <p>
+   <p>
         Têm entre si, de maneira justa e contratada, o presente Contrato Particular de
         Compra e Venda de Imóvel, regido pelo Código Civil, mediante as cláusulas e condições seguintes:
     </p>
