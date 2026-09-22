@@ -15,8 +15,10 @@ description of the code.
 3. **Print CSS for the form page** — hide checkboxes on print, tune page
    breaks (`break-inside: avoid`), empty inputs printed as clean lines, so the
    on-screen form itself can print as a blank contract ("print-empty mode").
-4. **PDF layout tuning** — fine-tune `@page` rules, margins, and clause
-   spacing in the PDF template for a clean A4 print.
+4. **Per-contract PDF layout tuning** — the shared `.contract-pdf` baseline
+   (A4, 2cm margins, Arial 11pt with `line-height: 1.15`) is in place; the
+   remaining work is fine-tuning each document type's template for a clean A4
+   print.
 5. **More document types** — the architecture is one-CBV-per-document; add
    new contracts following
    [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).

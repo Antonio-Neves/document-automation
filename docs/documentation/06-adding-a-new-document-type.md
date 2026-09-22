@@ -43,8 +43,14 @@ Create `dashboard/templates/dashboard/<type>_pdf.html`:
 - Full standalone HTML document (not extending the base),
   `{% load contract_filters static %}`.
 - `<link>` to `base/css/my_styles.css`: the `.contract-pdf` section there
-  provides the `@page` rules (A4, margins, page counter), Arial 12pt, and
-  `break-inside: avoid` on `.clause` / `.signature`. Do not duplicate styles inline.
+  provides the `@page` rules (A4, 2cm margins, page counter) and the shared
+  print typography (Arial 11pt, `line-height: 1.15`, space after paragraphs).
+  Do not duplicate styles inline.
+- Keep page breaks clean: wrap the signature area (the place-date line plus
+  every signature row) in `<div class="signatures">`. The stylesheet already
+  applies `break-inside: avoid` to `.clause`, `.signatures`,
+  `.signature-columns`, and `.signature`, and `break-after: avoid` to
+  `.contract-place-date`, so the whole signature area stays together.
 - Fill every field with `{{ fields.<name>|fill:<width> }}`.
 - Wrap each optional section in `{% if fields.include_... %}`.
 

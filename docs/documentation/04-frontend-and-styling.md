@@ -44,9 +44,10 @@ Rules:
 - **New modules append a new scoped section at the end of the file**, following
   the `.receipt-page` / `.contract` pattern. Never interleave styles into other
   sections.
-- The `.contract-pdf` section defines the print `@page` rules (A4, 2cm margins)
-  and a named `contract-page` page with a page counter. The PDF template links
-  this stylesheet instead of carrying inline styles.
+- The `.contract-pdf` section defines the print `@page` rules (A4, 2cm margins),
+  a named `contract-page` page with a page counter, and the shared print
+  typography. The PDF template links this stylesheet instead of carrying inline
+  styles.
 
 ### The `.contract` section
 
@@ -61,6 +62,20 @@ Makes the form page look like a sheet of paper:
   — **no justified text**.
 - Screen-only controls: `.clause-check` and `.signature-check` checkboxes.
   They are planned to be hidden on print (see roadmap).
+
+### The `.contract-pdf` section
+
+Styles for the standalone PDF templates (the actual print output):
+
+- Arial 11pt with `line-height: 1.15`; paragraphs add `8pt` of space after
+  (no space before); the centered `contract-title` has `margin-bottom: 18pt`.
+- `@page` A4 with 2cm margins, plus the `contract-page` named page and its page
+  counter footer.
+- Pagination guards: `break-inside: avoid` on `.clause`, `.signatures`,
+  `.signature-columns`, and `.signature`; `break-after: avoid` on the
+  `.contract-place-date` line. Templates must wrap the signature area (place
+  date plus every signature row) in `<div class="signatures">` so it is never
+  split across pages.
 
 ## JavaScript (`base/static/base/js/my_scripts.js`)
 

@@ -76,6 +76,9 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md).
 - Contract content: Arial only, left-aligned, no law citations, no fixed
   percentages, dates DD/MM/YYYY, currency R$.
+- PDF templates must wrap the signature area (place date plus every signature
+  row) in `<div class="signatures">`, so pagination never splits it across
+  pages.
 
 ## Documentation
 

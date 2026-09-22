@@ -43,8 +43,12 @@ Every document type uses **two sibling templates**:
    form controls. It receives `fields` (a dict of POST values) and fills them
    with the `fill` template filter. It links the project stylesheet
    (`base/css/my_styles.css`), whose `.contract-pdf` section provides the
-   `@page` rules (A4, 2cm margins, page counter), Arial 12pt, and
-   `break-inside: avoid` on clauses/signatures.
+   `@page` rules (A4, 2cm margins, page counter) and the shared print
+   typography (Arial 11pt, `line-height: 1.15`, space after paragraphs).
+   Pagination guards keep clauses and signature blocks from splitting across
+   pages; the whole signature area (the place-date line plus every signature
+   row) is wrapped in a `<div class="signatures">` so it always stays on a
+   single page.
 
 Input widths in the page template use `ch` units matching the original
 document's underscore count (e.g. name = `52ch`, address = `70ch`), so the
