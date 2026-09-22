@@ -183,18 +183,24 @@
 .contract-pdf {
     page: contract-page;
     font-family: Arial, sans-serif;
-    font-size: 12pt;
-    line-height: 1.5;
+    font-size: 11pt;
+    line-height: 1.15;
 }
 
 .contract-pdf p {
-    line-height: 1.5;
+    line-height: 1.15;
     overflow-wrap: break-word;
+}
+
+.contract-pdf > p,
+.contract-pdf .clause p {
+    margin: 0 0 8pt;
 }
 
 .contract-pdf .contract-title {
     text-align: center;
-    font-size: 12pt;
+    font-size: 11pt;
+    margin-bottom: 18pt;
 }
 
 .contract-pdf .clause,
@@ -203,17 +209,28 @@
 }
 
 .contract-pdf .clause-title {
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 .contract-pdf .signature {
     margin-top: 1.5em;
     font-size: 9pt;
+    line-height: 1.5;
+}
+
+.contract-pdf .signature p {
+    line-height: 1.5;
+    margin: 1em 0;
+}
+
+.contract-pdf .signatures {
+    break-inside: avoid;
 }
 
 .contract-pdf .signature-columns {
     display: flex;
     gap: 20pt;
+    break-inside: avoid;
 }
 
 .contract-pdf .signature-columns .signature {
@@ -222,4 +239,5 @@
 
 .contract-pdf .contract-place-date {
     margin-top: 2em;
+    break-after: avoid;
 }
