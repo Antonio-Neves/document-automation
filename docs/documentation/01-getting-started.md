@@ -55,14 +55,16 @@ Variables read by `config/settings.py`:
 python manage.py runserver
 ```
 
-Then open the home page. The routes registered today:
+Then open the home page. The base routes:
 
 | Path | Name | Purpose |
 |------|------|---------|
 | `/` | `dashboard` | Home page (`dashboard/templates/dashboard/index.html`) |
-| `/contract-sale-vehicle/` | `contract_sale_vehicle` | Vehicle purchase and sale contract form |
-| `/contract-sale-property/` | `contract_sale_property` | Property purchase and sale contract form |
 | `/admin/` | — | Django admin |
+
+Each document type also has its own route in `dashboard/urls.py` (one CBV per
+type). The full list is the single index in
+[README.md](README.md#implemented-document-types).
 
 > Note: URL `name`s always match their template names
 > (e.g. `contract_sale_vehicle` — see [05-conventions.md](05-conventions.md)).

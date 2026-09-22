@@ -21,12 +21,11 @@ Follow the canonical recipe instead of repeating it here:
 - **Recipe**: [docs/documentation/06-adding-a-new-document-type.md](../../../docs/documentation/06-adding-a-new-document-type.md)
   — the 8 steps and the checklist. If the recipe changes, it changes only there.
 - **Working reference (sibling templates)**: use the already-implemented types
-  as the pattern to mirror:
-  - `dashboard/templates/dashboard/contract_sale_property.html` and
-    `contract_sale_property_pdf.html`
-  - `dashboard/templates/dashboard/contract_sale_vehicle.html` and
-    `contract_sale_vehicle_pdf.html`
-  - CBVs in `dashboard/views.py`, routes in `dashboard/urls.py`.
+  as the pattern to mirror. The current list is the single index in
+  [docs/documentation/README.md](../../../docs/documentation/README.md)
+  ("Implemented document types"); read the page and PDF templates it points to
+  in `dashboard/templates/dashboard/`, plus the CBVs in `dashboard/views.py`
+  and routes in `dashboard/urls.py`.
 
 ## Non-negotiable: keep signatures on one page
 

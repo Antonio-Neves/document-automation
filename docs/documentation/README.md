@@ -19,13 +19,31 @@ codebase. All documentation is written in English (US), as required by
   filled from an in-memory form and rendered with WeasyPrint.
 - Every document type uses two sibling templates (a page form and a standalone
   PDF template) and one class-based view.
-- The vehicle purchase and sale contract and the property purchase and sale
-  contract are the document types implemented so far; new types are added
-  following [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).
+- The document types implemented so far are listed in the single index below;
+  new types are added following
+  [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).
 - Nothing about the templates or the form data is persisted — only the
   generated PDFs are written to `contract_files/created_contracts/`.
 - Pending work and open decisions live in
   [08-roadmap-and-open-questions.md](08-roadmap-and-open-questions.md).
+
+---
+
+## Implemented document types
+
+**Single source of truth** for which document types exist. Other chapters link
+back to this table instead of re-listing the types.
+
+| Type (`name` = template prefix) | Route | View | Menu label |
+|---------------------------------|-------|------|------------|
+| `contract_sale_vehicle` | `/contract-sale-vehicle/` | `ContractSaleVehicleView` | Veículo |
+| `contract_sale_property` | `/contract-sale-property/` | `ContractSalePropertyView` | Imóvel |
+| `contract_sale_land` | `/contract-sale-land/` | `ContractSaleLandView` | Terreno |
+
+Each type has a page template `<type>.html` and a PDF template `<type>_pdf.html`
+under `dashboard/templates/dashboard/`. The browser tab shows the view's
+`page_title`, which may differ from the menu label (e.g. the vehicle tab shows
+"Veículo Completo").
 
 ---
 
@@ -65,6 +83,7 @@ policy section to change.
 | Question | Answer |
 |----------|--------|
 | How do I run the project? | [01-getting-started.md](01-getting-started.md) |
+| Which document types exist today? | [Implemented document types](#implemented-document-types) above |
 | Where is the contract logic? | [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md) |
 | How do I add a new contract type? | [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md) |
 | Why is this file here / why is it unused? | [02-architecture.md](02-architecture.md) (legacy artifacts) |

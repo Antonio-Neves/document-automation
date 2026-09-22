@@ -17,7 +17,7 @@ base/_base_index.html
 | Partial | Purpose |
 |---------|---------|
 | `_base_head.html` | Meta tags (some legacy SEO tags with TODOs), favicon, Bootstrap 5 CSS, bootstrap-icons, `my_styles.css`, cookie-consent CSS from CDN |
-| `_base_sidebar.html` | Sidebar menu: "Página Inicial" and one entry per document type ("Veículo" and "Imóvel" today). Admin/logout entries are commented out |
+| `_base_sidebar.html` | Sidebar menu: "Página Inicial" and one entry per document type (see the index in [README.md](README.md#implemented-document-types)). Admin/logout entries are commented out |
 | `_messages.html` | Renders Django `messages` as dismissible Bootstrap alerts (`error` maps to `danger`) |
 | `_base_script.html` | Loads `my_scripts.js` then `bootstrap.bundle.min.js` |
 

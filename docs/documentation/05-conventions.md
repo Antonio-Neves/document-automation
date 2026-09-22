@@ -86,6 +86,9 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
 - `docs/documentation/README.md` is read at the start of every chat (see
   `AGENTS.md`); keep it and the relevant chapters current when the project
   structure changes.
+- Document types are listed in **one** place only — the "Implemented document
+  types" index in [README.md](README.md). Other chapters link back to it instead
+  of enumerating types, routes, or views.
 - Describe **patterns and structure**, never volatile counts: do not record how
   many clauses/paragraphs a document type has. Those numbers change per
   contract and go stale.

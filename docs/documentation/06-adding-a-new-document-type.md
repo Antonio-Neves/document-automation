@@ -107,13 +107,11 @@ section.
 
 ## Step 8 — Update the docs
 
-- Add the new route to the table in [01-getting-started.md](01-getting-started.md).
-- Update the views section in
-  [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md) and the
-  "Current state" section in [README.md](README.md).
-- Update [02-architecture.md](02-architecture.md) and
-  [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md) if the
-  pattern changes.
+- Add the new type to the **single index** in [README.md](README.md)
+  ("Implemented document types"): type name, route, view, and menu label.
+- Update [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md)
+  or [02-architecture.md](02-architecture.md) only if the **pattern** changed
+  (new form classes, shared base view, etc.) — never for a single new instance.
 
 ## Checklist
 
