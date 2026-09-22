@@ -88,8 +88,17 @@ Remember: path kebab-case, `name` = template name.
 
 ## Step 6 — Add the sidebar link
 
-In `base/templates/base/_base_sidebar.html`, add a `<li class="nav-item mt-4">`
+In `base/templates/base/_base_sidebar.html`, add a `<li class="nav-item">`
 with an `href="{% url '<type>' %}"` and a bootstrap icon.
+
+The sidebar is grouped by topic: a non-clickable `<span class="nav-topic">`
+header (always visible, not a collapsible menu) followed by a
+`<ul class="nav flex-column sidebar-submenu">` holding the document links.
+Add new document types inside the topic they belong to (e.g. under "Compra e
+Venda").
+
+Each link highlights itself when active by comparing the current URL name:
+`class="nav-link{% if request.resolver_match.url_name == '<type>' %} active{% endif %}"`.
 
 ## Step 7 — Add a scoped CSS section
 

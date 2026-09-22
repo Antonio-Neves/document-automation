@@ -6,9 +6,10 @@
             <h4 class="text-white">Documentos</h4>
         </div>
 
+        {% with current=request.resolver_match.url_name %}
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link"
+                <a class="nav-link{% if current == 'dashboard' %} active{% endif %}"
                    href="{% url 'dashboard' %}">
                     <i class="bi bi-house-door"></i>
                     Página Inicial
@@ -16,27 +17,36 @@
             </li>
 
             <li class="nav-item mt-4">
-                <a class="nav-link"
-                   href="{% url 'contract_sale_vehicle' %}">
-                    <i class="bi bi-car-front"></i>
-                    Veículo
-                </a>
-            </li>
+                <span class="nav-topic">
+                    <i class="bi bi-cart"></i>
+                    Compra e Venda
+                </span>
 
-            <li class="nav-item mt-4">
-                <a class="nav-link"
-                   href="{% url 'contract_sale_property' %}">
-                    <i class="bi bi-house"></i>
-                    Imóvel
-                </a>
-            </li>
+                <ul class="nav flex-column sidebar-submenu">
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == 'contract_sale_vehicle' %} active{% endif %}"
+                           href="{% url 'contract_sale_vehicle' %}">
+                            <i class="bi bi-car-front"></i>
+                            Veículo
+                        </a>
+                    </li>
 
-            <li class="nav-item mt-4">
-                <a class="nav-link"
-                   href="{% url 'contract_sale_land' %}">
-                    <i class="bi bi-geo-alt"></i>
-                    Terreno
-                </a>
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == 'contract_sale_property' %} active{% endif %}"
+                           href="{% url 'contract_sale_property' %}">
+                            <i class="bi bi-house"></i>
+                            Imóvel
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == 'contract_sale_land' %} active{% endif %}"
+                           href="{% url 'contract_sale_land' %}">
+                            <i class="bi bi-geo-alt"></i>
+                            Terreno
+                        </a>
+                    </li>
+                </ul>
             </li>
 
 {#            <li class="nav-item mt-4">#}
@@ -56,5 +66,6 @@
 {#                </form>#}
 {#            </li>#}
         </ul>
+        {% endwith %}
     </div>
 </nav>
