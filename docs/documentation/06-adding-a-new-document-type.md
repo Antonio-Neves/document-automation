@@ -56,28 +56,21 @@ Create `dashboard/templates/dashboard/<type>_pdf.html`:
 
 ## Step 4 — Add the CBV
 
-In `dashboard/views.py`, add one class per document type, mirroring
-`ContractSaleVehicleView`:
+In `dashboard/views.py`, add one class per document type. It inherits the
+shared pipeline from `ContractPdfView` (defined once in the same file) and only
+sets four attributes — never copy `post()` or `_pdf_filename()`:
 
 ```python
-class Contract<Type>View(TemplateView):
+class Contract<Type>View(ContractPdfView):
     template_name = 'dashboard/<type>.html'
     pdf_template_name = 'dashboard/<type>_pdf.html'
+    pdf_filename_prefix = '<type>'
     page_title = '<Menu label>'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['page_title'] = self.page_title
-        return context
-
-    def post(self, request, *args, **kwargs):
-        # identical pipeline to ContractSaleVehicleView.post
-        ...
-
-    def _pdf_filename(self):
-        timestamp = timezone.localtime().strftime('%Y%m%d_%H%M')
-        return f'<type>_{timestamp}.pdf'
 ```
+
+Do not turn this into a single generic/slug-driven view: one class per document
+type is a project convention (see
+[05-conventions.md](05-conventions.md)).
 
 ## Step 5 — Add the URL
 

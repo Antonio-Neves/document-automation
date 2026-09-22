@@ -12,18 +12,22 @@ list of types is the index in
 
 - **`IndexView`** — plain `TemplateView` for the home page
   (`dashboard/index.html`).
-- **`ContractSaleVehicleView`** — `TemplateView` that handles both GET and POST
-  for the vehicle contract.
+- **`ContractPdfView`** — shared base `TemplateView` holding the whole
+  GET/POST pipeline (`get_context_data`, `post`, `_pdf_filename`) once, so no
+  document type repeats it.
+- **`ContractSaleVehicleView`** — concrete `ContractPdfView` subclass for the
+  vehicle contract. Every document type has its own subclass like this one —
+  see the index in
+  [README.md](README.md#implemented-document-types) for the concrete names.
+  There is **no** generic/slug-driven view: one class per document type.
 
-Every other document type has one CBV that mirrors this one — see the index in
-[README.md](README.md#implemented-document-types) for the concrete names.
-
-Class attributes on `ContractSaleVehicleView`:
+Each concrete view only sets class attributes:
 
 | Attribute | Value |
 |-----------|-------|
 | `template_name` | `dashboard/contract_sale_vehicle.html` (form page) |
 | `pdf_template_name` | `dashboard/contract_sale_vehicle_pdf.html` (document to convert) |
+| `pdf_filename_prefix` | `'contract_sale_vehicle'` (base of the saved/downloaded filename) |
 | `page_title` | `'Veículo Completo'` (shown in the browser tab) |
 
 `get_context_data()` only adds `page_title`. There are no model forms — the
@@ -57,7 +61,7 @@ Input widths in the page template use `ch` units matching the original
 document's underscore count (e.g. name = `52ch`, address = `70ch`), so the
 on-screen layout mirrors the final paper layout.
 
-## POST → PDF pipeline (`ContractSaleVehicleView.post`)
+## POST → PDF pipeline (`ContractPdfView.post`)
 
 ```python
 def post(self, request, *args, **kwargs):
@@ -94,8 +98,9 @@ Notes:
 
 ## PDF file naming
 
-`_pdf_filename()` produces `<template_prefix>_<YYYYMMDD_HHMM>.pdf` using
-`timezone.localtime()` (America/Sao_Paulo). Example:
+`_pdf_filename()` (defined once in `ContractPdfView`) produces
+`<pdf_filename_prefix>_<YYYYMMDD_HHMM>.pdf` using `timezone.localtime()`
+(America/Sao_Paulo). Example (`pdf_filename_prefix = 'contract_sale_vehicle'`):
 
 ```
 contract_sale_vehicle_20260905_1259.pdf
