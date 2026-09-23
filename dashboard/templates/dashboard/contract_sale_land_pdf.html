@@ -93,12 +93,14 @@
             COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor total de
             R$ {{ fields.price|fill:20 }} ({{ fields.price_in_words|fill:60 }}).
         </p>
+        {% if fields.include_clause_3_1 %}
         <p>
             Havendo parcelamento, R$ {{ fields.down_payment|fill:14 }} a título de entrada/sinal, e o saldo
             remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de
             R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia
             dos meses subsequentes.
         </p>
+        {% endif %}
         <p>
             O pagamento será realizado na forma ajustada entre as partes, devendo os respectivos comprovantes,
             recibos, transferências bancárias ou comprovantes de PIX, quando existentes, ser conservados como prova
@@ -138,7 +140,7 @@
 
     {% if fields.include_clause_6 %}
     <div class="clause">
-        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESPONSABILIDADE DA VENDEDORA/CEDENTE</h2>
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESPONSABILIDADE DO(A) VENDEDOR(A)/CEDENTE</h2>
         <p>
             O(A) VENDEDOR(A)/CEDENTE responsabiliza-se pela legitimidade dos direitos possessórios que declara
             possuir e ceder. Caso seja comprovada a existência de alienação ou cessão anterior realizada pelo(a)
