@@ -51,8 +51,8 @@
             Fundos: medindo {{ fields.property_back_measure|fill:8 }} metros, confrontando com {{ fields.property_back_boundary|fill:36 }},
             Lado Direito: medindo {{ fields.property_right_measure|fill:8 }} metros, confrontando com {{ fields.property_right_boundary|fill:32 }},
             Lado Esquerdo: medindo {{ fields.property_left_measure|fill:8 }} metros, confrontando com {{ fields.property_left_boundary|fill:30 }},
-            com as seguintes características: {{ fields.property_contents|fill:70 }},
-            perfazendo área total de {{ fields.property_area|fill:12 }} m² ({{ fields.property_area_in_words|fill:44 }}),
+            {% if fields.include_clause_1_1 %}com&nbsp;as&nbsp;seguintes&nbsp;características:&nbsp;{{ fields.property_contents|fill:70 }},{% endif %}
+            perfazendo área total de {{ fields.property_area|fill:12 }} m² ({{ fields.property_area_in_words|fill:44 }}).
         </p>
         <p>
             Parágrafo primeiro. O(A) VENDEDOR(A)/CEDENTE declara que o imóvel objeto deste instrumento não possui
