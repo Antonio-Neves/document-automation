@@ -7,7 +7,7 @@ Têm entre si justo e contratado o presente instrumento, mediante as cláusulas 
 CLÁUSULA PRIMEIRA - DO OBJETO
 O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre  ______ (_________), tipo: ______________________________, situado em ______________________________________________________________________________ Município: ____________________________, Estado: _____________________________, Frente medindo ______ metros, confrontando com ____________________________________, Fundos: medindo ______ metros, confrontando com ___________________________________, Lado Direito: medindo ______ metros, confrontando com _______________________________, Lado Esquerdo: medindo ______ metros, confrontando com _____________________________, contendo ______________________________________________________________________, perfazendo área total de ___________ m² (___________________________________________),
 Parágrafo primeiro. O(A) VENDEDOR(A)/CEDENTE declara que o imóvel objeto deste instrumento não possui matrícula individualizada nem escritura pública registrada no Cartório de Registro de Imóveis, circunstância da qual o(a) COMPRADOR(A)/CESSIONÁRIO(A) declara estar expressamente ciente.
-Parágrafo segundo. Em razão da situação documental descrita, o presente instrumento tem por objeto a alienação e cessão definitiva, integral e irrevogável dos direitos possessórios efetivamente detidos pelo(a) VENDEDOR(A)/CEDENTE sobre o lote, não constituindo, por si só, transferência de propriedade imobiliária registrada.
+Parágrafo segundo. Em razão da situação documental descrita, o presente instrumento tem por objeto a alienação e cessão definitiva, integral e irrevogável dos direitos possessórios efetivamente detidos pelo(a) VENDEDOR(A)/CEDENTE sobre o imóvel, não constituindo, por si só, transferência de propriedade imobiliária registrada.
 Parágrafo terceiro. O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara conhecer a localização, dimensões, limites físicos e estado atual do imóvel, aceitando-o nas condições em que se encontra.
 CLÁUSULA SEGUNDA - DA ORIGEM E LEGITIMIDADE DA POSSE
 O(A) VENDEDOR(A)/CEDENTE declara, sob sua responsabilidade, que exerce a posse do imóvel e possui legitimidade para ceder os direitos possessórios objeto deste contrato. Declara, ainda, que, até a presente data e ressalvadas as informações expressamente consignadas neste instrumento, não realizou anteriormente venda, cessão, promessa de venda, promessa de cessão ou qualquer outro negócio incompatível com os direitos ora transmitidos ao(à) COMPRADOR(A)/CESSIONÁRIO.
@@ -23,13 +23,13 @@ O presente negócio é celebrado em caráter irrevogável e irretratável, obrig
 CLÁUSULA SEXTA - DA RESPONSABILIDADE DA VENDEDORA/CEDENTE
 O(A) VENDEDOR(A)/CEDENTE responsabiliza-se pela legitimidade dos direitos possessórios que declara possuir e ceder. Caso seja comprovada a existência de alienação ou cessão anterior realizada pelo(a) próprio(a) VENDEDOR(A)/CEDENTE sobre o mesmo objeto e incompatível com os direitos transmitidos neste contrato, ficam preservados ao(à) COMPRADOR(A)/CESSIONÁRIO(A) os direitos de exigir a restituição das quantias pagas, perdas e danos e demais medidas cabíveis na forma da legislação aplicável.
 CLÁUSULA SÉTIMA - DA SITUAÇÃO REGISTRAL E DA REGULARIZAÇÃO
-O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara estar plenamente informado de que a presente contratação envolve direitos possessórios, diante da inexistência de matrícula individualizada e título de propriedade registrado apresentado para o lote. O presente instrumento não substitui eventual escritura pública, registro imobiliário, procedimento de regularização fundiária, usucapião ou outro título legalmente exigido para futura aquisição ou reconhecimento da propriedade. Eventual regularização observará os requisitos legais aplicáveis ao caso concreto.
+O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara estar plenamente informado de que a presente contratação envolve direitos possessórios, diante da inexistência de matrícula individualizada e título de propriedade registrado apresentado para o imóvel. O presente instrumento não substitui eventual escritura pública, registro imobiliário, procedimento de regularização fundiária, usucapião ou outro título legalmente exigido para futura aquisição ou reconhecimento da propriedade. Eventual regularização observará os requisitos legais aplicáveis ao caso concreto.
 CLÁUSULA OITAVA - DOS TRIBUTOS, TAXAS E ENCARGOS
 Tributos, taxas e demais encargos incidentes sobre o imóvel e relativos a período anterior à entrega da posse serão de responsabilidade do(a) VENDEDOR(A)/CEDENTE quando decorrentes de obrigação a ela imputável. Os encargos incidentes após a transferência da posse serão de responsabilidade do(a) COMPRADOR(A)/CESSIONÁRIO(A), ressalvadas as obrigações que, por lei, sejam atribuídas de forma diversa.
 CLÁUSULA NONA - DA BOA-FÉ E DAS DECLARAÇÕES DAS PARTES
 As partes declaram celebrar o presente negócio de livre e espontânea vontade, sem erro, dolo, coação ou qualquer outro vício de consentimento. Declaram, ainda, que tiveram oportunidade de examinar as condições do negócio e obrigam-se a observar a probidade e a boa-fé durante sua celebração e execução.
 CLÁUSULA DÉCIMA - DOS DOCUMENTOS E PROVAS DA POSSE
-Integram ou poderão acompanhar este instrumento, para fins de identificação e comprovação do negócio, cópias dos documentos pessoais das partes, comprovantes de pagamento, fotografias, croqui, coordenadas geográficas, documentos anteriores relativos à posse e quaisquer outros documentos relacionados ao lote. A apresentação desses documentos não implica, isoladamente, reconhecimento de propriedade registral.
+Integram ou poderão acompanhar este instrumento, para fins de identificação e comprovação do negócio, cópias dos documentos pessoais das partes, comprovantes de pagamento, fotografias, croqui, coordenadas geográficas, documentos anteriores relativos à posse e quaisquer outros documentos relacionados ao imóvel. A apresentação desses documentos não implica, isoladamente, reconhecimento de propriedade registral.
 CLÁUSULA DÉCIMA PRIMEIRA - DAS BENFEITORIAS
 Após a efetiva transferência da posse, as construções, cercas, instalações, melhorias e demais benfeitorias realizadas pelo(a) COMPRADOR(A)/CESSIONÁRIO(A) correrão por sua conta e responsabilidade, observadas as exigências urbanísticas, ambientais e administrativas eventualmente aplicáveis.
 CLÁUSULA DÉCIMA SEGUNDA - DA SUCESSÃO
@@ -62,12 +62,4 @@ TESTEMUNHA 1						TESTEMUNHA 2
 ___________________________________		___________________________________
 Nome: ______________________________		Nome: ______________________________
 CPF: _______________________________		CPF: _______________________________
-
-
-Página 1
-
-Página 1 de 4
-
-
-Página 1
 
