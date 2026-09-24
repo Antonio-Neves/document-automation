@@ -3,189 +3,250 @@
 {% load contract_filters static %}
 <head>
 <meta charset="utf-8">
-<title>Contrato Compra e Venda de Imóvel</title>
+<title>Instrumento Particular de Compra e Venda e Cessão Definitiva de Direitos Possessórios</title>
 <link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
 </head>
 <body class="contract-pdf">
 
-    <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL</h1>
+    <h1 class="contract-title">INSTRUMENTO PARTICULAR DE COMPRA E VENDA E CESSÃO DEFINITIVA DE DIREITOS POSSESSÓRIOS</h1>
 
     <p>
-        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A)/CEDENTE:<br>
         {{ fields.seller_name|fill:52 }},
         {{ fields.seller_nationality|fill:20 }},
         {{ fields.seller_marital_status|fill:20 }},
-        profissão: {{ fields.seller_profession|fill:20 }},
+        {{ fields.seller_profession|fill:20 }},
         inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
         portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
-        residente e domiciliado(a) na {{ fields.seller_address|fill:70 }}
+        residente e domiciliado(a) em {{ fields.seller_address|fill:70 }}
         {{ fields.seller_city|fill:20 }},
         {{ fields.seller_state|fill:20 }}.
     </p>
 
     <p>
-        E, de outro lado, como COMPRADOR(A):<br>
+        E, de outro lado, como COMPRADOR(A)/CESSIONÁRIO(A):<br>
         {{ fields.buyer_name|fill:52 }},
         {{ fields.buyer_nationality|fill:20 }},
         {{ fields.buyer_marital_status|fill:20 }},
         {{ fields.buyer_profession|fill:20 }},
         inscrito(a) no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
         portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
-        residente e domiciliado(a) na {{ fields.buyer_address|fill:70 }}
+        residente e domiciliado(a) em {{ fields.buyer_address|fill:70 }}
         {{ fields.buyer_city|fill:20 }},
         {{ fields.buyer_state|fill:20 }}.
     </p>
-   <p>
-        Têm entre si, de maneira justa e contratada, o presente Contrato Particular de
-        Compra e Venda de Imóvel, regido pelo Código Civil, mediante as cláusulas e condições seguintes:
+
+    <p>
+        Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
     </p>
 
     {% if fields.include_clause_1 %}
     <div class="clause">
-        <h2 class="clause-title">1. DO OBJETO</h2>
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO OBJETO</h2>
         <p>
-            O(A) VENDEDOR(A) vende AO(À) COMPRADOR(A) o imóvel situado em
-            {{ fields.property_address|fill:60 }},
-            nº {{ fields.property_number|fill:8 }},
-            complemento {{ fields.property_complement|fill:12 }},
-            bairro {{ fields.property_neighborhood|fill:14 }},
-            cidade {{ fields.property_city|fill:14 }},
-            estado {{ fields.property_state|fill:14 }},
-            CEP {{ fields.property_zip|fill:10 }},
-            com área total de {{ fields.property_area|fill:12 }} m²,
-            registrado sob a matrícula nº {{ fields.property_registration|fill:14 }},
-            inscrição imobiliária nº {{ fields.property_tax_id|fill:18 }},
-            do Cartório de Registro de Imóveis de {{ fields.property_registry_office|fill:40 }}.
+            O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre
+            {{ fields.property_quantity|fill:6 }} ({{ fields.property_quantity_in_words|fill:9 }}), tipo: {{ fields.property_type|fill:30 }},
+            situado em {{ fields.property_address|fill:70 }} Município: {{ fields.property_city|fill:20 }}, Estado: {{ fields.property_state|fill:20 }},
+            Frente medindo {{ fields.property_front_measure|fill:8 }} metros, confrontando com {{ fields.property_front_boundary|fill:36 }},
+            Fundos: medindo {{ fields.property_back_measure|fill:8 }} metros, confrontando com {{ fields.property_back_boundary|fill:36 }},
+            Lado Direito: medindo {{ fields.property_right_measure|fill:8 }} metros, confrontando com {{ fields.property_right_boundary|fill:32 }},
+            Lado Esquerdo: medindo {{ fields.property_left_measure|fill:8 }} metros, confrontando com {{ fields.property_left_boundary|fill:30 }},
+            {% if fields.include_clause_1_1 %}com&nbsp;as&nbsp;seguintes&nbsp;características:&nbsp;{{ fields.property_contents|fill:70 }},{% endif %}
+            perfazendo área total de {{ fields.property_area|fill:12 }} m² ({{ fields.property_area_in_words|fill:44 }}).
+        </p>
+        <p>
+            Parágrafo primeiro. O(A) VENDEDOR(A)/CEDENTE declara que o imóvel objeto deste instrumento não possui
+            matrícula individualizada nem escritura pública registrada no Cartório de Registro de Imóveis,
+            circunstância da qual o(a) COMPRADOR(A)/CESSIONÁRIO(A) declara estar expressamente ciente.
+        </p>
+        <p>
+            Parágrafo segundo. Em razão da situação documental descrita, o presente instrumento tem por objeto a
+            alienação e cessão definitiva, integral e irrevogável dos direitos possessórios efetivamente detidos
+            pelo(a) VENDEDOR(A)/CEDENTE sobre o imóvel, não constituindo, por si só, transferência de propriedade
+            imobiliária registrada.
+        </p>
+        <p>
+            Parágrafo terceiro. O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara conhecer a localização, dimensões, limites
+            físicos e estado atual do imóvel, aceitando-o nas condições em que se encontra.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_2 %}
     <div class="clause">
-        <h2 class="clause-title">2. DO PREÇO E DA FORMA DE PAGAMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DA ORIGEM E LEGITIMIDADE DA POSSE</h2>
         <p>
-            O preço total, certo e ajustado é de R$ {{ fields.price|fill:21 }}
-            ({{ fields.price_in_words|fill:70 }}), que O(A) COMPRADOR(A) pagará
-            AO(À) VENDEDOR(A) da seguinte forma: {{ fields.payment_terms|fill:30 }}.
-        </p>
-        <p>
-            Havendo parcelamento, R$ {{ fields.down_payment|fill:13 }} a título de entrada/sinal, e o saldo
-            de R$ {{ fields.balance|fill:13 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de R$ {{ fields.installment_value|fill:14 }},
-            vencendo a primeira em {{ fields.first_due_date|fill:12 }}. Sujeitando o atraso a juros de mora de
-            1% (um por cento) ao mês e correção monetária.
+            O(A) VENDEDOR(A)/CEDENTE declara, sob sua responsabilidade, que exerce a posse do imóvel e possui
+            legitimidade para ceder os direitos possessórios objeto deste contrato. Declara, ainda, que, até a
+            presente data e ressalvadas as informações expressamente consignadas neste instrumento, não realizou
+            anteriormente venda, cessão, promessa de venda, promessa de cessão ou qualquer outro negócio
+            incompatível com os direitos ora transmitidos ao(à) COMPRADOR(A)/CESSIONÁRIO.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_3 %}
     <div class="clause">
-        <h2 class="clause-title">3. DA SITUAÇÃO DO IMÓVEL E DOS DÉBITOS EXISTENTES</h2>
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DO PREÇO E DA FORMA DE PAGAMENTO</h2>
         <p>
-            O(A) VENDEDOR(A) declara que o imóvel se encontra livre e desembaraçado de ônus reais,
-            hipotecas, penhoras, ações e dívidas de IPTU ou condomínio, obrigando-se a apresentar
-            as certidões negativas exigidas para a escritura.
+            Pela presente compra e venda e cessão definitiva dos direitos possessórios, o(a)
+            COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor total de
+            R$ {{ fields.price|fill:20 }} ({{ fields.price_in_words|fill:60 }}).
+        </p>
+        {% if fields.include_clause_3_1 %}
+        <p>
+            Havendo parcelamento, R$ {{ fields.down_payment|fill:14 }} a título de entrada/sinal, e o saldo
+            remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de
+            R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia
+            dos meses subsequentes.
+        </p>
+        {% endif %}
+        <p>
+            O pagamento será realizado na forma ajustada entre as partes, devendo os respectivos comprovantes,
+            recibos, transferências bancárias ou comprovantes de PIX, quando existentes, ser conservados como prova
+            do adimplemento.
         </p>
         <p>
-            Eventuais débitos anteriores a {{ fields.debts_responsibility_date|fill:14 }} são de responsabilidade exclusiva
-            DO(DA) VENDEDOR(A).
+            Parágrafo único. Após o recebimento integral do preço, o(a) VENDEDOR(A)/CEDENTE dará ao(à)
+            COMPRADOR(A)/CESSIONÁRIO(A), plena, geral, rasa, irrevogável e irretratável quitação do valor
+            contratado, nada mais podendo reclamar a esse título.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_4 %}
     <div class="clause">
-        <h2 class="clause-title">3. DA SITUAÇÃO DO IMÓVEL E DOS DÉBITOS EXISTENTES</h2>
+        <h2 class="clause-title">CLÁUSULA QUARTA - DA TRANSFERÊNCIA DA POSSE</h2>
         <p>
-            O(A) VENDEDOR(A) declara e informa AO(À) COMPRADOR(A) a existência de quaisquer ônus,
-            débitos, tributos, taxas ou demais obrigações incidentes sobre o imóvel até a data da
-            entrega da posse.
-        </p>
-        <p>
-            O(A) COMPRADOR(A) declara ter ciência e assumir expressamente os seguintes débitos
-            anteriores à entrega da posse: {{ fields.assumed_debts|fill:67 }}
-        </p>
-        <p>
-            Credor: {{ fields.debt_creditor|fill:30 }} Valor: R$ {{ fields.debt_value|fill:14 }}.
-        </p>
-        <p>
-            Os demais débitos e obrigações cujo fato gerador seja anterior à entrega da posse
-            permanecerão sob responsabilidade do VENDEDOR(A).
-        </p>
-        <p>
-            A responsabilidade assumida pelo COMPRADOR(A) neste contrato produz efeitos entre as
-            partes, sem prejuízo de eventual responsabilidade perante o Poder Público, condomínio
-            ou terceiros, quando determinada por lei.
+            Com a assinatura deste instrumento e o pagamento integral do preço, o(a) VENDEDOR(A)/CEDENTE transfere
+            ao(à) COMPRADOR(A)/CESSIONÁRIO(A) a posse e os direitos possessórios que exerce sobre o imóvel descrito
+            na Cláusula Primeira. A partir da imissão na posse, o(a) COMPRADOR(A)/CESSIONÁRIO(A) poderá usar, ocupar,
+            conservar e realizar benfeitorias no imóvel, observadas as limitações legais e administrativas
+            aplicáveis.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_5 %}
     <div class="clause">
-        <h2 class="clause-title">4. DA POSSE</h2>
+        <h2 class="clause-title">CLÁUSULA QUINTA - DA IRREVOGABILIDADE E IRRETRATABILIDADE</h2>
         <p>
-            A posse do imóvel será transmitida AO(À) COMPRADOR(A) em {{ fields.possession_date|fill:14 }},
-            livre de pessoas e coisas, no estado de conservação em que foi vistoriado.
+            O presente negócio é celebrado em caráter irrevogável e irretratável, obrigando as partes, seus
+            herdeiros e sucessores, ressalvadas as hipóteses de resolução, nulidade, anulabilidade ou demais
+            situações previstas em lei ou neste instrumento.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_6 %}
     <div class="clause">
-        <h2 class="clause-title">4. DA POSSE E DAS LOCAÇÕES EXISTENTES</h2>
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESPONSABILIDADE DO(A) VENDEDOR(A)/CEDENTE</h2>
         <p>
-            A posse do imóvel será transmitida AO(À) COMPRADOR(A) em {{ fields.possession_date|fill:14 }},
-            juntamente com os contratos de locação, ocupantes e inquilinos existentes na data da
-            assinatura deste instrumento, os quais O(A) COMPRADOR(A) declara ter ciência e concordar
-            em assumir, passando a responder, a partir da imissão na posse, pelos direitos e
-            obrigações decorrentes das respectivas locações, na forma da legislação aplicável.
-        </p>
-        <p>
-            O(A) COMPRADOR(A) declara ter conhecimento da situação de ocupação do imóvel, bem como
-            das condições dos contratos de locação existentes, comprometendo-se a respeitar os
-            direitos dos respectivos locatários, inclusive quanto aos prazos e demais condições
-            contratuais, quando aplicáveis.
-        </p>
-        <p>
-            A partir da transmissão da posse, caberá AO(À) COMPRADOR(A) a administração dos imóveis
-            e o recebimento dos aluguéis, bem como a responsabilidade pelos encargos e obrigações
-            que lhe couberem na qualidade de proprietário e locador, observada a data efetiva da
-            transmissão da posse.
-        </p>
-        <p>
-            O imóvel será entregue no estado de conservação em que foi previamente vistoriado e
-            aceito pelo COMPRADOR(A), considerando-se igualmente reconhecida a existência dos
-            inquilinos e das respectivas ocupações na data da transmissão da posse.
-        </p>
-        <p>
-            O(A) VENDEDOR(A) obriga-se a entregar AO(À) COMPRADOR(A), até a data da transmissão da
-            posse, cópia dos contratos de locação vigentes e demais documentos relacionados às
-            locações, bem como informar os valores dos aluguéis, eventuais garantias locatícias,
-            encargos, pagamentos antecipados, débitos ou outras obrigações existentes relacionadas
-            aos respectivos contratos.
+            O(A) VENDEDOR(A)/CEDENTE responsabiliza-se pela legitimidade dos direitos possessórios que declara
+            possuir e ceder. Caso seja comprovada a existência de alienação ou cessão anterior realizada pelo(a)
+            próprio(a) VENDEDOR(A)/CEDENTE sobre o mesmo objeto e incompatível com os direitos transmitidos neste
+            contrato, ficam preservados ao(à) COMPRADOR(A)/CESSIONÁRIO(A) os direitos de exigir a restituição das
+            quantias pagas, perdas e danos e demais medidas cabíveis na forma da legislação aplicável.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_7 %}
     <div class="clause">
-        <h2 class="clause-title">5. DO FORO</h2>
+        <h2 class="clause-title">CLÁUSULA SÉTIMA - DA SITUAÇÃO REGISTRAL E DA REGULARIZAÇÃO</h2>
         <p>
-            Fica eleito o foro da Comarca de {{ fields.forum_city|fill:29 }}, no Estado do
-            {{ fields.forum_state|fill:18 }}, para dirimir questões decorrentes deste contrato, ressalvadas
-            as hipóteses em que a legislação estabeleça foro diverso.
+            O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara estar plenamente informado de que a presente contratação
+            envolve direitos possessórios, diante da inexistência de matrícula individualizada e título de
+            propriedade registrado apresentado para o imóvel. O presente instrumento não substitui eventual escritura
+            pública, registro imobiliário, procedimento de regularização fundiária, usucapião ou outro título
+            legalmente exigido para futura aquisição ou reconhecimento da propriedade. Eventual regularização
+            observará os requisitos legais aplicáveis ao caso concreto.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_8 %}
     <div class="clause">
-        <h2 class="clause-title">6. DISPOSIÇÕES FINAIS</h2>
+        <h2 class="clause-title">CLÁUSULA OITAVA - DOS TRIBUTOS, TAXAS E ENCARGOS</h2>
         <p>
-            As partes declaram que leram este contrato, compreenderam suas condições e o
-            assinam de livre e espontânea vontade, em 2 (duas) vias de igual teor e forma.
+            Tributos, taxas e demais encargos incidentes sobre o imóvel e relativos a período anterior à entrega da
+            posse serão de responsabilidade do(a) VENDEDOR(A)/CEDENTE quando decorrentes de obrigação a ela
+            imputável. Os encargos incidentes após a transferência da posse serão de responsabilidade do(a)
+            COMPRADOR(A)/CESSIONÁRIO(A), ressalvadas as obrigações que, por lei, sejam atribuídas de forma diversa.
         </p>
     </div>
     {% endif %}
+
+    {% if fields.include_clause_9 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA NONA - DA BOA-FÉ E DAS DECLARAÇÕES DAS PARTES</h2>
+        <p>
+            As partes declaram celebrar o presente negócio de livre e espontânea vontade, sem erro, dolo, coação ou
+            qualquer outro vício de consentimento. Declaram, ainda, que tiveram oportunidade de examinar as
+            condições do negócio e obrigam-se a observar a probidade e a boa-fé durante sua celebração e execução.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_10 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA - DOS DOCUMENTOS E PROVAS DA POSSE</h2>
+        <p>
+            Integram ou poderão acompanhar este instrumento, para fins de identificação e comprovação do negócio,
+            cópias dos documentos pessoais das partes, comprovantes de pagamento, fotografias, croqui, coordenadas
+            geográficas, documentos anteriores relativos à posse e quaisquer outros documentos relacionados ao imóvel.
+            A apresentação desses documentos não implica, isoladamente, reconhecimento de propriedade registral.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_11 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA PRIMEIRA - DAS BENFEITORIAS</h2>
+        <p>
+            Após a efetiva transferência da posse, as construções, cercas, instalações, melhorias e demais
+            benfeitorias realizadas pelo(a) COMPRADOR(A)/CESSIONÁRIO(A) correrão por sua conta e responsabilidade,
+            observadas as exigências urbanísticas, ambientais e administrativas eventualmente aplicáveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_12 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA SEGUNDA - DA SUCESSÃO</h2>
+        <p>
+            O presente contrato obriga as partes contratantes, bem como seus respectivos herdeiros e sucessores, a
+            qualquer título, respeitados os limites dos direitos efetivamente transmitidos neste instrumento.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_13 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA TERCEIRA - DO INADIMPLEMENTO</h2>
+        <p>
+            O descumprimento de obrigação essencial assumida neste instrumento sujeitará a parte inadimplente às
+            consequências previstas neste contrato e na legislação civil, inclusive, quando cabíveis, resolução
+            contratual, restituição de valores e indenização por perdas e danos.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_14 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA QUARTA - DO FORO</h2>
+        <p>
+            Fica eleito o Foro da Comarca de {{ fields.forum_city|fill:24 }}, Estado {{ fields.forum_state|fill:24 }},
+            para dirimir quaisquer controvérsias decorrentes deste instrumento, ressalvadas as hipóteses em que a
+            legislação estabelecer competência inderrogável diversa.
+        </p>
+    </div>
+    {% endif %}
+
+    <p>
+        E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
+        teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+    </p>
 
     <div class="signatures">
         <p class="contract-place-date">
@@ -195,7 +256,7 @@
         <div class="signature-columns">
             {% if fields.include_signature_seller %}
             <div class="signature">
-                <p>VENDEDOR(A):<br><br>
+                <p>VENDEDOR(A)/CEDENTE:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>
@@ -204,7 +265,7 @@
 
             {% if fields.include_signature_seller_spouse %}
             <div class="signature">
-                <p>CÔNJUGE DO(A) VENDEDOR(A):<br><br>
+                <p>CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>
@@ -215,7 +276,16 @@
         <div class="signature-columns">
             {% if fields.include_signature_buyer %}
             <div class="signature">
-                <p>COMPRADOR(A):<br><br>
+                <p>COMPRADOR(A)/CESSIONÁRIO(A):<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_signature_buyer_spouse %}
+            <div class="signature">
+                <p>CÔNJUGE DO(A) COMPRADOR(A)/CESSIONÁRIO(A):<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>

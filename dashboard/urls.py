@@ -14,9 +14,4 @@ urlpatterns = [
         views.ContractSalePropertyView.as_view(),
         name='contract_sale_property',
     ),
-    path(
-        'contract-sale-land/',
-        views.ContractSaleLandView.as_view(),
-        name='contract_sale_land',
-    ),
 ]
