@@ -32,19 +32,60 @@
     </p>
 
     <div class="clause" id="clause-1">
-        <input type="checkbox" name="include_clause_1" value="1" class="clause-check" checked>
         <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO OBJETO</h2>
         <p>
+            <input type="checkbox" name="include_clause_1_land" value="1" class="clause-check" checked>
             O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre
-            <input type="text" name="property_quantity" style="width: 6ch"> (<input type="text" name="property_quantity_in_words" style="width: 9ch">), tipo: <input type="text" name="property_type" style="width: 30ch">,
-            situado em <input type="text" name="property_address" style="width: 70ch"> Município: <input type="text" name="property_city" style="width: 20ch">, Estado: <input type="text" name="property_state" style="width: 20ch">,
-            Frente medindo <input type="text" name="property_front_measure" style="width: 8ch"> metros, confrontando com <input type="text" name="property_front_boundary" style="width: 36ch">,
-            Fundos: medindo <input type="text" name="property_back_measure" style="width: 8ch"> metros, confrontando com <input type="text" name="property_back_boundary" style="width: 36ch">,
-            Lado Direito: medindo <input type="text" name="property_right_measure" style="width: 8ch"> metros, confrontando com <input type="text" name="property_right_boundary" style="width: 32ch">,
-            Lado Esquerdo: medindo <input type="text" name="property_left_measure" style="width: 8ch"> metros, confrontando com <input type="text" name="property_left_boundary" style="width: 30ch">,
-            <input type="checkbox" name="include_clause_1_1" value="1" class="clause-check" checked>
-            com as seguintes características: <textarea name="property_contents" rows="2" style="width: 70ch"></textarea>,
-            perfazendo área total de <input type="text" name="property_area" style="width: 12ch"> m² (<input type="text" name="property_area_in_words" style="width: 44ch">).
+            <input type="text" name="property_land_quantity" style="width: 6ch"> (<input type="text" name="property_land_quantity_in_words" style="width: 9ch">),
+            tipo: <input type="text" name="property_land_type" style="width: 26ch">,
+            situado em <input type="text" name="property_land_address" style="width: 60ch">,
+            <input type="checkbox" name="include_clause_1_land_complement" value="1" class="clause-check">
+            Complemento: <input type="text" name="property_land_complement" style="width: 22ch">, <input type="checkbox" name="include_clause_1_land_neighborhood" value="1" class="clause-check">
+            Bairro: <input type="text" name="property_land_neighborhood" style="width: 22ch">,
+            CEP: <input type="text" name="property_land_zip_code" style="width: 12ch">,
+            Município: <input type="text" name="property_land_city" style="width: 20ch">, Estado: <input type="text" name="property_land_state" style="width: 16ch">,
+            frente medindo <input type="text" name="property_land_front_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_land_front_boundary" style="width: 28ch">,
+            fundos medindo <input type="text" name="property_land_back_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_land_back_boundary" style="width: 27ch">,
+            lado direito medindo <input type="text" name="property_land_right_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_land_right_boundary" style="width: 24ch">,
+            lado esquerdo medindo <input type="text" name="property_land_left_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_land_left_boundary" style="width: 22ch">,
+            <input type="checkbox" name="include_clause_1_1_land" value="1" class="clause-check" checked>
+            com as seguintes características: <textarea name="property_land_contents" rows="2" style="width: 70ch"></textarea>,
+            perfazendo área total de <input type="text" name="property_land_area" style="width: 12ch"> m² (<input type="text" name="property_land_area_in_words" style="width: 35ch">).
+        </p>
+        <p>
+            <input type="checkbox" name="include_clause_1_built" value="1" class="clause-check">
+            O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre
+            <input type="text" name="property_built_quantity" style="width: 6ch"> (<input type="text" name="property_built_quantity_in_words" style="width: 9ch">),
+            tipo: <input type="text" name="property_built_type" style="width: 26ch">,
+            situado em <input type="text" name="property_built_address" style="width: 60ch">,
+            <input type="checkbox" name="include_clause_1_built_complement" value="1" class="clause-check">
+            Complemento: <input type="text" name="property_built_complement" style="width: 22ch">, <input type="checkbox" name="include_clause_1_built_neighborhood" value="1" class="clause-check">
+            Bairro: <input type="text" name="property_built_neighborhood" style="width: 22ch">,
+            CEP: <input type="text" name="property_built_zip_code" style="width: 12ch">,
+            Município: <input type="text" name="property_built_city" style="width: 20ch">, Estado: <input type="text" name="property_built_state" style="width: 16ch">,
+            com área construída de <input type="text" name="property_built_area" style="width: 14ch"> m² (<input type="text" name="property_built_area_in_words" style="width: 32ch">),
+            com frente medindo <input type="text" name="property_built_front_measure" style="width: 13ch"> metros,
+            fundos medindo <input type="text" name="property_built_back_measure" style="width: 13ch"> metros,
+            lado direito medindo <input type="text" name="property_built_right_measure" style="width: 12ch"> metros,
+            lado esquerdo medindo <input type="text" name="property_built_left_measure" style="width: 8ch"> metros.
+        </p>
+        <p>
+            Edificada sobre terreno com área total de <input type="text" name="property_built_land_area" style="width: 8ch">
+            m² (<input type="text" name="property_built_land_area_in_words" style="width: 25ch">),
+            frente medindo <input type="text" name="property_built_land_front_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_built_land_front_boundary" style="width: 28ch">,
+            fundos medindo <input type="text" name="property_built_land_back_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_built_land_back_boundary" style="width: 27ch">,
+            lado direito: medindo <input type="text" name="property_built_land_right_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_built_land_right_boundary" style="width: 24ch">,
+            lado esquerdo: medindo <input type="text" name="property_built_land_left_measure" style="width: 8ch"> metros,
+            confrontando com <input type="text" name="property_built_land_left_boundary" style="width: 22ch">,
+            <input type="checkbox" name="include_clause_1_1_built" value="1" class="clause-check">
+            com as seguintes características: <textarea name="property_built_contents" rows="2" style="width: 70ch"></textarea>,
         </p>
         <p>
             Parágrafo primeiro. O(A) VENDEDOR(A)/CEDENTE declara que o imóvel objeto deste instrumento não possui
