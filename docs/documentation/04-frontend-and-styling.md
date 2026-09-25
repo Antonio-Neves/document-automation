@@ -30,20 +30,18 @@ no bundler, no npm. Bootstrap is vendored in `base/static/base/css/` and
 The project CSS is organized in **scoped sections**, one per module:
 
 ```
-:root                      → brand palette
-Base Layout                → sidebar, buttons, badges (store-system legacy)
-.receipt-page              → legacy sale-receipt styles (kept, unused today)
+:root                      → brand palette (--primary-color)
+Base Layout                → sidebar, nav links, buttons (store-system legacy)
 .contract                  → the contract form page styles
 .contract-pdf              → the PDF document styles (print)
 ```
 
 Rules:
 
-- Brand colors: `--primary-color: #004F9F` (blue), `--secondary-color: #FBB900`
-  (yellow). Sidebar and `.btn-primary` use them.
+- Brand color: `--primary-color: #004F9F` (blue), used by the sidebar and
+  `.btn-primary`.
 - **New modules append a new scoped section at the end of the file**, following
-  the `.receipt-page` / `.contract` pattern. Never interleave styles into other
-  sections.
+  the `.contract` pattern. Never interleave styles into other sections.
 - The `.contract-pdf` section defines the print `@page` rules (A4, 2cm margins),
   a named `contract-page` page with a page counter, and the shared print
   typography. The PDF template links this stylesheet instead of carrying inline

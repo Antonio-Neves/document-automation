@@ -1,12 +1,14 @@
 # 3. Dashboard and Contract Flow
 
-This chapter describes how document pages work end to end, using the vehicle
-purchase and sale contract ("Contrato Particular de Compra e Venda de Veículo
-Automotor") as the reference. **Every other document type follows the exact
-same pattern**, only with its own templates, view, and route. The authoritative
-list of types is the index in
-[README.md](README.md#implemented-document-types); this chapter documents the
-**pattern once**.
+This chapter describes how document pages work end to end. The whole pipeline —
+one class-based view, one page template, one PDF template, one route — is common
+to every document type, and the vehicle purchase and sale contract ("Contrato
+Particular de Compra e Venda de Veículo Automotor") is the simplest reference
+for it. A document type may add its own variations on top of the common pattern:
+alternative sections, optional sub-blocks, and extra signature rows (the
+property contract is the current example). The authoritative list of types is
+the index in [README.md](README.md#implemented-document-types); this chapter
+documents the **shared pattern once**.
 
 ## Views (`dashboard/views.py`)
 
@@ -41,8 +43,10 @@ Every document type uses **two sibling templates**:
    It renders the contract layout with real form controls:
    - `<input type="text" name="...">` for single-line fields,
    - `<textarea name="..." rows="2">` for long free-text fields,
-   - `<input type="checkbox" class="clause-check|signature-check">` to exclude
-     whole sections.
+   - `<input type="checkbox" class="clause-check|signature-check">` bound to a
+     `{% if fields.include_... %}` block in the PDF template. A checked box
+     (the default for clauses and signatures) keeps the block — *opt-out*; an
+     unchecked box omits it — *opt-in*, used for optional sub-blocks.
    Field `name` attributes are in English and are the contract between the form
    and the PDF template (e.g. `seller_name`, `vehicle_plate`, `price`).
 
@@ -128,17 +132,28 @@ Used everywhere in the PDF template as `{{ fields.<name>|fill:<width> }}`.
 An empty field renders as a run of underscores (the "print-empty" style) so the
 client can fill the printed contract by hand; a filled field renders its value.
 
-## Clause and signature exclusion
+## Optional sections and checkboxes
+
+Checkboxes drive every conditional block, both at the top level (whole clauses
+and signatures) and inside a clause (optional details and alternative variants).
 
 - Page template: each clause has
   `<input type="checkbox" name="include_clause_N" class="clause-check" checked>`
   and each signature block has
   `<input type="checkbox" name="include_signature_seller" class="signature-check" checked>`
-  (buyer and the two witnesses follow the same pattern).
-- PDF template: each section is wrapped in
+  (buyer, witnesses, and the spouse rows in the property contract follow the
+  same pattern).
+- PDF template: the bound block is wrapped in
   `{% if fields.include_clause_N %} ... {% endif %}` (or the signature
   equivalent). Unchecked boxes simply do not exist in POST, so the `{% if %}`
-  fails and the section is omitted from the PDF.
+  fails and the block is omitted from the PDF.
+- Defaults: clauses and signatures ship `checked` (opt-out — included unless
+  the user unchecks them). Optional inner details can ship unchecked (opt-in)
+  instead, e.g. the property contract's complement, neighborhood, built-area
+  variant, and installment paragraph.
+- Alternative variants: mutually exclusive blocks are plain sibling `{% if %}`
+  blocks, each bound to its own checkbox. The property contract uses this for
+  the object described in the first clause (land only vs. built property).
 - The checkboxes are screen-only controls and are planned to be hidden on
   print (see roadmap).
 
@@ -148,15 +163,17 @@ All form fields are snake_case English names, grouped by entity:
 
 | Prefix | Meaning | Example fields |
 |--------|---------|----------------|
-| `seller_*` | Seller identification | `seller_name`, `seller_cpf`, `seller_address` |
-| `buyer_*` | Buyer identification | `buyer_name`, `buyer_rg` |
+| `seller_*` | Seller identification | `seller_name`, `seller_cpf`, `seller_marital_status`, `seller_city` |
+| `buyer_*` | Buyer identification | `buyer_name`, `buyer_rg`, `buyer_profession`, `buyer_state` |
 | `vehicle_*` | Vehicle description | `vehicle_type`, `vehicle_plate`, `vehicle_renavam` |
-| `payment_*` | Price and payment | `price`, `price_in_words`, `payment_details` |
-| `delivery_*` | Delivery data | `delivery_day`, `delivery_time`, `delivery_location` |
-| `known_*` | Disclosed debts/defects | `known_debts`, `known_defects_details` |
+| `property_land_*` | Property object — land | `property_land_address`, `property_land_area`, `property_land_front_measure` |
+| `property_built_*` | Property object — built property | `property_built_address`, `property_built_area`, `property_built_contents` |
+| `payment_*` | Price and payment | `price`, `price_in_words`, `down_payment`, `installments_count`, `first_due_date` |
+| `delivery_*` | Delivery data | `delivery_day`, `delivery_time`, `delivery_place` |
+| `known_*` | Disclosed debts/defects | `known_debts`, `known_defects` |
 | `place_*` | Signature place/date line | `place_city`, `place_day`, `place_month` |
 | `forum_*` | Jurisdiction clause | `forum_city`, `forum_state` |
-| `include_*` | Exclusion checkboxes | `include_clause_1`, `include_witness_2` |
+| `include_*` | Checkboxes for optional blocks | `include_clause_1`, `include_clause_1_land_complement`, `include_signature_seller_spouse` |
 
 ## Routing (`dashboard/urls.py`)
 
@@ -167,6 +184,11 @@ urlpatterns = [
         'contract-sale-vehicle/',
         views.ContractSaleVehicleView.as_view(),
         name='contract_sale_vehicle',
+    ),
+    path(
+        'contract-sale-property/',
+        views.ContractSalePropertyView.as_view(),
+        name='contract_sale_property',
     ),
 ]
 ```

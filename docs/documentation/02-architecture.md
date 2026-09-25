@@ -89,9 +89,10 @@ purpose:
 - `my_scripts.js` — legacy jQuery scroll-to-top, cookie-consent, contact-form
   AJAX, and mobile-navbar code (jQuery itself is *not* loaded by the current
   base script partial, so some of this code is inert).
-- `my_styles.css` — contains the legacy `.receipt-page` scoped section and
-  store branding colors (`--primary-color: #004F9F`,
-  `--secondary-color: #FBB900`) that are still used by the sidebar/buttons.
+- `my_styles.css` — keeps the store branding color
+  `--primary-color: #004F9F`, still used by the sidebar/buttons, alongside the
+  `Base Layout` section and the document-specific `.contract` and
+  `.contract-pdf` sections.
 - SEO/meta tags in `_base_head.html` still reference the old store system
   (marked with TODOs).
 - `base/models.py`, `base/views.py`, `dashboard/models.py` are empty scaffolds.

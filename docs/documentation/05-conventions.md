@@ -70,9 +70,9 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
 ## Styling and frontend structure
 
 - New CSS goes in a new scoped section at the end of `my_styles.css`
-  (pattern: `.receipt-page`, `.contract`).
-- Contract page conventions (ids `#clause-N`, `#signature-seller`, etc.,
-  `ch`-based input widths) are described in
+  (pattern: `.contract`, `.contract-pdf`).
+- Contract page conventions (ids `#clause-N`, `#signature-seller`,
+  `#signature-seller-spouse`, etc., `ch`-based input widths) are described in
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md).
 - Contract content: Arial only, left-aligned, no law citations, no fixed
   percentages, dates DD/MM/YYYY, currency R$.

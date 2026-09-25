@@ -27,9 +27,16 @@ Create `dashboard/templates/dashboard/<type>.html`:
 - Each clause: `<div class="clause" id="clause-N">` with
   `<h2 class="clause-title">` and a checkbox
   `<input type="checkbox" name="include_clause_N" value="1" class="clause-check" checked>`.
+- Optional inner details and alternative variants: give each its own
+  `.clause-check` checkbox bound to a `{% if fields.include_... %}` block in the
+  PDF template. Clauses/signatures default to `checked` (opt-out); optional
+  details can default to unchecked (opt-in). The property contract shows both
+  styles — see
+  [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md#optional-sections-and-checkboxes).
 - Signature blocks: `<div class="signature" id="signature-seller">`,
-  `#signature-buyer`, `#witness-1`, `#witness-2` (or your own set) with
-  `.signature-check` checkboxes.
+  `#signature-buyer`, `#witness-1`, `#witness-2` (or your own set, e.g. the
+  property contract adds `#signature-seller-spouse` and
+  `#signature-buyer-spouse`) with `.signature-check` checkboxes.
 - Fields are `<input type="text" name="...">` (long free text =
   `<textarea name="..." rows="2">`) with English snake_case names grouped by
   entity (see the field-prefix table in
@@ -52,7 +59,8 @@ Create `dashboard/templates/dashboard/<type>_pdf.html`:
   `.signature-columns`, and `.signature`, and `break-after: avoid` to
   `.contract-place-date`, so the whole signature area stays together.
 - Fill every field with `{{ fields.<name>|fill:<width> }}`.
-- Wrap each optional section in `{% if fields.include_... %}`.
+- Wrap each optional block in `{% if fields.include_... %}` — whole clauses,
+  signatures, optional inner details, and alternative variants alike.
 
 ## Step 4 — Add the CBV
 
