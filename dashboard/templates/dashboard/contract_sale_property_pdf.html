@@ -47,11 +47,11 @@
         <p>
             O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre
             {{ fields.property_land_quantity|fill:6 }} ({{ fields.property_land_quantity_in_words|fill:9 }}) {{ fields.property_land_type|fill:30 }},
-            situado em {{ fields.property_land_address|fill:70 }}, {% if fields.include_clause_1_land_complement %}complemento: {{ fields.property_land_complement|fill:24 }}, {% endif %}{% if fields.include_clause_1_land_neighborhood %}bairro: {{ fields.property_land_neighborhood|fill:19 }}, {% endif %}CEP: {{ fields.property_land_zip_code|fill:12 }}, Município: {{ fields.property_land_city|fill:20 }}, Estado: {{ fields.property_land_state|fill:20 }},
+            situado em {{ fields.property_land_address|fill:70 }}, {% if fields.include_clause_1_land_complement %}Complemento: {{ fields.property_land_complement|fill:24 }}, {% endif %}{% if fields.include_clause_1_land_neighborhood %}Bairro: {{ fields.property_land_neighborhood|fill:19 }}, {% endif %}CEP: {{ fields.property_land_zip_code|fill:12 }}, Município: {{ fields.property_land_city|fill:20 }}, Estado: {{ fields.property_land_state|fill:20 }},
             frente medindo {{ fields.property_land_front_measure|fill:8 }} metros, confrontando com {{ fields.property_land_front_boundary|fill:36 }},
-            fundos: medindo {{ fields.property_land_back_measure|fill:8 }} metros, confrontando com {{ fields.property_land_back_boundary|fill:36 }},
-            lado direito: medindo {{ fields.property_land_right_measure|fill:8 }} metros, confrontando com {{ fields.property_land_right_boundary|fill:32 }},
-            lado esquerdo: medindo {{ fields.property_land_left_measure|fill:8 }} metros, confrontando com {{ fields.property_land_left_boundary|fill:30 }},
+            fundos medindo {{ fields.property_land_back_measure|fill:8 }} metros, confrontando com {{ fields.property_land_back_boundary|fill:36 }},
+            lado direito medindo {{ fields.property_land_right_measure|fill:8 }} metros, confrontando com {{ fields.property_land_right_boundary|fill:32 }},
+            lado esquerdo medindo {{ fields.property_land_left_measure|fill:8 }} metros, confrontando com {{ fields.property_land_left_boundary|fill:30 }},
             {% if fields.include_clause_1_1_land %}com&nbsp;as&nbsp;seguintes&nbsp;características:&nbsp;{{ fields.property_land_contents|fill:70 }},{% endif %}
             perfazendo área total de {{ fields.property_land_area|fill:12 }} m² ({{ fields.property_land_area_in_words|fill:44 }}).
         </p>
