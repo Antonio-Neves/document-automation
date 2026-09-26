@@ -45,7 +45,7 @@
         <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO OBJETO</h2>
         {% if fields.include_clause_1_land %}
         <p>
-            O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre
+            Imóvel constituído por, quantidade:
             {{ fields.property_land_quantity|fill:6 }} ({{ fields.property_land_quantity_in_words|fill:9 }}) {{ fields.property_land_type|fill:30 }},
             situado em {{ fields.property_land_address|fill:70 }}, {% if fields.include_clause_1_land_complement %}Complemento: {{ fields.property_land_complement|fill:24 }}, {% endif %}{% if fields.include_clause_1_land_neighborhood %}Bairro: {{ fields.property_land_neighborhood|fill:19 }}, {% endif %}CEP: {{ fields.property_land_zip_code|fill:12 }}, Município: {{ fields.property_land_city|fill:20 }}, Estado: {{ fields.property_land_state|fill:20 }},
             frente medindo {{ fields.property_land_front_measure|fill:8 }} metros, confrontando com {{ fields.property_land_front_boundary|fill:36 }},
@@ -58,7 +58,7 @@
         {% endif %}
         {% if fields.include_clause_1_built %}
         <p>
-            O(A) VENDEDOR(A)/CEDENTE declara exercer legitimamente a posse e deter direitos possessórios sobre
+            Imóvel constituído por
             {{ fields.property_built_quantity|fill:6 }} ({{ fields.property_built_quantity_in_words|fill:9 }}) {{ fields.property_built_type|fill:30 }},
             situado em {{ fields.property_built_address|fill:70 }}, {% if fields.include_clause_1_built_complement %}Complemento: {{ fields.property_built_complement|fill:24 }}, {% endif %}{% if fields.include_clause_1_built_neighborhood %}Bairro: {{ fields.property_built_neighborhood|fill:19 }}, {% endif %}CEP: {{ fields.property_built_zip_code|fill:12 }}, Município: {{ fields.property_built_city|fill:20 }}, Estado: {{ fields.property_built_state|fill:20 }},
             com área construída de {{ fields.property_built_area|fill:14 }} m² ({{ fields.property_built_area_in_words|fill:35 }}), com frente medindo {{ fields.property_built_front_measure|fill:8 }} metros, fundos medindo {{ fields.property_built_back_measure|fill:8 }} metros, lado direito medindo {{ fields.property_built_right_measure|fill:8 }} metros, lado esquerdo medindo {{ fields.property_built_left_measure|fill:8 }} metros.
