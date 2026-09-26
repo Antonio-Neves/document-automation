@@ -15,6 +15,7 @@
         {{ fields.seller_name|fill:52 }},
         {{ fields.seller_nationality|fill:20 }},
         {{ fields.seller_marital_status|fill:20 }},
+        sob o regime de {{ fields.seller_marital_regime|fill:20 }},
         {{ fields.seller_profession|fill:20 }},
         inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
         portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
@@ -22,6 +23,21 @@
         {{ fields.seller_city|fill:20 }},
         {{ fields.seller_state|fill:20 }}.
     </p>
+
+    {% if fields.include_seller_spouse %}
+    <p>
+        CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br>
+        {{ fields.seller_spouse_name|fill:52 }},
+        {{ fields.seller_spouse_nationality|fill:20 }},
+        {{ fields.seller_spouse_marital_status|fill:20 }},
+        {{ fields.seller_spouse_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_spouse_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_spouse_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.seller_spouse_address|fill:70 }}
+        {{ fields.seller_spouse_city|fill:20 }},
+        {{ fields.seller_spouse_state|fill:20 }}.
+    </p>
+    {% endif %}
 
     <p>
         E, de outro lado, como COMPRADOR(A)/CESSIONÁRIO(A):<br>
@@ -227,17 +243,7 @@
 
     {% if fields.include_clause_12 %}
     <div class="clause">
-        <h2 class="clause-title">CLÁUSULA DÉCIMA SEGUNDA - DA SUCESSÃO</h2>
-        <p>
-            O presente contrato obriga as partes contratantes, bem como seus respectivos herdeiros e sucessores, a
-            qualquer título, respeitados os limites dos direitos efetivamente transmitidos neste instrumento.
-        </p>
-    </div>
-    {% endif %}
-
-    {% if fields.include_clause_13 %}
-    <div class="clause">
-        <h2 class="clause-title">CLÁUSULA DÉCIMA TERCEIRA - DO INADIMPLEMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA DÉCIMA SEGUNDA - DO INADIMPLEMENTO</h2>
         <p>
             O descumprimento de obrigação essencial assumida neste instrumento sujeitará a parte inadimplente às
             consequências previstas neste contrato e na legislação civil, inclusive, quando cabíveis, resolução
@@ -246,9 +252,9 @@
     </div>
     {% endif %}
 
-    {% if fields.include_clause_14 %}
+    {% if fields.include_clause_13 %}
     <div class="clause">
-        <h2 class="clause-title">CLÁUSULA DÉCIMA QUARTA - DO FORO</h2>
+        <h2 class="clause-title">CLÁUSULA DÉCIMA TERCEIRA - DO FORO</h2>
         <p>
             Fica eleito o Foro da Comarca de {{ fields.forum_city|fill:24 }}, Estado {{ fields.forum_state|fill:24 }},
             para dirimir quaisquer controvérsias decorrentes deste instrumento, ressalvadas as hipóteses em que a
@@ -297,14 +303,6 @@
             </div>
             {% endif %}
 
-            {% if fields.include_signature_buyer_spouse %}
-            <div class="signature">
-                <p>CÔNJUGE DO(A) COMPRADOR(A)/CESSIONÁRIO(A):<br><br>
-                    _________________________________________</p>
-                <p>Nome: ___________________________________</p>
-                <p>CPF: ____________________________________</p>
-            </div>
-            {% endif %}
         </div>
 
         <div class="signature-columns">

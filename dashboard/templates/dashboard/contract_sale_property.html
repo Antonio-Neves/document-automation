@@ -13,9 +13,19 @@
         Pelo presente instrumento particular, de um lado, como VENDEDOR(A)/CEDENTE:<br>
         NOME COMPLETO: <input type="text" name="seller_name" style="width: 52ch">,<br>
         Nacionalidade: <input type="text" name="seller_nationality" style="width: 20ch">, Estado Civil: <input type="text" name="seller_marital_status" style="width: 20ch">,<br>
-        Profissão: <input type="text" name="seller_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_cpf" style="width: 18ch">,<br>
+        sob o regime de: <input type="text" name="seller_marital_regime" style="width: 20ch">, Profissão: <input type="text" name="seller_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_cpf" style="width: 18ch">,<br>
         portador(a) do RG nº <input type="text" name="seller_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
         <input type="text" name="seller_address" style="width: 70ch"> Município: <input type="text" name="seller_city" style="width: 20ch">, Estado: <input type="text" name="seller_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        <input type="checkbox" name="include_seller_spouse" value="1" class="clause-check">
+        CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br>
+        NOME COMPLETO: <input type="text" name="seller_spouse_name" style="width: 52ch">,<br>
+        Nacionalidade: <input type="text" name="seller_spouse_nationality" style="width: 20ch">, Estado Civil: <input type="text" name="seller_spouse_marital_status" style="width: 20ch">,<br>
+        Profissão: <input type="text" name="seller_spouse_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_spouse_cpf" style="width: 18ch">,<br>
+        portador(a) do RG nº <input type="text" name="seller_spouse_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="seller_spouse_address" style="width: 70ch"> Município: <input type="text" name="seller_spouse_city" style="width: 20ch">, Estado: <input type="text" name="seller_spouse_state" style="width: 20ch">.
     </p>
 
     <p>
@@ -234,16 +244,7 @@
 
     <div class="clause" id="clause-12">
         <input type="checkbox" name="include_clause_12" value="1" class="clause-check" checked>
-        <h2 class="clause-title">CLÁUSULA DÉCIMA SEGUNDA - DA SUCESSÃO</h2>
-        <p>
-            O presente contrato obriga as partes contratantes, bem como seus respectivos herdeiros e sucessores, a
-            qualquer título, respeitados os limites dos direitos efetivamente transmitidos neste instrumento.
-        </p>
-    </div>
-
-    <div class="clause" id="clause-13">
-        <input type="checkbox" name="include_clause_13" value="1" class="clause-check" checked>
-        <h2 class="clause-title">CLÁUSULA DÉCIMA TERCEIRA - DO INADIMPLEMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA DÉCIMA SEGUNDA - DO INADIMPLEMENTO</h2>
         <p>
             O descumprimento de obrigação essencial assumida neste instrumento sujeitará a parte inadimplente às
             consequências previstas neste contrato e na legislação civil, inclusive, quando cabíveis, resolução
@@ -251,9 +252,9 @@
         </p>
     </div>
 
-    <div class="clause" id="clause-14">
-        <input type="checkbox" name="include_clause_14" value="1" class="clause-check" checked>
-        <h2 class="clause-title">CLÁUSULA DÉCIMA QUARTA - DO FORO</h2>
+    <div class="clause" id="clause-13">
+        <input type="checkbox" name="include_clause_13" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA DÉCIMA TERCEIRA - DO FORO</h2>
         <p>
             Fica eleito o Foro da Comarca de <input type="text" name="forum_city" style="width: 24ch">, Estado <input type="text" name="forum_state" style="width: 24ch">,
             para dirimir quaisquer controvérsias decorrentes deste instrumento, ressalvadas as hipóteses em que a
@@ -294,12 +295,6 @@
             <p>CPF: ___________________</p>
         </div>
 
-        <div class="signature" id="signature-buyer-spouse">
-            <input type="checkbox" name="include_signature_buyer_spouse" value="1" class="signature-check" checked>
-            <p>CÔNJUGE DO(A) COMPRADOR(A): ________</p>
-            <p>Nome: ____________________________</p>
-            <p>CPF: ___________________</p>
-        </div>
     </div>
 
     <div class="signature-columns">
