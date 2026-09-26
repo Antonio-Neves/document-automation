@@ -1,29 +1,34 @@
 ﻿CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL
 Pelo presente instrumento particular, de um lado, como VENDEDOR(A):
-NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: __________________________, profissão: ___________________, inscrito(a) no CPF sob o nº: ________________________, portador(a) do RG nº: ____________________, residente e domiciliado(a) em   ______________________________________________________________________________ Município: ____________________, Estado: ____________________.
+NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: _____________________________, regime de bens: ________________________,  profissão: ___________________, inscrito(a) no CPF sob o nº: ________________________, portador(a) do RG nº: ____________________, residente e domiciliado(a) em   ______________________________________________________________________________ Município: ____________________, Estado: ____________________.
+CÔNJUGE ANUENTE DO(A) VENDEDOR(A):
+NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: _____________________________,  profissão: ___________________, inscrito(a) no CPF sob o nº: ________________________, portador(a) do RG nº: ____________________, residente e domiciliado(a) em   ______________________________________________________________________________ Município: ____________________, Estado: ____________________.
 E, de outro lado, como COMPRADOR(A):
 NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: __________________________, profissão: ___________________, inscrito(a) no CPF sob o nº: ________________________, portador(a) do RG nº: ____________________, residente e domiciliado(a) em   ______________________________________________________________________________ Município: ____________________, Estado: ____________________.
 Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
-CLÁUSULA PRIMEIRA - DO OBJETO
-O(A) VENDEDOR(A) declara ser legítimo(a) proprietário(a) do imóvel constituído pelo, tipo: ______________________________, situado em ______________________________________________________________________________ Município: ____________________________, Estado: _____________________________, Frente medindo ______ metros, confrontando com ____________________________________, Fundos: medindo ______ metros, confrontando com ___________________________________, Lado Direito: medindo ______ metros, confrontando com _______________________________, Lado Esquerdo: medindo ______ metros, confrontando com _____________________________, com as seguintes características: ___________________________________________________ ______________________________________________________________________________, perfazendo área total de ___________ m² (___________________________________________), matriculado sob o nº ____________________________ no Cartório de Registro de Imóveis de ____________________________ - ______________________.
-Parágrafo primeiro. O(A) VENDEDOR(A) declara que o imóvel possui matrícula individualizada e título de propriedade registrado no Cartório de Registro de Imóveis, encontrando-se em condições de ser objeto da presente compra e venda.
-Parágrafo segundo. O presente instrumento tem por objeto a compra e venda do imóvel descrito nesta cláusula, observada a forma legal exigida para a transmissão da propriedade.
-Parágrafo terceiro. O(A) COMPRADOR(A) declara conhecer a localização, dimensões, limites físicos e estado atual do imóvel, aceitando-o nas condições em que se encontra.
+CLÁUSULA PRIMEIRA – DO OBJETO E DA IDENTIFICAÇÃO DO IMÓVEL
+Imóvel constituído por, quantidade: _______ (__________) tipo: _________________, identificado como ___________ nº ________, da Quadra nº ________, integrante do Loteamento/Desmembramento denominado __________________________________________, situado em  __________________________________________________________________, nº ________, Complemento: _________________________ Bairro/Setor ______________________________, Município: __________________________________, Estado: ____________________________, CEP ________, com as seguintes características: ______________________________________________________________________________, frente medindo ______ metros, confrontando com _____________________________________, fundos medindo ______ metros, confrontando com ____________________________________, lado direito medindo ______ metros, confrontando com _________________________________, lado esquerdo medindo ______ metros, confrontando com ______________________________,  Matrícula nº: ______________________________, registrada perante o Cartório de Registro de Imóveis de ________________________________ Estado: _________________________, Registro do título de propriedade: ______________________________, constante da matrícula acima indicada, inscrição imobiliária/cadastro municipal nº  ______________________________, perante o Município de __________________________________________, registro do loteamento/desmembramento nº ______________________________, perante o Cartório de Registro de Imóveis de __________________________________________, quando aplicável.
+Parágrafo Primeiro. O(A) VENDEDOR(A) declara que o imóvel objeto deste contrato possui matrícula individualizada perante o Cartório de Registro de Imóveis competente e que o lote acima descrito corresponde integralmente ao imóvel constante da respectiva matrícula, não se tratando de mera cessão de direitos possessórios, cessão de posse ou venda de área sem individualização registral.
+
+Parágrafo Segundo. O(A) VENDEDOR(A) declara que a descrição, área, medidas, confrontações, localização, identificação do lote, quadra e demais características do imóvel correspondem às informações constantes da respectiva matrícula e dos documentos oficiais aplicáveis ao imóvel.
+Parágrafo Terceiro. O(A) COMPRADOR(A) declara ter tido conhecimento da localização, identificação, área, medidas, confrontações e demais características do imóvel, podendo examiná-lo e conferir sua correspondência com a documentação apresentada pelo(a) VENDEDOR(A).
+Parágrafo Quarto. A presente compra e venda refere-se exclusivamente ao imóvel individualizado nesta cláusula, não abrangendo outros lotes, áreas ou direitos pertencentes ao(à) VENDEDOR(A), ainda que integrantes do mesmo loteamento ou imóvel de origem.
+Parágrafo Quinto. A transferência da propriedade do imóvel observará a forma legalmente exigida, ficando as partes obrigadas a praticar os atos necessários à lavratura do título competente e ao respectivo registro no Cartório de Registro de Imóveis.
 CLÁUSULA SEGUNDA - DA PROPRIEDADE E LEGITIMIDADE
 O(A) VENDEDOR(A) declara, sob sua responsabilidade, ser legítimo(a) proprietário(a) do imóvel descrito na Cláusula Primeira e possuir plena legitimidade e capacidade para realizar a presente venda. Declara, ainda, que, até a presente data e ressalvadas as informações expressamente consignadas neste instrumento, não realizou anteriormente venda, promessa de venda ou qualquer outro negócio incompatível com a propriedade ora transmitida.
 CLÁUSULA TERCEIRA - DO PREÇO E DA FORMA DE PAGAMENTO
-Pela presente compra e venda do imóvel, o(a) COMPRADOR(A) pagará ao(à) VENDEDOR(A) o valor total de R$ _________________ (_______________________________________________________).
-Havendo parcelamento, R$ _____________ a título de entrada/sinal, e o saldo remanescente de R$ ________________, será pago em _______ parcelas de R$ ________________, vencendo a primeira em $________________, e as demais no mesmo dia dos meses subsequentes.
+Pela presente compra e venda do imóvel, o(a) COMPRADOR(A) pagará ao(à) VENDEDOR(A) o valor total de R$ _________________ (____________________________________________________________________________).
+Havendo parcelamento, R$ _____________ a título de entrada, e o saldo remanescente de R$ ________________, será pago em _______ parcelas de R$ ________________, vencendo a primeira em ________________, e as demais no mesmo dia dos meses subsequentes.
 O pagamento será realizado na forma ajustada entre as partes, devendo os respectivos comprovantes, recibos, transferências bancárias ou comprovantes de PIX, quando existentes, ser conservados como prova do adimplemento.
 Parágrafo único. Após o recebimento integral do preço, o(a) VENDEDOR(A) dará ao(à) COMPRADOR(A), plena, geral, rasa, irrevogável e irretratável quitação do valor contratado, nada mais podendo reclamar a esse título.
 CLÁUSULA QUARTA - DA TRANSFERÊNCIA DA POSSE
-Com a assinatura deste instrumento e o pagamento integral do preço, ou na forma expressamente ajustada entre as partes o(a) VENDEDOR(A) transfere ao(à) COMPRADOR(A) a posse do imóvel descrito na Cláusula Primeira. A partir da imissão na posse, o(a) COMPRADOR(A) poderá usar, ocupar, conservar e realizar benfeitorias no imóvel, observadas as limitações legais e administrativas aplicáveis.
+Com a assinatura deste instrumento e o pagamento integral do preço, ou na forma expressamente ajustada entre as partes, o(a) VENDEDOR(A) transfere ao(à) COMPRADOR(A) a posse do imóvel descrito na Cláusula Primeira, passando este(a) a exercer, em relação ao imóvel, os poderes inerentes à posse, nos termos da legislação aplicável.
 CLÁUSULA QUINTA - DA IRREVOGABILIDADE E IRRETRATABILIDADE
 O presente negócio é celebrado em caráter irrevogável e irretratável, obrigando as partes, seus herdeiros e sucessores, ressalvadas as hipóteses de resolução, nulidade, anulabilidade ou demais situações previstas em lei ou neste instrumento.
 CLÁUSULA SEXTA - DA RESPONSABILIDADE DO(A) VENDEDOR(A)
 O(A) VENDEDOR(A) responsabiliza-se pela legitimidade da propriedade que declara possuir e vender, bem como pela inexistência de alienação anterior, ônus ou restrição não informados ao(à) COMPRADOR(A), respondendo, na forma da legislação aplicável, pelas obrigações e fatos anteriores à venda que lhe sejam imputáveis.
 CLÁUSULA SÉTIMA - DA SITUAÇÃO REGISTRAL E DA DOCUMENTAÇÃO
-O(A) VENDEDOR(A) obriga-se a apresentar ao(à) COMPRADOR(A) certidão atualizada da matrícula do imóvel, contendo a situação registral vigente na data da venda. O(A) COMPRADOR(A) declara ter ciência da situação constante da referida matrícula.
+O(A) VENDEDOR(A) obriga-se a apresentar ao(à) COMPRADOR(A) certidão atualizada da matrícula do imóvel, contendo a situação registral vigente na data da venda. O(A) COMPRADOR(A) declara ter recebido e examinado a certidão atualizada da matrícula do imóvel.
 CLÁUSULA OITAVA - DOS TRIBUTOS, TAXAS E ENCARGOS
 Tributos, taxas e demais encargos incidentes sobre o imóvel e relativos a período anterior à entrega da posse serão de responsabilidade do(a) VENDEDOR(A) quando decorrentes de obrigação a ele(a) imputável. Os encargos incidentes após a transferência da posse serão de responsabilidade do(a) COMPRADOR(A), ressalvadas as obrigações que, por lei, sejam atribuídas de forma diversa.
 CLÁUSULA NONA - DA BOA-FÉ E DAS DECLARAÇÕES DAS PARTES
@@ -33,35 +38,25 @@ Integram ou poderão acompanhar este instrumento, para fins de identificação e
 A apresentação desses documentos não substitui o título e o respectivo registro exigidos para a transferência da propriedade.
 CLÁUSULA DÉCIMA PRIMEIRA - DAS BENFEITORIAS
 Após a efetiva transferência da posse, as construções, cercas, instalações, melhorias e demais benfeitorias realizadas pelo(a) COMPRADOR(A) correrão por sua conta e responsabilidade, observadas as exigências urbanísticas, ambientais e administrativas eventualmente aplicáveis.
-CLÁUSULA DÉCIMA SEGUNDA - DA SUCESSÃO
-O presente contrato obriga as partes contratantes, bem como seus respectivos herdeiros e sucessores, a qualquer título, respeitados os limites dos direitos decorrentes deste contrato neste instrumento.
-CLÁUSULA DÉCIMA TERCEIRA - DO INADIMPLEMENTO
+CLÁUSULA DÉCIMA SEGUNDA  - DO INADIMPLEMENTO
 O descumprimento de obrigação essencial assumida neste instrumento sujeitará a parte inadimplente às consequências previstas neste contrato e na legislação civil, inclusive, quando cabíveis, resolução contratual, restituição de valores e indenização por perdas e danos.
-CLÁUSULA DÉCIMA QUARTA - DO FORO
+CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 Fica eleito o Foro da Comarca de ___________________, Estado ___________________, para dirimir quaisquer controvérsias decorrentes deste instrumento, ressalvadas as hipóteses em que a legislação estabelecer competência inderrogável diversa.
-
-
-
-
-
-
-
-
 E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
 
 ___________________ - ________________, ____ de __________________________ de 2026.
 
 
-VENDEDOR(A)						CÔNJUGE DO(A) VENDEDOR(A)
+VENDEDOR(A)						CÔNJUGE ANUENTE DO(A) VENDEDOR(A)
 ___________________________________		___________________________________
 Nome: ______________________________		Nome: ______________________________
 CPF: _______________________________		CPF: _______________________________
 
 
-COMPRADOR(A)					CÔNJUGE DO(A) COMPRADOR(A)
-___________________________________		___________________________________
-Nome: ______________________________		Nome: ______________________________
-CPF: _______________________________		CPF: _______________________________
+COMPRADOR(A)
+___________________________________	
+Nome: ______________________________	
+CPF: _______________________________	
 
 
 TESTEMUNHA 1						TESTEMUNHA 2
