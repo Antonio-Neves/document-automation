@@ -15,7 +15,7 @@
         {{ fields.seller_name|fill:52 }},
         {{ fields.seller_nationality|fill:20 }},
         {{ fields.seller_marital_status|fill:20 }},
-        sob o regime de {{ fields.seller_marital_regime|fill:20 }},
+        {% if fields.include_seller_marital_regime %}sob o regime de {{ fields.seller_marital_regime|fill:20 }}, {% endif %}
         {{ fields.seller_profession|fill:20 }},
         inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
         portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
