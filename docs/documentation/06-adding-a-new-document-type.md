@@ -54,10 +54,12 @@ Create `dashboard/templates/dashboard/<type>_pdf.html`:
   print typography (Arial 11pt, `line-height: 1.15`, space after paragraphs).
   Do not duplicate styles inline.
 - Keep page breaks clean: wrap the signature area (the place-date line plus
-  every signature row) in `<div class="signatures">`. The stylesheet already
-  applies `break-inside: avoid` to `.clause`, `.signatures`,
-  `.signature-columns`, and `.signature`, and `break-after: avoid` to
-  `.contract-place-date`, so the whole signature area stays together.
+  every signature row) in `<div class="signatures">`. The stylesheet applies
+  `break-inside: avoid` to `.signatures`, `.signature-columns`, and
+  `.signature`, and `break-after: avoid` to `.contract-place-date`, so the
+  whole signature area stays together. Clauses are allowed to flow across
+  pages (with `orphans`/`widows` and `break-after: avoid` on
+  `.clause-title`), so a tall clause does not leave a blank page.
 - Fill every field with `{{ fields.<name>|fill:<width> }}`.
 - Wrap each optional block in `{% if fields.include_... %}` — whole clauses,
   signatures, optional inner details, and alternative variants alike.
