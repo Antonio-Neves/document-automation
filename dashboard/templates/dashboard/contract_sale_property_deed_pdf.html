@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load contract_filters static %}
+<head>
+<meta charset="utf-8">
+<title>Contrato Particular de Compra e Venda de Imóvel</title>
+<link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
+</head>
+<body class="contract-pdf">
+
+    <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
+        {{ fields.seller_name|fill:52 }},
+        {{ fields.seller_nationality|fill:20 }},
+        {{ fields.seller_marital_status|fill:20 }},
+        {% if fields.include_seller_marital_regime %}sob o regime de {{ fields.seller_marital_regime|fill:20 }}, {% endif %}
+        {{ fields.seller_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.seller_address|fill:70 }},
+        {{ fields.seller_city|fill:20 }},
+        {{ fields.seller_state|fill:20 }}.
+    </p>
+
+    {% if fields.include_seller_spouse %}
+    <p>
+        CÔNJUGE ANUENTE DO(A) VENDEDOR(A):<br>
+        {{ fields.seller_spouse_name|fill:52 }},
+        {{ fields.seller_spouse_nationality|fill:20 }},
+        {{ fields.seller_spouse_marital_status|fill:20 }},
+        {{ fields.seller_spouse_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_spouse_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_spouse_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.seller_spouse_address|fill:70 }},
+        {{ fields.seller_spouse_city|fill:20 }},
+        {{ fields.seller_spouse_state|fill:20 }}.
+    </p>
+    {% endif %}
+
+    <p>
+        E, de outro lado, como COMPRADOR(A):<br>
+        {{ fields.buyer_name|fill:52 }},
+        {{ fields.buyer_nationality|fill:20 }},
+        {{ fields.buyer_marital_status|fill:20 }},
+        {{ fields.buyer_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.buyer_address|fill:70 }},
+        {{ fields.buyer_city|fill:20 }},
+        {{ fields.buyer_state|fill:20 }}.
+    </p>
+
+    <p>
+        Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
+    </p>
+
+    {% if fields.include_clause_1 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO OBJETO E DA IDENTIFICAÇÃO DO IMÓVEL</h2>
+        <p>
+            Imóvel constituído por,
+            {{ fields.property_land_quantity|fill:7 }} ({{ fields.property_land_quantity_in_words|fill:10 }}),
+            {{ fields.property_land_type|fill:17 }},
+            identificado como {{ fields.property_land_identifier|fill:11 }}, nº {{ fields.property_land_number|fill:8 }},
+            da Quadra nº {{ fields.property_land_block|fill:8 }},
+            integrante do Loteamento/Desmembramento denominado {{ fields.property_land_development|fill:42 }},
+            situado em {{ fields.property_land_address|fill:66 }}, nº {{ fields.property_land_address_number|fill:8 }},
+            {% if fields.include_clause_1_complement %}Complemento: {{ fields.property_land_complement|fill:25 }},
+            {% endif %}Bairro/Setor: {{ fields.property_land_neighborhood|fill:30 }},
+            Município: {{ fields.property_land_city|fill:34 }}, Estado: {{ fields.property_land_state|fill:28 }},
+            CEP: {{ fields.property_land_zip_code|fill:8 }},
+            com as seguintes características: {{ fields.property_land_contents|fill:78 }},
+            frente medindo {{ fields.property_land_front_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_land_front_boundary|fill:37 }},
+            fundos medindo {{ fields.property_land_back_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_land_back_boundary|fill:36 }},
+            lado direito medindo {{ fields.property_land_right_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_land_right_boundary|fill:33 }},
+            lado esquerdo medindo {{ fields.property_land_left_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_land_left_boundary|fill:30 }},
+            Matrícula nº: {{ fields.property_land_registration_number|fill:30 }},
+            registrada perante o Cartório de Registro de Imóveis de {{ fields.property_land_registry_office|fill:32 }}
+            Estado: {{ fields.property_land_registry_office_state|fill:25 }},
+            Registro do título de propriedade: {{ fields.property_land_title_record|fill:30 }},
+            constante da matrícula acima indicada, inscrição imobiliária/cadastro municipal nº {{ fields.property_land_municipal_registration|fill:30 }},
+            perante o Município de {{ fields.property_land_municipality|fill:42 }},
+            registro do loteamento/desmembramento nº {{ fields.property_land_development_record|fill:30 }},
+            perante o Cartório de Registro de Imóveis de {{ fields.property_land_development_registry_office|fill:42 }},
+            quando aplicável.
+        </p>
+        <p>
+            <strong>Parágrafo Primeiro.</strong> O(A) VENDEDOR(A) declara que o imóvel objeto deste contrato possui matrícula
+            individualizada perante o Cartório de Registro de Imóveis competente e que o imóvel acima descrito
+            corresponde integralmente àquele constante da respectiva matrícula, não se tratando de mera cessão de
+            direitos possessórios, cessão de posse ou venda de área sem individualização registral.
+        </p>
+        <p>
+            <strong>Parágrafo Segundo.</strong> O(A) VENDEDOR(A) declara que a descrição, área, medidas, confrontações, localização e
+            demais características do imóvel correspondem às informações constantes da respectiva matrícula e dos
+            documentos oficiais aplicáveis.
+        </p>
+        <p>
+            <strong>Parágrafo Terceiro.</strong> O(A) COMPRADOR(A) declara ter tido conhecimento da localização, identificação, área,
+            medidas, confrontações e demais características do imóvel, podendo examiná-lo e conferir sua
+            correspondência com a documentação apresentada pelo(a) VENDEDOR(A).
+        </p>
+        <p>
+            <strong>Parágrafo Quarto.</strong> A presente compra e venda refere-se exclusivamente ao imóvel individualizado nesta
+            cláusula, não abrangendo outros imóveis, áreas ou direitos pertencentes ao(à) VENDEDOR(A), ainda que
+            integrantes do mesmo condomínio, empreendimento, loteamento ou imóvel de origem.
+        </p>
+        <p>
+            <strong>Parágrafo Quinto.</strong> A transferência da propriedade do imóvel observará a forma legalmente exigida, ficando
+            as partes obrigadas a praticar os atos necessários à lavratura do título competente e ao respectivo
+            registro no Cartório de Registro de Imóveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_2 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DA PROPRIEDADE E LEGITIMIDADE</h2>
+        <p>
+            O(A) VENDEDOR(A) declara, sob sua responsabilidade, ser legítimo(a) proprietário(a) do imóvel descrito na
+            Cláusula Primeira e possuir plena legitimidade e capacidade para realizar a presente venda. Declara,
+            ainda, que, até a presente data e ressalvadas as informações expressamente consignadas neste instrumento,
+            não realizou anteriormente venda, promessa de venda ou qualquer outro negócio incompatível com a
+            propriedade ora transmitida.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_3 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DO PREÇO E DA FORMA DE PAGAMENTO</h2>
+        <p>
+            Pela presente compra e venda do imóvel, o(a) COMPRADOR(A) pagará ao(à) VENDEDOR(A) o valor total de
+            R$ {{ fields.price|fill:17 }} ({{ fields.price_in_words|fill:76 }}).
+        </p>
+        {% if fields.include_clause_3_1 %}
+        <p>
+            Havendo parcelamento, R$ {{ fields.down_payment|fill:13 }} a título de entrada, e o saldo
+            remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:7 }} parcelas de
+            R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia
+            dos meses subsequentes.
+        </p>
+        {% endif %}
+        <p>
+            O pagamento será realizado na forma ajustada entre as partes, devendo os respectivos comprovantes,
+            recibos, transferências bancárias ou comprovantes de PIX, quando existentes, ser conservados como prova
+            do adimplemento.
+        </p>
+        <p>
+            <strong>Parágrafo único.</strong> Após o recebimento integral do preço, o(a) VENDEDOR(A) dará ao(à) COMPRADOR(A), plena,
+            geral, rasa, irrevogável e irretratável quitação do valor contratado, nada mais podendo reclamar a esse
+            título.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_4 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUARTA - DA TRANSFERÊNCIA DA POSSE</h2>
+        <p>
+            Com a assinatura deste instrumento e o pagamento integral do preço, ou na forma expressamente ajustada
+            entre as partes, o(a) VENDEDOR(A) transfere ao(à) COMPRADOR(A) a posse do imóvel descrito na Cláusula
+            Primeira, passando este(a) a exercer, em relação ao imóvel, os poderes inerentes à posse, nos termos da
+            legislação aplicável.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_5 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUINTA - DA IRREVOGABILIDADE E IRRETRATABILIDADE</h2>
+        <p>
+            O presente negócio é celebrado em caráter irrevogável e irretratável, obrigando as partes, seus
+            herdeiros e sucessores, ressalvadas as hipóteses de resolução, nulidade, anulabilidade ou demais
+            situações previstas em lei ou neste instrumento.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_6 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESPONSABILIDADE DO(A) VENDEDOR(A)</h2>
+        <p>
+            O(A) VENDEDOR(A) responsabiliza-se pela legitimidade da propriedade que declara possuir e vender, bem
+            como pela inexistência de alienação anterior, ônus ou restrição não informados ao(à) COMPRADOR(A),
+            respondendo, na forma da legislação aplicável, pelas obrigações e fatos anteriores à venda que lhe sejam
+            imputáveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_7 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SÉTIMA - DA SITUAÇÃO REGISTRAL E DA DOCUMENTAÇÃO</h2>
+        <p>
+            O(A) VENDEDOR(A) obriga-se a apresentar ao(à) COMPRADOR(A) certidão atualizada da matrícula do imóvel,
+            contendo a situação registral vigente na data da venda. O(A) COMPRADOR(A) declara ter recebido e
+            examinado a certidão atualizada da matrícula do imóvel.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_8 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA OITAVA - DOS TRIBUTOS, TAXAS E ENCARGOS</h2>
+        <p>
+            Tributos, taxas e demais encargos incidentes sobre o imóvel e relativos a período anterior à entrega da
+            posse serão de responsabilidade do(a) VENDEDOR(A) quando decorrentes de obrigação a ele(a) imputável. Os
+            encargos incidentes após a transferência da posse serão de responsabilidade do(a) COMPRADOR(A),
+            ressalvadas as obrigações que, por lei, sejam atribuídas de forma diversa.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_9 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA NONA - DA BOA-FÉ E DAS DECLARAÇÕES DAS PARTES</h2>
+        <p>
+            As partes declaram celebrar o presente negócio de livre e espontânea vontade, sem erro, dolo, coação ou
+            qualquer outro vício de consentimento. Declaram, ainda, que tiveram oportunidade de examinar as
+            condições do negócio e obrigam-se a observar a probidade e a boa-fé durante sua celebração e execução.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_10 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA - DOS DOCUMENTOS DO IMÓVEL</h2>
+        <p>
+            Integram ou poderão acompanhar este instrumento, para fins de identificação e comprovação do negócio e da
+            propriedade, cópia da matrícula atualizada do imóvel, comprovantes de pagamento, documentos pessoais das
+            partes e quaisquer outros documentos relacionados ao imóvel.
+        </p>
+        <p>
+            A apresentação desses documentos não substitui o título e o respectivo registro exigidos para a
+            transferência da propriedade.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_11 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA PRIMEIRA - DAS BENFEITORIAS</h2>
+        <p>
+            Após a efetiva transferência da posse, as construções, cercas, instalações, melhorias e demais
+            benfeitorias realizadas pelo(a) COMPRADOR(A) correrão por sua conta e responsabilidade, observadas as
+            exigências urbanísticas, ambientais e administrativas eventualmente aplicáveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_12 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA SEGUNDA - DO INADIMPLEMENTO</h2>
+        <p>
+            O descumprimento de obrigação essencial assumida neste instrumento sujeitará a parte inadimplente às
+            consequências previstas neste contrato e na legislação civil, inclusive, quando cabíveis, resolução
+            contratual, restituição de valores e indenização por perdas e danos.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_13 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA DÉCIMA TERCEIRA - DO FORO</h2>
+        <p>
+            Fica eleito o Foro da Comarca de {{ fields.forum_city|fill:19 }}, Estado {{ fields.forum_state|fill:19 }},
+            para dirimir quaisquer controvérsias decorrentes deste instrumento, ressalvadas as hipóteses em que a
+            legislação estabelecer competência inderrogável diversa.
+        </p>
+    </div>
+    {% endif %}
+
+    <p>
+        E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
+        teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+    </p>
+
+    <div class="signatures">
+        <p class="contract-place-date">
+            ____________________________, _____ de _________________________ de __________
+        </p>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_seller %}
+            <div class="signature">
+                <p>VENDEDOR(A):<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_signature_seller_spouse %}
+            <div class="signature">
+                <p>CÔNJUGE ANUENTE DO(A) VENDEDOR(A):<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_buyer %}
+            <div class="signature">
+                <p>COMPRADOR(A):<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_witness_1 %}
+            <div class="signature">
+                <p>TESTEMUNHA 1:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_witness_2 %}
+            <div class="signature">
+                <p>TESTEMUNHA 2:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
