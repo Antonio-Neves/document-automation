@@ -205,6 +205,8 @@
     font-family: Arial, sans-serif;
     font-size: 11pt;
     line-height: 1.15;
+    orphans: 2;
+    widows: 2;
 }
 
 .contract-pdf p {
@@ -223,13 +225,13 @@
     margin-bottom: 18pt;
 }
 
-.contract-pdf .clause,
 .contract-pdf .signature {
     break-inside: avoid;
 }
 
 .contract-pdf .clause-title {
     font-size: 11pt;
+    break-after: avoid;
 }
 
 .contract-pdf .signature {
