@@ -112,7 +112,7 @@ Do not remove, rename, or repurpose files or directories solely because they app
 
 ## Tech Stack
 
-- Backend: Django 5.2, Python 3.12
+- Backend: Django 5.2, Python 3.13
 - Django views: always use class-based views (CBVs), never function-based views (FBVs)
 - Database: SQLite
 - Frontend: Django templates and tags, Bootstrap 5, HTML, CSS, JavaScript

@@ -2,7 +2,7 @@
 
 ## Runtime
 
-- **Python**: `runtime.txt` pins `python-3.12.12` for the deployment platform.
+- **Python**: `runtime.txt` pins `python-3.13.15` for the deployment platform.
 - **Server**: `gunicorn` (also `waitress` is in requirements as an
   alternative; `asgiref`/`wsgi` are standard Django companions).
 - **Database**: PostgreSQL via `DATABASE_URL` in production (`ssl_require=True`).

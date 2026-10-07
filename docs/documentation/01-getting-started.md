@@ -17,8 +17,7 @@ generated PDFs (see [03-dashboard-and-contract-flow.md](03-dashboard-and-contrac
 
 ## Prerequisites
 
-- Python 3.12+ (deployment pins `python-3.12.12` via `runtime.txt`; the
-  project has also been run locally on Python 3.13).
+- Python 3.13.15 (deployment pins `python-3.13.15` via `runtime.txt`).
 - A virtual environment (`.venv/` is used locally).
 - The system libraries required by WeasyPrint on your OS
   (Pango, cairo, etc. — see the

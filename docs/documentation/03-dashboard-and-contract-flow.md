@@ -167,10 +167,9 @@ All form fields are snake_case English names, grouped by entity:
 | `vehicle_*` | Vehicle description | `vehicle_type`, `vehicle_plate`, `vehicle_renavam` |
 | `property_land_*` | Property object — land | `property_land_address`, `property_land_area`, `property_land_front_measure` |
 | `property_built_*` | Property object — built property | `property_built_address`, `property_built_area`, `property_built_contents` |
-| `payment_*` | Price and payment | `price`, `price_in_words`, `down_payment`, `installments_count`, `first_due_date` |
+| `price_*` / `payment_*` | Price and payment | `price`, `price_in_words`, `down_payment`, `installments_count`, `first_due_date` |
 | `delivery_*` | Delivery data | `delivery_day`, `delivery_time`, `delivery_place` |
 | `known_*` | Disclosed debts/defects | `known_debts`, `known_defects` |
-| `place_*` | Signature place/date line | `place_city`, `place_day`, `place_month` |
 | `forum_*` | Jurisdiction clause | `forum_city`, `forum_state` |
 | `include_*` | Checkboxes for optional blocks | `include_clause_1`, `include_clause_1_land_complement`, `include_signature_seller_spouse` |
 

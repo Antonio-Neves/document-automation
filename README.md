@@ -5,7 +5,7 @@ Fills in document templates with data entered in a form and generates a download
 
 AI-assisted development with OpenCode and agentic programming, using a step-by-step, human-controlled workflow rather than delegating the entire development process to agents.
 
-- Python 3.13
+- Python 3.13.15
 - Django 5.2 (LTS)
 - OpenCode
 - Database: SQLite
@@ -27,7 +27,7 @@ Preenche modelos de documentos com os dados informados em um formulário e gera 
 
 Desenvolvimento assistido por IA com OpenCode e programação agêntica, utilizando um fluxo passo a passo, controlado pelo desenvolvedor, em vez de delegar todo o processo de desenvolvimento aos agentes.
 
-- Python 3.13
+- Python 3.13.15
 - Django 5.2 (LTS)
 - OpenCode
 - Banco de dados: SQLite
