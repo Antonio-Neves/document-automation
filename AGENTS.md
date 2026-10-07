@@ -59,7 +59,7 @@
 
 - Do not create models or migrations for storing document templates or the data entered in forms; everything must be used in memory for the request and discarded after the PDF is generated.
 - Any form of persistence (models, migrations, cache, local files) requires prior approval from the user.
-- The only planned exception is the generated PDF files, which will be saved in a future folder named `created_docs`.
+- The only allowed exception is the generated PDF files, saved to `contract_files/created_contracts/`.
 
 ## Git
 

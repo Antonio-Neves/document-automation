@@ -12,7 +12,7 @@ AI-assisted development with OpenCode and agentic programming, using a step-by-s
 - Frontend: Bootstrap 5
 - PDF generation: WeasyPrint
 - Templates and form data are used in memory only — no data is stored.
-- Generated PDFs are kept for 10 days and then deleted.  
+- Generated PDFs are intended to be kept for 10 days and then deleted — **automatic cleanup is not implemented yet.**  
 
 ### Documentation
 
@@ -34,7 +34,7 @@ Desenvolvimento assistido por IA com OpenCode e programação agêntica, utiliza
 - Frontend: Bootstrap 5
 - Geração de PDF: WeasyPrint
 - Modelos e dados dos formulários são usados apenas em memória — nenhum dado fica guardado.
-- Os PDFs gerados ficam guardados por 10 dias e depois são eliminados.  
+- Os PDFs gerados deverão ser guardados por 10 dias e depois eliminados — **a limpeza automática ainda não foi implementada.**  
 
 ### Documentação
 
