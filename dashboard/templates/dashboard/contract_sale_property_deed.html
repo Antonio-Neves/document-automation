@@ -48,8 +48,13 @@
             Imóvel constituído por, quantidade:
             <input type="text" name="property_land_quantity" style="width: 7ch"> (<input type="text" name="property_land_quantity_in_words" style="width: 10ch">)
             tipo: <input type="text" name="property_land_type" style="width: 17ch">,
-            identificado como <input type="text" name="property_land_identifier" style="width: 11ch"> nº <input type="text" name="property_land_number" style="width: 8ch">,
+            <input type="checkbox" name="include_property_land_identifier" value="1" class="clause-check" checked>
+            identificado como <input type="text" name="property_land_identifier" style="width: 11ch">
+            <input type="checkbox" name="include_property_land_number" value="1" class="clause-check" checked>
+            nº <input type="text" name="property_land_number" style="width: 8ch">,
+            <input type="checkbox" name="include_property_land_block" value="1" class="clause-check" checked>
             da Quadra nº <input type="text" name="property_land_block" style="width: 8ch">,
+            <input type="checkbox" name="include_property_land_development" value="1" class="clause-check" checked>
             integrante do Loteamento/Desmembramento denominado <input type="text" name="property_land_development" style="width: 42ch">,
             situado em <input type="text" name="property_land_address" style="width: 66ch">, nº <input type="text" name="property_land_address_number" style="width: 8ch">,
             <input type="checkbox" name="include_clause_1_complement" value="1" class="clause-check">
@@ -57,6 +62,7 @@
             Bairro/Setor <input type="text" name="property_land_neighborhood" style="width: 30ch">,
             Município: <input type="text" name="property_land_city" style="width: 34ch">, Estado: <input type="text" name="property_land_state" style="width: 28ch">,
             CEP <input type="text" name="property_land_zip_code" style="width: 8ch">,
+            <input type="checkbox" name="include_property_land_contents" value="1" class="clause-check" checked>
             com as seguintes características: <textarea name="property_land_contents" rows="2" style="width: 78ch"></textarea>,
             frente medindo <input type="text" name="property_land_front_measure" style="width: 6ch"> metros,
             confrontando com <input type="text" name="property_land_front_boundary" style="width: 37ch">,
@@ -72,6 +78,7 @@
             Registro do título de propriedade: <input type="text" name="property_land_title_record" style="width: 30ch">,
             constante da matrícula acima indicada, inscrição imobiliária/cadastro municipal nº <input type="text" name="property_land_municipal_registration" style="width: 30ch">,
             perante o Município de <input type="text" name="property_land_municipality" style="width: 42ch">,
+            <input type="checkbox" name="include_property_land_development_record" value="1" class="clause-check" checked>
             registro do loteamento/desmembramento nº <input type="text" name="property_land_development_record" style="width: 30ch">,
             perante o Cartório de Registro de Imóveis de <input type="text" name="property_land_development_registry_office" style="width: 42ch">,
             quando aplicável.
