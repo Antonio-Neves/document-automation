@@ -30,13 +30,12 @@ Create `dashboard/templates/dashboard/<type>.html`:
 - Optional inner details and alternative variants: give each its own
   `.clause-check` checkbox bound to a `{% if fields.include_... %}` block in the
   PDF template. Clauses/signatures default to `checked` (opt-out); optional
-  details can default to unchecked (opt-in). The property contract shows both
+  details can default to unchecked (opt-in). Some document types show both
   styles — see
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md#optional-sections-and-checkboxes).
 - Signature blocks: `<div class="signature" id="signature-seller">`,
-  `#signature-buyer`, `#witness-1`, `#witness-2` (or your own set, e.g. the
-  property contract adds `#signature-seller-spouse` and
-  `#signature-buyer-spouse`) with `.signature-check` checkboxes.
+  `#signature-buyer`, `#witness-1`, `#witness-2` (or your own set, e.g. an
+  extra `#signature-seller-spouse` row) with `.signature-check` checkboxes.
 - Fields are `<input type="text" name="...">` (long free text =
   `<textarea name="..." rows="2">`) with English snake_case names grouped by
   entity (see the field-prefix table in

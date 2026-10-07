@@ -5,10 +5,10 @@ one class-based view, one page template, one PDF template, one route — is comm
 to every document type, and the vehicle purchase and sale contract ("Contrato
 Particular de Compra e Venda de Veículo Automotor") is the simplest reference
 for it. A document type may add its own variations on top of the common pattern:
-alternative sections, optional sub-blocks, and extra signature rows (the
-property contract is the current example). The authoritative list of types is
-the index in [README.md](README.md#implemented-document-types); this chapter
-documents the **shared pattern once**.
+alternative sections, optional sub-blocks, and extra signature rows. The
+authoritative list of types is the index in
+[README.md](README.md#implemented-document-types); this chapter documents the
+**shared pattern once**.
 
 ## Views (`dashboard/views.py`)
 
@@ -142,19 +142,17 @@ and signatures) and inside a clause (optional details and alternative variants).
   `<input type="checkbox" name="include_clause_N" class="clause-check" checked>`
   and each signature block has
   `<input type="checkbox" name="include_signature_seller" class="signature-check" checked>`
-  (buyer, witnesses, and the spouse rows in the property contract follow the
-  same pattern).
+  (buyer, witnesses, and any extra signature rows follow the same pattern).
 - PDF template: the bound block is wrapped in
   `{% if fields.include_clause_N %} ... {% endif %}` (or the signature
   equivalent). Unchecked boxes simply do not exist in POST, so the `{% if %}`
   fails and the block is omitted from the PDF.
 - Defaults: clauses and signatures ship `checked` (opt-out — included unless
   the user unchecks them). Optional inner details can ship unchecked (opt-in)
-  instead, e.g. the property contract's complement, neighborhood, built-area
-  variant, and installment paragraph.
+  instead (e.g. a complement, neighborhood, or alternative-area paragraph).
 - Alternative variants: mutually exclusive blocks are plain sibling `{% if %}`
-  blocks, each bound to its own checkbox. The property contract uses this for
-  the object described in the first clause (land only vs. built property).
+  blocks, each bound to its own checkbox (e.g. an object described two
+  alternative ways).
 - The checkboxes are screen-only controls and are planned to be hidden on
   print (see roadmap).
 
@@ -178,22 +176,18 @@ All form fields are snake_case English names, grouped by entity:
 
 ## Routing (`dashboard/urls.py`)
 
+One `path()` entry per document type, each following the same shape:
+
 ```python
-urlpatterns = [
-    path('', views.IndexView.as_view(), name='dashboard'),
-    path(
-        'contract-sale-vehicle/',
-        views.ContractSaleVehicleView.as_view(),
-        name='contract_sale_vehicle',
-    ),
-    path(
-        'contract-sale-property/',
-        views.ContractSalePropertyView.as_view(),
-        name='contract_sale_property',
-    ),
-]
+path(
+    '<type-in-kebab-case>/',
+    views.Contract<Type>View.as_view(),
+    name='<type>',
+),
 ```
 
 Rules: URL path in kebab-case, URL `name` **equal** to the template name, one
-CBV per document type. Adding a document type = adding one block here — see
+CBV per document type. The authoritative list of routes is the index in
+[README.md](README.md#implemented-document-types); adding a document type = one
+new block here — see
 [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).

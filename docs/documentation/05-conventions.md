@@ -33,8 +33,8 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
 - Do not create models or migrations for templates or form data.
 - Any form of persistence (models, migrations, cache, local files) requires
   prior approval.
-- The only planned exception: generated PDFs saved to `created_contracts`
-  (a future folder name; currently `contract_files/created_contracts/`).
+- The only allowed exception: the generated PDFs, saved to
+  `contract_files/created_contracts/`.
 
 ## Security and forbidden actions
 
