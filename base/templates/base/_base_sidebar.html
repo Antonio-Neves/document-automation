@@ -1,72 +1,70 @@
 {% load static %}
 
-<nav class="col-md-2 d-md-block sidebar px-0">
-    <div class="position-sticky pt-3">
-        <div class="text-center mb-4">
-            <h4 class="text-white">Documentos</h4>
-        </div>
-
-        {% with current=request.resolver_match.url_name %}
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link{% if current == 'dashboard' %} active{% endif %}"
-                   href="{% url 'dashboard' %}">
-                    <i class="bi bi-house-door"></i>
-                    Página Inicial
-                </a>
-            </li>
-
-            <li class="nav-item mt-4">
-                <span class="nav-topic">
-                    <i class="bi bi-cart"></i>
-                    Compra e Venda
-                </span>
-
-                <ul class="nav flex-column sidebar-submenu">
-                    <li class="nav-item">
-                        <a class="nav-link{% if current == 'contract_sale_vehicle' %} active{% endif %}"
-                           href="{% url 'contract_sale_vehicle' %}">
-                            <i class="bi bi-car-front"></i>
-                            Veículo
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link{% if current == 'contract_sale_property_complete' %} active{% endif %}"
-                           href="{% url 'contract_sale_property_complete' %}">
-                            <i class="bi bi-house"></i>
-                            Imóvel Completo
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link{% if current == 'contract_sale_property_deed' %} active{% endif %}"
-                           href="{% url 'contract_sale_property_deed' %}">
-                            <i class="bi bi-house-check"></i>
-                            Imóvel Registrado
-                        </a>
-                    </li>
-
-                </ul>
-            </li>
-
-{#            <li class="nav-item mt-4">#}
-{#                <a class="nav-link" href="{% url 'admin:index' %}">#}
-{#                    <i class="bi bi-gear"></i>#}
-{#                    Admin Panel#}
-{#                </a>#}
-{#            </li>#}
-{##}
-{#            <li class="nav-item">#}
-{#                <form method="post" action="{% url 'admin:logout' %}" style="margin: 0;">#}
-{#                    {% csrf_token %}#}
-{#                    <button type="submit" class="nav-link btn btn-link text-start w-100" style="border: none; background: none; color: rgba(255, 255, 255, 0.8); padding: 12px 20px;">#}
-{#                        <i class="bi bi-box-arrow-right" style="margin-right: 10px; width: 20px;"></i>#}
-{#                        Sair#}
-{#                    </button>#}
-{#                </form>#}
-{#            </li>#}
-        </ul>
-        {% endwith %}
+<nav class="col-md-2 d-md-block sidebar pt-3 px-0">
+    <div class="text-center mb-4">
+        <h4 class="text-white">Documentos</h4>
     </div>
+
+    {% with current=request.resolver_match.url_name %}
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link{% if current == 'dashboard' %} active{% endif %}"
+               href="{% url 'dashboard' %}">
+                <i class="bi bi-house-door"></i>
+                Página Inicial
+            </a>
+        </li>
+
+        <li class="nav-item mt-4">
+            <span class="nav-topic">
+                <i class="bi bi-cart"></i>
+                Compra e Venda
+            </span>
+
+            <ul class="nav flex-column sidebar-submenu">
+                <li class="nav-item">
+                    <a class="nav-link{% if current == 'contract_sale_vehicle' %} active{% endif %}"
+                       href="{% url 'contract_sale_vehicle' %}">
+                        <i class="bi bi-car-front"></i>
+                        Veículo
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link{% if current == 'contract_sale_property_complete' %} active{% endif %}"
+                       href="{% url 'contract_sale_property_complete' %}">
+                        <i class="bi bi-house"></i>
+                        Imóvel Completo
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link{% if current == 'contract_sale_property_deed' %} active{% endif %}"
+                       href="{% url 'contract_sale_property_deed' %}">
+                        <i class="bi bi-house-check"></i>
+                        Imóvel Registrado
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+{#        <li class="nav-item mt-4">#}
+{#            <a class="nav-link" href="{% url 'admin:index' %}">#}
+{#                <i class="bi bi-gear"></i>#}
+{#                Admin Panel#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#        <li class="nav-item">#}
+{#            <form method="post" action="{% url 'admin:logout' %}" style="margin: 0;">#}
+{#                {% csrf_token %}#}
+{#                <button type="submit" class="nav-link btn btn-link text-start w-100" style="border: none; background: none; color: rgba(255, 255, 255, 0.8); padding: 12px 20px;">#}
+{#                    <i class="bi bi-box-arrow-right" style="margin-right: 10px; width: 20px;"></i>#}
+{#                    Sair#}
+{#                </button>#}
+{#            </form>#}
+{#        </li>#}
+    </ul>
+    {% endwith %}
 </nav>
