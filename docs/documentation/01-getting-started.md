@@ -66,7 +66,7 @@ type). The full list is the single index in
 [README.md](README.md#implemented-document-types).
 
 > Note: URL `name`s always match their template names
-> (e.g. `contract_sale_vehicle` — see [05-conventions.md](05-conventions.md)).
+> (e.g. `contract_sale_vehicle_complete` — see [05-conventions.md](05-conventions.md)).
 
 ## Database
 
@@ -77,7 +77,7 @@ directly.
 
 ## Quick smoke test
 
-1. Run the server and open `/contract-sale-vehicle/`.
+1. Run the server and open `/contract-sale-vehicle-complete/`.
 2. Fill in a few fields, leave the checkboxes checked.
 3. Click **Gerar PDF**.
 4. A PDF is downloaded and a copy is saved under

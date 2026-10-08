@@ -51,10 +51,10 @@ class ContractPdfView(TemplateView):
         return f'{self.pdf_filename_prefix}_{timestamp}.pdf'
 
 
-class ContractSaleVehicleView(ContractPdfView):
-    template_name = 'dashboard/contract_sale_vehicle.html'
-    pdf_template_name = 'dashboard/contract_sale_vehicle_pdf.html'
-    pdf_filename_prefix = 'contract_sale_vehicle'
+class ContractSaleVehicleCompleteView(ContractPdfView):
+    template_name = 'dashboard/contract_sale_vehicle_complete.html'
+    pdf_template_name = 'dashboard/contract_sale_vehicle_complete_pdf.html'
+    pdf_filename_prefix = 'contract_sale_vehicle_complete'
     page_title = 'Veículo Completo'
 
 

@@ -79,6 +79,26 @@
     background-color: #f8f9fa;
 }
 
+.content-header {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.content-header-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #212529;
+}
+
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -90,7 +110,7 @@
 }
 
 /* ==========================================================================
-   Contract (contract_sale_vehicle.html) -- Scoped under .contract
+   Contract (contract_sale_vehicle_complete.html) -- Scoped under .contract
    ========================================================================== */
 
 .contract {
@@ -186,7 +206,7 @@
 }
 
 /* ==========================================================================
-   Contract PDF (contract_sale_vehicle_pdf.html) -- Scoped under .contract-pdf
+   Contract PDF (contract_sale_vehicle_complete_pdf.html) -- Scoped under .contract-pdf
    ========================================================================== */
 
 @page {

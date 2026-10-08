@@ -17,7 +17,7 @@ authoritative list of types is the index in
 - **`ContractPdfView`** — shared base `TemplateView` holding the whole
   GET/POST pipeline (`get_context_data`, `post`, `_pdf_filename`) once, so no
   document type repeats it.
-- **`ContractSaleVehicleView`** — concrete `ContractPdfView` subclass for the
+- **`ContractSaleVehicleCompleteView`** — concrete `ContractPdfView` subclass for the
   vehicle contract. Every document type has its own subclass like this one —
   see the index in
   [README.md](README.md#implemented-document-types) for the concrete names.
@@ -27,9 +27,9 @@ Each concrete view only sets class attributes:
 
 | Attribute | Value |
 |-----------|-------|
-| `template_name` | `dashboard/contract_sale_vehicle.html` (form page) |
-| `pdf_template_name` | `dashboard/contract_sale_vehicle_pdf.html` (document to convert) |
-| `pdf_filename_prefix` | `'contract_sale_vehicle'` (base of the saved/downloaded filename) |
+| `template_name` | `dashboard/contract_sale_vehicle_complete.html` (form page) |
+| `pdf_template_name` | `dashboard/contract_sale_vehicle_complete_pdf.html` (document to convert) |
+| `pdf_filename_prefix` | `'contract_sale_vehicle_complete'` (base of the saved/downloaded filename) |
 | `page_title` | `'Veículo Completo'` (shown in the browser tab) |
 
 `get_context_data()` only adds `page_title`. There are no model forms — the
@@ -39,7 +39,7 @@ form is plain HTML inside the template.
 
 Every document type uses **two sibling templates**:
 
-1. **Page template** (`contract_sale_vehicle.html`) — what the user sees.
+1. **Page template** (`contract_sale_vehicle_complete.html`) — what the user sees.
    It renders the contract layout with real form controls:
    - `<input type="text" name="...">` for single-line fields,
    - `<textarea name="..." rows="2">` for long free-text fields,
@@ -49,8 +49,12 @@ Every document type uses **two sibling templates**:
      unchecked box omits it — *opt-in*, used for optional sub-blocks.
    Field `name` attributes are in English and are the contract between the form
    and the PDF template (e.g. `seller_name`, `vehicle_plate`, `price`).
+   The page also fills `{% block header_actions %}` in the shared content
+   header (`base/_base_index.html`) with the **Gerar PDF** submit button; the
+   button references the form via `form="contract-form"` because the header sits
+   outside the form.
 
-2. **PDF template** (`contract_sale_vehicle_pdf.html`) — pure print HTML, no
+2. **PDF template** (`contract_sale_vehicle_complete_pdf.html`) — pure print HTML, no
    form controls. It receives `fields` (a dict of POST values) and fills them
    with the `fill` template filter. It links the project stylesheet
    (`base/css/my_styles.css`), whose `.contract-pdf` section provides the
@@ -105,10 +109,10 @@ Notes:
 
 `_pdf_filename()` (defined once in `ContractPdfView`) produces
 `<pdf_filename_prefix>_<YYYYMMDD_HHMM>.pdf` using `timezone.localtime()`
-(America/Sao_Paulo). Example (`pdf_filename_prefix = 'contract_sale_vehicle'`):
+(America/Sao_Paulo). Example (`pdf_filename_prefix = 'contract_sale_vehicle_complete'`):
 
 ```
-contract_sale_vehicle_20260905_1259.pdf
+contract_sale_vehicle_complete_20260905_1259.pdf
 ```
 
 Note the minute-only timestamp: two submissions within the same minute

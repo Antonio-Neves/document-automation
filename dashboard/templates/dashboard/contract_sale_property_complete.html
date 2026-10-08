@@ -2,8 +2,14 @@
 
 {% block title %}{{ page_title }}{% endblock %}
 
+{% block header_actions %}
+<button type="submit" form="contract-form" class="btn btn-primary">
+    <i class="bi bi-file-earmark-pdf"></i> Gerar PDF
+</button>
+{% endblock %}
+
 {% block body_content %}
-<form method="post">
+<form method="post" id="contract-form">
 {% csrf_token %}
 <div class="contract" id="contract-sale-property-complete">
 
@@ -314,6 +320,5 @@
     </div>
 
 </div>
-<button type="submit" class="btn btn-primary">Gerar PDF</button>
 </form>
 {% endblock %}

@@ -20,9 +20,9 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
 - **Always class-based views (CBVs)** — never function-based views.
 - One CBV per document type in `dashboard/views.py`.
 - URL rules (in `dashboard/urls.py`):
-  - path in kebab-case (e.g. `contract-sale-vehicle/`);
+  - path in kebab-case (e.g. `contract-sale-vehicle-complete/`);
   - URL `name` always equals the template name
-    (e.g. `contract_sale_vehicle` ↔ `dashboard/contract_sale_vehicle.html`).
+    (e.g. `contract_sale_vehicle_complete` ↔ `dashboard/contract_sale_vehicle_complete.html`).
 - Localization: `pt-br`, `America/Sao_Paulo` — respect these when formatting
   dates or currency manually.
 

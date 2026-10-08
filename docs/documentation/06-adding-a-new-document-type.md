@@ -19,10 +19,14 @@ original pages can go in `utils/pages_photos/`.
 
 Create `dashboard/templates/dashboard/<type>.html`:
 
-- Extend `base/_base_index.html`, fill `{% block title %}` and
-  `{% block body_content %}`.
-- Wrap everything in a `<form method="post">{% csrf_token %} ... </form>`
-  ending with a `<button type="submit" class="btn btn-primary">Gerar PDF</button>`.
+- Extend `base/_base_index.html`, fill `{% block title %}`,
+  `{% block body_content %}`, and — for the action button —
+  `{% block header_actions %}`.
+- Wrap everything in a `<form method="post" id="contract-form">{% csrf_token %}
+  ... </form>`.
+- Do **not** put the submit button at the end of the form. Put it in the shared
+  content header's action block, targeting the form by id:
+  `<button type="submit" form="contract-form" class="btn btn-primary">Gerar PDF</button>`.
 - Root content in `<div class="contract" id="contract-<type>">`.
 - Each clause: `<div class="clause" id="clause-N">` with
   `<h2 class="clause-title">` and a checkbox

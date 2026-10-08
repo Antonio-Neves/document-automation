@@ -2,17 +2,25 @@
 
 ## Template chain
 
-Every page extends `base/_base_index.html` and only fills two blocks:
+Every page extends `base/_base_index.html` and fills up to three blocks:
 
 ```
 base/_base_index.html
 ├── {% block title %}            ← page title (browser tab)
 ├── includes _base_head.html     ← meta tags, icons, CSS (Bootstrap, icons, my_styles)
 ├── includes _base_sidebar.html  ← the fixed left sidebar with the document menu
+├── content header (inline)      ← sticky top bar: page title + {% block header_actions %}
 ├── includes _messages.html      ← Django messages (Bootstrap alerts)
 ├── {% block body_content %}     ← the actual page content
 └── includes _base_script.html   ← bootstrap.bundle.min.js + my_scripts.js
 ```
+
+The content header is defined **inline** in `_base_index.html` (it must host the
+`{% block header_actions %}` block, which an `{% include %}` could not expose).
+It is sticky at the top of the content area and shows `page_title` on the left
+(falling back to "Página Inicial"); each contract page fills `header_actions`
+with its **Gerar PDF** submit button. Because the header lives outside the form,
+the button targets it with `form="contract-form"`.
 
 | Partial | Purpose |
 |---------|---------|
@@ -31,7 +39,7 @@ The project CSS is organized in **scoped sections**, one per module:
 
 ```
 :root                      → brand palette (--primary-color)
-Base Layout                → sidebar, nav links, buttons (store-system legacy)
+Base Layout                → sticky sidebar, sticky content header, nav links, buttons (store-system legacy)
 .contract                  → the contract form page styles
 .contract-pdf              → the PDF document styles (print)
 ```

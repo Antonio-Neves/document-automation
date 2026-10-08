@@ -45,21 +45,21 @@ document_automation/
 
 ```
 Browser
-   │  GET /contract-sale-vehicle/
+   │  GET /contract-sale-vehicle-complete/
    ▼
-config/urls.py ──► dashboard/urls.py (name='contract_sale_vehicle')
+config/urls.py ──► dashboard/urls.py (name='contract_sale_vehicle_complete')
    ▼
-dashboard/views.py — ContractSaleVehicleView (TemplateView)
-   │  renders dashboard/contract_sale_vehicle.html
+dashboard/views.py — ContractSaleVehicleCompleteView (TemplateView)
+   │  renders dashboard/contract_sale_vehicle_complete.html
    │  (extends base/_base_index.html: sidebar + content + scripts)
    ▼
 Form page with inline <input>/<textarea>/<checkbox> fields
    │
-   │  POST /contract-sale-vehicle/ (all form fields, stripped)
+   │  POST /contract-sale-vehicle-complete/ (all form fields, stripped)
    ▼
-ContractSaleVehicleView.post()
+ContractSaleVehicleCompleteView.post()
    │  1. Strips every POST value
-   │  2. render_to_string('dashboard/contract_sale_vehicle_pdf.html', {'fields': ...})
+   │  2. render_to_string('dashboard/contract_sale_vehicle_complete_pdf.html', {'fields': ...})
    │  3. WeasyPrint HTML(string=..., base_url=request.build_absolute_uri('/'))
    │  4. Saves a copy: contract_files/created_contracts/<type>_<YYYYMMDD_HHMM>.pdf
    │  5. Returns the PDF bytes as an attachment download

@@ -11,6 +11,12 @@
                 {% include 'base/_base_sidebar.html' %}
                  <!-- Main Content -->
                 <main class="col-md-10 ms-sm-auto content-wrapper">
+                    <header class="content-header">
+                        <h1 class="content-header-title">{{ page_title|default:'Página Inicial' }}</h1>
+                        <div class="content-header-actions">
+                            {% block header_actions %}{% endblock %}
+                        </div>
+                    </header>
                     <div class="container-fluid py-4">
                         <!-- Page Content -->
                         {% include 'base/_messages.html' %}
