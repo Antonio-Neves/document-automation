@@ -95,6 +95,7 @@
     top: 0;
     z-index: 1020;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
@@ -131,6 +132,48 @@
     font-size: 1.4rem;
     font-weight: 400;
     color: #212529;
+}
+
+@media (max-width: 991.98px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .content-wrapper {
+        height: 100vh;
+        height: 100dvh;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-body {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .content-header {
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .content-header-toggle {
+        margin-right: 0.25rem;
+    }
+
+    .content-header-title {
+        font-size: 1rem;
+    }
+
+    .content-header .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
 }
 
 .btn-primary {

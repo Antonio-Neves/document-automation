@@ -86,9 +86,10 @@ leftovers that are **not used** by the document workflow but are kept on
 purpose:
 
 - `base/templates/base/_base_footer.html` — an old "Get in touch" footer.
-- `my_scripts.js` — legacy jQuery scroll-to-top, cookie-consent, contact-form
-  AJAX, and mobile-navbar code (jQuery itself is *not* loaded by the current
-  base script partial, so some of this code is inert).
+- `my_scripts.js` — now a cleaned placeholder. Its legacy jQuery
+  scroll-to-top, cookie-consent, contact-form AJAX, and mobile-navbar code was
+  removed (jQuery is *not* loaded by the current base script partial, so it only
+  raised a console error).
 - `my_styles.css` — keeps the store branding color
   `--primary-color: #004F9F`, still used by the sidebar/buttons, alongside the
   `Base Layout` section and the document-specific `.contract` and

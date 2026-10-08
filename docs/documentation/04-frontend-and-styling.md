@@ -29,6 +29,12 @@ default, toggled by the hamburger button in the content header
 (`data-bs-toggle="offcanvas"`, `data-bs-target="#sidebarMenu"`). No custom JS is
 needed — the vendored `bootstrap.bundle.min.js` provides the Offcanvas component.
 
+Below `lg` the main area also becomes an **app shell**: the content header stays
+fixed at the top and only `.content-body` scrolls. Because the printable
+`.contract` sheet is fixed at `210mm`, it pans horizontally inside
+`.content-body` (the page itself never scrolls sideways), so the header and menu
+stay put on phones and tablets.
+
 | Partial | Purpose |
 |---------|---------|
 | `_base_head.html` | Meta tags (some legacy SEO tags with TODOs), favicon, Bootstrap 5 CSS, bootstrap-icons, `my_styles.css`, cookie-consent CSS from CDN |
@@ -92,14 +98,10 @@ Styles for the standalone PDF templates (the actual print output):
 
 ## JavaScript (`base/static/base/js/my_scripts.js`)
 
-Current state is mostly legacy and partially inert:
-
-- jQuery-based scroll-to-top and cookie-consent code — note that **jQuery is
-  not loaded** by `_base_script.html` today, so this code does not run.
-- `hide_contact_form()` / AJAX contact-form code — tied to the legacy footer
-  form, unused.
-- Vanilla JS mobile-navbar toggle code (`#navbar`) — no matching markup in the
-  current base template, inert.
+The file is currently a **placeholder**. The old legacy code (jQuery
+scroll-to-top, cookie-consent, contact-form and `#navbar` toggle) was removed in
+one go: jQuery was never loaded by `_base_script.html`, so it only raised a
+`ReferenceError` in the console and stopped the rest of the file.
 
 Planned for this file: a small module to toggle contract clauses/signature
 blocks on/off when their checkboxes change (see

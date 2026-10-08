@@ -50,7 +50,7 @@ never executed by the AI workflow.)
   that the right default per document type?
 - **DETRAN references**: keep them generic; do not introduce state-specific
   references (e.g. "DETRAN-PA").
-- **Legacy base artifacts** (footer, jQuery code, store branding
+- **Legacy base artifacts** (empty footer, store branding and cookie-consent CSS
   in `_base_head.html`): kept for now — decide when/if to repurpose them.
 - **Documentation cadence**: update docs at milestones vs. continuously — to
   be decided as the project evolves.
