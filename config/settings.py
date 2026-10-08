@@ -40,7 +40,7 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # --- development --- #
 if DEBUG:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 
 # --- Production --- #
 if not DEBUG:
