@@ -16,12 +16,23 @@
    ========================================================================== */
 
 .sidebar {
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    height: 100vh;
+    background-color: var(--primary-color) !important;
+    --bs-offcanvas-width: 260px;
     overflow-y: auto;
-    background-color: var(--primary-color);
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        height: 100vh;
+    }
+}
+
+.sidebar-title {
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 
 .sidebar .nav-link {
@@ -92,8 +103,31 @@
     border-bottom: 1px solid #e9ecef;
 }
 
+.content-header-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #212529;
+    background: transparent;
+    border: 0;
+}
+
+.content-header-actions {
+    flex-shrink: 0;
+}
+
 .content-header-title {
     margin: 0;
+    margin-right: auto;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 1.4rem;
     font-weight: 400;
     color: #212529;

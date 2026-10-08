@@ -10,8 +10,13 @@
             <div class="row">
                 {% include 'base/_base_sidebar.html' %}
                  <!-- Main Content -->
-                <main class="col-md-10 ms-sm-auto content-wrapper">
+                <main class="col-12 col-lg-10 ms-sm-auto content-wrapper">
                     <header class="content-header">
+                        <button class="content-header-toggle d-lg-none" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+                                aria-controls="sidebarMenu" aria-label="Abrir menu">
+                            <i class="bi bi-list"></i>
+                        </button>
                         <h1 class="content-header-title">{{ page_title|default:'Página Inicial' }}</h1>
                         <div class="content-header-actions">
                             {% block header_actions %}{% endblock %}

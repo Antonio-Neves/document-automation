@@ -8,7 +8,7 @@ Every page extends `base/_base_index.html` and fills up to three blocks:
 base/_base_index.html
 ├── {% block title %}            ← page title (browser tab)
 ├── includes _base_head.html     ← meta tags, icons, CSS (Bootstrap, icons, my_styles)
-├── includes _base_sidebar.html  ← the fixed left sidebar with the document menu
+├── includes _base_sidebar.html  ← left sidebar with the document menu (offcanvas below lg)
 ├── content header (inline)      ← sticky top bar: page title + {% block header_actions %}
 ├── includes _messages.html      ← Django messages (Bootstrap alerts)
 ├── {% block body_content %}     ← the actual page content
@@ -22,10 +22,17 @@ It is sticky at the top of the content area and shows `page_title` on the left
 with its **Gerar PDF** submit button. Because the header lives outside the form,
 the button targets it with `form="contract-form"`.
 
+The sidebar is **responsive**. At `lg` (≥ 992px) it is a fixed sticky column
+(`col-lg-2`). Below `lg` (phones and tablets in portrait) it becomes a Bootstrap
+**offcanvas** drawer (`offcanvas-lg offcanvas-start`, 260px wide) hidden by
+default, toggled by the hamburger button in the content header
+(`data-bs-toggle="offcanvas"`, `data-bs-target="#sidebarMenu"`). No custom JS is
+needed — the vendored `bootstrap.bundle.min.js` provides the Offcanvas component.
+
 | Partial | Purpose |
 |---------|---------|
 | `_base_head.html` | Meta tags (some legacy SEO tags with TODOs), favicon, Bootstrap 5 CSS, bootstrap-icons, `my_styles.css`, cookie-consent CSS from CDN |
-| `_base_sidebar.html` | Sidebar menu: "Página Inicial" and one entry per document type (see the index in [README.md](README.md#implemented-document-types)). Admin/logout entries are commented out |
+| `_base_sidebar.html` | Sidebar menu: "Página Inicial" and one entry per document type (see the index in [README.md](README.md#implemented-document-types)). Admin/logout entries are commented out. Desktop sticky column; offcanvas drawer below `lg` |
 | `_messages.html` | Renders Django `messages` as dismissible Bootstrap alerts (`error` maps to `danger`) |
 | `_base_script.html` | Loads `my_scripts.js` then `bootstrap.bundle.min.js` |
 
@@ -39,7 +46,7 @@ The project CSS is organized in **scoped sections**, one per module:
 
 ```
 :root                      → brand palette (--primary-color)
-Base Layout                → sticky sidebar, sticky content header, nav links, buttons (store-system legacy)
+Base Layout                → sticky sidebar (offcanvas below lg), sticky content header, nav links, buttons (store-system legacy)
 .contract                  → the contract form page styles
 .contract-pdf              → the PDF document styles (print)
 ```
