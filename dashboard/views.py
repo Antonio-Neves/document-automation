@@ -58,11 +58,11 @@ class ContractSaleVehicleView(ContractPdfView):
     page_title = 'Veículo Completo'
 
 
-class ContractSalePropertyView(ContractPdfView):
-    template_name = 'dashboard/contract_sale_property.html'
-    pdf_template_name = 'dashboard/contract_sale_property_pdf.html'
-    pdf_filename_prefix = 'contract_sale_property'
-    page_title = 'Imóvel'
+class ContractSalePropertyCompleteView(ContractPdfView):
+    template_name = 'dashboard/contract_sale_property_complete.html'
+    pdf_template_name = 'dashboard/contract_sale_property_complete_pdf.html'
+    pdf_filename_prefix = 'contract_sale_property_complete'
+    page_title = 'Imóvel Completo'
 
 
 class ContractSalePropertyDeedView(ContractPdfView):

@@ -10,9 +10,9 @@ urlpatterns = [
         name='contract_sale_vehicle',
     ),
     path(
-        'contract-sale-property/',
-        views.ContractSalePropertyView.as_view(),
-        name='contract_sale_property',
+        'contract-sale-property-complete/',
+        views.ContractSalePropertyCompleteView.as_view(),
+        name='contract_sale_property_complete',
     ),
     path(
         'contract-sale-property-deed/',

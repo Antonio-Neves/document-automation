@@ -37,7 +37,7 @@ back to this table instead of re-listing the types.
 | Type (`name` = template prefix) | Route | View | Menu label |
 |---------------------------------|-------|------|------------|
 | `contract_sale_vehicle` | `/contract-sale-vehicle/` | `ContractSaleVehicleView` | Veículo |
-| `contract_sale_property` | `/contract-sale-property/` | `ContractSalePropertyView` | Imóvel |
+| `contract_sale_property_complete` | `/contract-sale-property-complete/` | `ContractSalePropertyCompleteView` | Imóvel Completo |
 | `contract_sale_property_deed` | `/contract-sale-property-deed/` | `ContractSalePropertyDeedView` | Imóvel Registrado |
 
 Each type has a page template `<type>.html` and a PDF template `<type>_pdf.html`
