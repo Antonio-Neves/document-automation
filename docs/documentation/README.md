@@ -70,8 +70,9 @@ The codebase evolves rapidly. The current policy is:
   stabilizes, its docs are updated in the same change.
 - **Do not document speculation.** Only describe what exists today. Planned
   work lives in [08-roadmap-and-open-questions.md](08-roadmap-and-open-questions.md).
-- There is intentionally **no PDF export yet**. Once the project stabilizes,
-  a PDF generation step may be added on top of these Markdown sources.
+- There is intentionally **no PDF export of this documentation yet**. Once the
+  project stabilizes, a PDF generation step may be added on top of these
+  Markdown sources (this is distinct from the contract PDFs the app generates).
 
 The cadence (document earlier vs. later) is still being tuned — expect this
 policy section to change.

@@ -187,7 +187,7 @@
 }
 
 /* ==========================================================================
-   Contract (contract_sale_vehicle_complete.html) -- Scoped under .contract
+   Contract form page -- shared by all document types -- Scoped under .contract
    ========================================================================== */
 
 .contract {
@@ -283,7 +283,7 @@
 }
 
 /* ==========================================================================
-   Contract PDF (contract_sale_vehicle_complete_pdf.html) -- Scoped under .contract-pdf
+   Contract PDF -- shared by all document types -- Scoped under .contract-pdf
    ========================================================================== */
 
 @page {

@@ -26,7 +26,7 @@ Behavior is switched by the `DEBUG` environment variable (`"True"` /
 
 | Setting | `DEBUG=True` (dev) | `DEBUG=False` (prod) |
 |---------|--------------------|----------------------|
-| `ALLOWED_HOSTS` | empty | from `ALLOWED_HOSTS` env var |
+| `ALLOWED_HOSTS` | `['*']` | from `ALLOWED_HOSTS` env var |
 | Database | `DATABASE_URL` via `dj-database-url`, `conn_max_age=600` | same + `ssl_require=True` |
 | Cookies | default | `SESSION_COOKIE_SECURE`, `CSRF_COOKIE_SECURE` |
 | CSRF origins | — | `CSRF_TRUSTED_ORIGINS` from `TRUSTED_ORIGINS` env var |

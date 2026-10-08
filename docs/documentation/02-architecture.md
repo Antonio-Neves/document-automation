@@ -69,9 +69,10 @@ Browser downloads the PDF
 
 ## Settings highlights (`config/settings.py`)
 
-- **DEBUG split**: with `DEBUG=True` the app runs with empty `ALLOWED_HOSTS`;
-  with `DEBUG=False` it loads `ALLOWED_HOSTS`, `TRUSTED_ORIGINS`, and enforces
-  secure session/CSRF cookies (SSL redirect is commented out).
+- **DEBUG split**: with `DEBUG=True` the app allows any host
+  (`ALLOWED_HOSTS = ['*']`); with `DEBUG=False` it loads `ALLOWED_HOSTS`,
+  `TRUSTED_ORIGINS`, and enforces secure session/CSRF cookies (SSL redirect is
+  commented out).
 - **Database**: no hard-coded engine — the connection string comes from
   `DATABASE_URL` via `dj-database-url` (SSL required in production).
 - **Localization**: `pt-br` language, `America/Sao_Paulo` timezone. Always
@@ -92,11 +93,12 @@ purpose:
   raised a console error).
 - `my_styles.css` — keeps the store branding color
   `--primary-color: #004F9F`, still used by the sidebar/buttons, alongside the
-  `Base Layout` section and the document-specific `.contract` and
-  `.contract-pdf` sections.
+  `Base Layout` section and the shared `.contract` and `.contract-pdf`
+  sections.
 - SEO/meta tags in `_base_head.html` still reference the old store system
   (marked with TODOs).
-- `base/models.py`, `base/views.py`, `dashboard/models.py` are empty scaffolds.
+- `base/models.py`, `base/views.py`, `dashboard/models.py` are scaffolds with
+  only the default Django imports/comments.
 
 **Do not remove, rename, or repurpose these files** just because they look
 unused. The codebase is evolving rapidly and these artifacts may be adapted
