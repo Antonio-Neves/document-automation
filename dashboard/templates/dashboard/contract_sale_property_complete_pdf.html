@@ -120,15 +120,12 @@
         <h2 class="clause-title">CLÁUSULA TERCEIRA - DO PREÇO E DA FORMA DE PAGAMENTO</h2>
         <p>
             Pela presente compra e venda e cessão definitiva dos direitos possessórios, o(a)
-            COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor total de
-            R$ {{ fields.price|fill:20 }} ({{ fields.price_in_words|fill:60 }}).
+            COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor de
+            R$ {{ fields.price|fill:20 }} ({{ fields.price_in_words|fill:60 }}){% if fields.include_clause_3_delivery %}, acrescido da entrega de {{ fields.price_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.price_delivery_value|fill:20 }}{% endif %}{% if fields.include_clause_3_full_payment %}, como pagamento integral efetuado no ato da celebração deste contrato{% endif %}.
         </p>
         {% if fields.include_clause_3_1 %}
         <p>
-            Havendo parcelamento, R$ {{ fields.down_payment|fill:14 }} a título de entrada/sinal, e o saldo
-            remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de
-            R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia
-            dos meses subsequentes.
+            O pagamento será realizado de forma parcelada, a título de entrada/sinal,{% if fields.include_clause_3_down_payment %} R$ {{ fields.down_payment|fill:14 }},{% endif %}{% if fields.include_clause_3_delivery_more %} mais a entrega de{% endif %}{% if fields.include_clause_3_delivery_by %} pela entrega de{% endif %}{% if fields.include_clause_3_delivery_item %} {{ fields.payment_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.payment_delivery_value|fill:16 }}, recebido(a) como parte do pagamento,{% endif %} e o saldo remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia dos meses subsequentes.
         </p>
         {% endif %}
         <p>
