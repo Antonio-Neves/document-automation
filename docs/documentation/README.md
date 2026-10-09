@@ -39,6 +39,7 @@ back to this table instead of re-listing the types.
 | `contract_sale_vehicle_complete` | `/contract-sale-vehicle-complete/` | `ContractSaleVehicleCompleteView` | Veículo Completo |
 | `contract_sale_property_complete` | `/contract-sale-property-complete/` | `ContractSalePropertyCompleteView` | Imóvel Completo |
 | `contract_sale_property_deed` | `/contract-sale-property-deed/` | `ContractSalePropertyDeedView` | Imóvel Registrado |
+| `contract_sale_property_simple` | `/contract-sale-property-simple/` | `ContractSalePropertySimpleView` | Imóvel Simples |
 
 Each type has a page template `<type>.html` and a PDF template `<type>_pdf.html`
 under `dashboard/templates/dashboard/`. The browser tab shows the view's

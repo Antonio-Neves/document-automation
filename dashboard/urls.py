@@ -19,4 +19,9 @@ urlpatterns = [
         views.ContractSalePropertyDeedView.as_view(),
         name='contract_sale_property_deed',
     ),
+    path(
+        'contract-sale-property-simple/',
+        views.ContractSalePropertySimpleView.as_view(),
+        name='contract_sale_property_simple',
+    ),
 ]

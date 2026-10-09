@@ -1,0 +1,167 @@
+{% extends 'base/_base_index.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block header_actions %}
+<button type="submit" form="contract-form" class="btn btn-primary">
+    <i class="bi bi-file-earmark-pdf"></i> Gerar PDF
+</button>
+{% endblock %}
+
+{% block body_content %}
+<form method="post" id="contract-form">
+{% csrf_token %}
+<div class="contract" id="contract-sale-property-simple">
+
+    <h1 class="contract-title">INSTRUMENTO PARTICULAR DE COMPRA E VENDA E CESSÃO DEFINITIVA DE DIREITOS POSSESSÓRIOS</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A)/CEDENTE:<br>
+        NOME COMPLETO: <input type="text" name="seller_name" style="width: 52ch">,<br>
+        Nacionalidade: <input type="text" name="seller_nationality" style="width: 20ch">, Estado Civil: <input type="text" name="seller_marital_status" style="width: 20ch">,<br>
+        <input type="checkbox" name="include_seller_marital_regime" value="1" class="clause-check"> sob o regime de: <input type="text" name="seller_marital_regime" style="width: 20ch">, Profissão: <input type="text" name="seller_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_cpf" style="width: 18ch">,<br>
+        portador(a) do RG nº <input type="text" name="seller_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="seller_address" style="width: 70ch"> Município: <input type="text" name="seller_city" style="width: 20ch">, Estado: <input type="text" name="seller_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        <input type="checkbox" name="include_seller_spouse" value="1" class="clause-check">
+        CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br>
+        NOME COMPLETO: <input type="text" name="seller_spouse_name" style="width: 52ch">,<br>
+        Nacionalidade: <input type="text" name="seller_spouse_nationality" style="width: 20ch">, Estado Civil: <input type="text" name="seller_spouse_marital_status" style="width: 20ch">,<br>
+        Profissão: <input type="text" name="seller_spouse_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_spouse_cpf" style="width: 18ch">,<br>
+        portador(a) do RG nº <input type="text" name="seller_spouse_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="seller_spouse_address" style="width: 70ch"> Município: <input type="text" name="seller_spouse_city" style="width: 20ch">, Estado: <input type="text" name="seller_spouse_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        E, de outro lado, como COMPRADOR(A)/CESSIONÁRIO(A):<br>
+        NOME COMPLETO: <input type="text" name="buyer_name" style="width: 52ch">,<br>
+        Nacionalidade: <input type="text" name="buyer_nationality" style="width: 20ch">, Estado Civil: <input type="text" name="buyer_marital_status" style="width: 20ch">,<br>
+        Profissão: <input type="text" name="buyer_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="buyer_cpf" style="width: 18ch">,<br>
+        portador(a) do RG nº <input type="text" name="buyer_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="buyer_address" style="width: 70ch"> Município: <input type="text" name="buyer_city" style="width: 20ch">, Estado: <input type="text" name="buyer_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
+    </p>
+
+    <div class="clause" id="clause-1">
+        <input type="checkbox" name="include_clause_1" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO OBJETO E DA POSSE</h2>
+        <p>
+            O(A) VENDEDOR(A)/CEDENTE é legítimo possuidor do imóvel situado na
+            <input type="text" name="property_land_address" style="width: 74ch">,
+            Município: <input type="text" name="property_land_city" style="width: 23ch">,
+            Estado: <input type="text" name="property_land_state" style="width: 25ch">,
+            composto por área medindo <input type="text" name="property_land_front_measure" style="width: 13ch"> metros de frente por
+            <input type="text" name="property_land_length_measure" style="width: 9ch"> metros de comprimento,
+            perfazendo <input type="text" name="property_land_area" style="width: 14ch"> m².
+        </p>
+    </div>
+
+    <div class="clause" id="clause-2">
+        <input type="checkbox" name="include_clause_2" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DO PREÇO E DA FORMA DE PAGAMENTO</h2>
+        <p>
+            Pela presente compra e venda e cessão definitiva dos direitos possessórios, o(a)
+            COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor total de
+            R$ <input type="text" name="price" style="width: 12ch"> (<input type="text" name="price_in_words" style="width: 49ch">).
+        </p>
+        <input type="checkbox" name="include_clause_2_1" value="1" class="clause-check" checked>
+        <p>
+            Havendo parcelamento, R$ <input type="text" name="down_payment" style="width: 13ch"> a título de entrada/sinal, e o saldo
+            remanescente de R$ <input type="text" name="balance" style="width: 16ch">, será pago em <input type="text" name="installments_count" style="width: 7ch"> parcelas de
+            R$ <input type="text" name="installment_value" style="width: 16ch">, vencendo a primeira em <input type="text" name="first_due_date" style="width: 16ch">, e as demais no mesmo dia
+            dos meses subsequentes.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-3">
+        <input type="checkbox" name="include_clause_3" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DA TRANSFERÊNCIA DA POSSE</h2>
+        <p>
+            Com a assinatura deste instrumento e o pagamento integral do preço, o(a) VENDEDOR(A)/CEDENTE transfere
+            ao(à) COMPRADOR(A)/CESSIONÁRIO(A) a posse e os direitos possessórios que exerce sobre o imóvel descrito
+            na Cláusula Primeira.
+        </p>
+        <p>
+            A partir da imissão na posse, o(a) COMPRADOR(A)/CESSIONÁRIO(A) poderá usar, ocupar, conservar e realizar
+            benfeitorias no imóvel, observadas as limitações legais e administrativas aplicáveis.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-4">
+        <input type="checkbox" name="include_clause_4" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA QUARTA - DA IRREVOGABILIDADE E IRRETRATABILIDADE</h2>
+        <p>
+            Todos os compromissos assumidos neste contrato são de caráter IRREVOGÁVEL e IRRETRATÁVEL, obrigando as
+            partes, seus herdeiros e sucessores a qualquer título fazer sempre boa e valiosa a presente cessão,
+            ficando sujeito às penalidades da lei.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-5">
+        <input type="checkbox" name="include_clause_5" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA QUINTA - DO FORO</h2>
+        <p>
+            O foro deste contrato é da Comarca de <input type="text" name="forum_city" style="width: 24ch">, no estado do
+            <input type="text" name="forum_state" style="width: 24ch">, renunciando as partes quaisquer outro por mais privilegiado que seja.
+        </p>
+    </div>
+
+    <p>
+        E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
+        teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+    </p>
+
+    <p class="contract-place-date">
+        _____________________, _____ de _________________________ de __________
+    </p>
+
+    <div class="signature-columns">
+        <div class="signature" id="signature-seller">
+            <input type="checkbox" name="include_signature_seller" value="1" class="signature-check" checked>
+            <p>VENDEDOR(A)/CEDENTE: ______________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+        <div class="signature" id="signature-seller-spouse">
+            <input type="checkbox" name="include_signature_seller_spouse" value="1" class="signature-check" checked>
+            <p>CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE: _________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+    <div class="signature-columns">
+        <div class="signature" id="signature-buyer">
+            <input type="checkbox" name="include_signature_buyer" value="1" class="signature-check" checked>
+            <p>COMPRADOR(A)/CESSIONÁRIO(A): ______</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+    </div>
+
+    <div class="signature-columns">
+        <div class="signature" id="witness-1">
+            <input type="checkbox" name="include_witness_1" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 1: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+        <div class="signature" id="witness-2">
+            <input type="checkbox" name="include_witness_2" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 2: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+</div>
+</form>
+{% endblock %}

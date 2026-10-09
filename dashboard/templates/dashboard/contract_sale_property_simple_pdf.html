@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load contract_filters static %}
+<head>
+<meta charset="utf-8">
+<title>Instrumento Particular de Compra e Venda e Cessão Definitiva de Direitos Possessórios</title>
+<link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
+</head>
+<body class="contract-pdf">
+
+    <h1 class="contract-title">INSTRUMENTO PARTICULAR DE COMPRA E VENDA E CESSÃO DEFINITIVA DE DIREITOS POSSESSÓRIOS</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como VENDEDOR(A)/CEDENTE:<br>
+        {{ fields.seller_name|fill:52 }},
+        {{ fields.seller_nationality|fill:20 }},
+        {{ fields.seller_marital_status|fill:20 }},
+        {% if fields.include_seller_marital_regime %}sob o regime de {{ fields.seller_marital_regime|fill:20 }}, {% endif %}
+        {{ fields.seller_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.seller_address|fill:70 }}
+        {{ fields.seller_city|fill:20 }},
+        {{ fields.seller_state|fill:20 }}.
+    </p>
+
+    {% if fields.include_seller_spouse %}
+    <p>
+        CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br>
+        {{ fields.seller_spouse_name|fill:52 }},
+        {{ fields.seller_spouse_nationality|fill:20 }},
+        {{ fields.seller_spouse_marital_status|fill:20 }},
+        {{ fields.seller_spouse_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_spouse_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_spouse_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.seller_spouse_address|fill:70 }}
+        {{ fields.seller_spouse_city|fill:20 }},
+        {{ fields.seller_spouse_state|fill:20 }}.
+    </p>
+    {% endif %}
+
+    <p>
+        E, de outro lado, como COMPRADOR(A)/CESSIONÁRIO(A):<br>
+        {{ fields.buyer_name|fill:52 }},
+        {{ fields.buyer_nationality|fill:20 }},
+        {{ fields.buyer_marital_status|fill:20 }},
+        {{ fields.buyer_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.buyer_address|fill:70 }}
+        {{ fields.buyer_city|fill:20 }},
+        {{ fields.buyer_state|fill:20 }}.
+    </p>
+
+    <p>
+        Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
+    </p>
+
+    {% if fields.include_clause_1 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO OBJETO E DA POSSE</h2>
+        <p>
+            O(A) VENDEDOR(A)/CEDENTE é legítimo possuidor do imóvel situado na
+            {{ fields.property_land_address|fill:74 }},
+            Município: {{ fields.property_land_city|fill:23 }},
+            Estado: {{ fields.property_land_state|fill:25 }},
+            composto por área medindo {{ fields.property_land_front_measure|fill:13 }} metros de frente por
+            {{ fields.property_land_length_measure|fill:9 }} metros de comprimento,
+            perfazendo {{ fields.property_land_area|fill:14 }} m².
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_2 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DO PREÇO E DA FORMA DE PAGAMENTO</h2>
+        <p>
+            Pela presente compra e venda e cessão definitiva dos direitos possessórios, o(a)
+            COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor total de
+            R$ {{ fields.price|fill:12 }} ({{ fields.price_in_words|fill:49 }}).
+        </p>
+        {% if fields.include_clause_2_1 %}
+        <p>
+            Havendo parcelamento, R$ {{ fields.down_payment|fill:13 }} a título de entrada/sinal, e o saldo
+            remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:7 }} parcelas de
+            R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia
+            dos meses subsequentes.
+        </p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_3 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DA TRANSFERÊNCIA DA POSSE</h2>
+        <p>
+            Com a assinatura deste instrumento e o pagamento integral do preço, o(a) VENDEDOR(A)/CEDENTE transfere
+            ao(à) COMPRADOR(A)/CESSIONÁRIO(A) a posse e os direitos possessórios que exerce sobre o imóvel descrito
+            na Cláusula Primeira.
+        </p>
+        <p>
+            A partir da imissão na posse, o(a) COMPRADOR(A)/CESSIONÁRIO(A) poderá usar, ocupar, conservar e realizar
+            benfeitorias no imóvel, observadas as limitações legais e administrativas aplicáveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_4 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUARTA - DA IRREVOGABILIDADE E IRRETRATABILIDADE</h2>
+        <p>
+            Todos os compromissos assumidos neste contrato são de caráter IRREVOGÁVEL e IRRETRATÁVEL, obrigando as
+            partes, seus herdeiros e sucessores a qualquer título fazer sempre boa e valiosa a presente cessão,
+            ficando sujeito às penalidades da lei.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_5 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUINTA - DO FORO</h2>
+        <p>
+            O foro deste contrato é da Comarca de {{ fields.forum_city|fill:24 }}, no estado do
+            {{ fields.forum_state|fill:24 }}, renunciando as partes quaisquer outro por mais privilegiado que seja.
+        </p>
+    </div>
+    {% endif %}
+
+    <p>
+        E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
+        teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+    </p>
+
+    <div class="signatures">
+        <p class="contract-place-date">
+            ____________________________, _____ de _________________________ de __________
+        </p>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_seller %}
+            <div class="signature">
+                <p>VENDEDOR(A)/CEDENTE:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_signature_seller_spouse %}
+            <div class="signature">
+                <p>CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_buyer %}
+            <div class="signature">
+                <p>COMPRADOR(A)/CESSIONÁRIO(A):<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_witness_1 %}
+            <div class="signature">
+                <p>TESTEMUNHA 1:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_witness_2 %}
+            <div class="signature">
+                <p>TESTEMUNHA 2:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

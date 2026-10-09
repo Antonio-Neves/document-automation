@@ -70,3 +70,10 @@ class ContractSalePropertyDeedView(ContractPdfView):
     pdf_template_name = 'dashboard/contract_sale_property_deed_pdf.html'
     pdf_filename_prefix = 'contract_sale_property_deed'
     page_title = 'Imóvel Registrado'
+
+
+class ContractSalePropertySimpleView(ContractPdfView):
+    template_name = 'dashboard/contract_sale_property_simple.html'
+    pdf_template_name = 'dashboard/contract_sale_property_simple_pdf.html'
+    pdf_filename_prefix = 'contract_sale_property_simple'
+    page_title = 'Imóvel Simples'
