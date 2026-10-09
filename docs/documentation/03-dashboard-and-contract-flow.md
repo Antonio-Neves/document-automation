@@ -171,11 +171,16 @@ All form fields are snake_case English names, grouped by entity:
 | `vehicle_*` | Vehicle description | `vehicle_type`, `vehicle_plate`, `vehicle_renavam` |
 | `property_land_*` | Property object — land | `property_land_address`, `property_land_area`, `property_land_front_measure` |
 | `property_built_*` | Property object — built property | `property_built_address`, `property_built_area`, `property_built_contents` |
-| `price_*` / `payment_*` | Price and payment | `price`, `price_in_words`, `down_payment`, `installments_count`, `first_due_date` |
-| `delivery_*` | Delivery data | `delivery_day`, `delivery_time`, `delivery_place` |
+| `price_*` / `payment_*` | Price and payment | `price`, `price_in_words`, `down_payment`, `price_delivery_item`, `payment_delivery_item`, `payment_delivery_value`, `installments_count`, `first_due_date` |
+| `delivery_*` | Vehicle delivery data (handover of the vehicle) | `delivery_day`, `delivery_time`, `delivery_place` |
 | `known_*` | Disclosed debts/defects | `known_debts`, `known_defects` |
 | `forum_*` | Jurisdiction clause | `forum_city`, `forum_state` |
-| `include_*` | Checkboxes for optional blocks | `include_clause_1`, `include_clause_1_land_complement`, `include_signature_seller_spouse` |
+| `include_*` | Checkboxes for optional blocks | `include_clause_1`, `include_clause_1_land_complement`, `include_clause_3_delivery`, `include_signature_seller_spouse` |
+
+> Note: the vehicle `delivery_*` prefix (handover of the vehicle) is distinct
+> from the `*_delivery_*` fields inside a price/payment prefix
+> (`price_delivery_item`, `payment_delivery_item`, `payment_delivery_value`),
+> which describe goods handed over as (part of) the payment.
 
 ## Routing (`dashboard/urls.py`)
 
