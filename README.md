@@ -8,7 +8,7 @@ AI-assisted development with OpenCode and agentic programming, using a step-by-s
 - Python 3.13.15
 - Django 5.2 (LTS)
 - OpenCode
-- Database: SQLite
+- Database: PostgreSQL
 - Frontend: Bootstrap 5
 - PDF generation: WeasyPrint
 - Templates and form data are used in memory only — no data is stored.
@@ -17,6 +17,8 @@ AI-assisted development with OpenCode and agentic programming, using a step-by-s
 ### Documentation
 
 Developer documentation (in English): [`docs/documentation/`](docs/documentation/)
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the version history.
 
 ---
 
@@ -30,7 +32,7 @@ Desenvolvimento assistido por IA com OpenCode e programação agêntica, utiliza
 - Python 3.13.15
 - Django 5.2 (LTS)
 - OpenCode
-- Banco de dados: SQLite
+- Banco de dados: PostgreSQL
 - Frontend: Bootstrap 5
 - Geração de PDF: WeasyPrint
 - Modelos e dados dos formulários são usados apenas em memória — nenhum dado fica guardado.
@@ -39,6 +41,8 @@ Desenvolvimento assistido por IA com OpenCode e programação agêntica, utiliza
 ### Documentação
 
 Documentação para desenvolvedores (em inglês): [`docs/documentation/`](docs/documentation/)
+
+Consulte [`CHANGELOG.md`](CHANGELOG.md) para o histórico de versões.
 
 ---
 
