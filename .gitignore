@@ -20,9 +20,10 @@ db.sqlite3
 # Folders
 media
 htmlcov/*
-created_contracts/
+
 
 # Files
 # **/migrations/*.py
+contract_files/created_contracts/*.pdf
 
 # Testes
