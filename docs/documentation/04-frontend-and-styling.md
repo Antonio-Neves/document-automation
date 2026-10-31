@@ -18,9 +18,12 @@ base/_base_index.html
 The content header is defined **inline** in `_base_index.html` (it must host the
 `{% block header_actions %}` block, which an `{% include %}` could not expose).
 It is sticky at the top of the content area and shows `page_title` on the left
-(falling back to "Página Inicial"); each contract page fills `header_actions`
-with its **Gerar PDF** submit button. Because the header lives outside the form,
-the button targets it with `form="contract-form"`.
+(falling back to "Página Inicial"). By default it renders the shared document
+actions from `_contract_header_actions.html`: the two gender groups and the
+**Gerar PDF** submit button. Document pages do not define `header_actions`
+themselves. The dashboard overrides the block with an empty one; any future
+non-document page can do the same. Because the header lives outside the form,
+the controls target it with `form="contract-form"`.
 
 The sidebar is **responsive**. At `lg` (≥ 992px) it is a fixed sticky column
 (`col-lg-2`). Below `lg` (phones and tablets in portrait) it becomes a Bootstrap
@@ -39,6 +42,7 @@ stay put on phones and tablets.
 |---------|---------|
 | `_base_head.html` | Meta tags (some legacy SEO tags with TODOs), favicon, Bootstrap 5 CSS, bootstrap-icons, `my_styles.css`, cookie-consent CSS from CDN |
 | `_base_sidebar.html` | Sidebar menu: "Página Inicial" and one entry per document type (see the index in [README.md](README.md#implemented-document-types)). Admin/logout entries are commented out. Desktop sticky column; offcanvas drawer below `lg` |
+| `_contract_header_actions.html` | Shared content-header actions: the two gender groups and the **Gerar PDF** submit button. Included by `_base_index.html` by default; pages opt out by overriding `header_actions` |
 | `_messages.html` | Renders Django `messages` as dismissible Bootstrap alerts (`error` maps to `danger`) |
 | `_base_script.html` | Loads `my_scripts.js` then `bootstrap.bundle.min.js` |
 
@@ -52,7 +56,9 @@ The project CSS is organized in **scoped sections**, one per module:
 
 ```
 :root                      → brand palette (--primary-color)
-Base Layout                → sticky sidebar (offcanvas below lg), sticky content header, nav links, buttons (store-system legacy)
+Base Layout                → sticky sidebar (offcanvas below lg), sticky content header,
+                             shared document actions (.contract-actions, .gender-group),
+                             nav links, buttons (store-system legacy)
 .contract                  → the contract form page styles
 .contract-pdf              → the PDF document styles (print)
 ```
@@ -61,6 +67,9 @@ Rules:
 
 - Brand color: `--primary-color: #004F9F` (blue), used by the sidebar and
   `.btn-primary`.
+- The shared header actions use `.contract-actions`, `.gender-group`, and
+  `.gender-group-label`. Keep the extra gap before the **Gerar PDF** button and
+  let the row wrap below `lg`.
 - **New modules append a new scoped section at the end of the file**, following
   the `.contract` pattern. Never interleave styles into other sections.
 - The `.contract-pdf` section defines the print `@page` rules (A4, 2cm margins),

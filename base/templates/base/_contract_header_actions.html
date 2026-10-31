@@ -1,0 +1,29 @@
+<div class="contract-actions">
+    <div class="gender-group">
+        <span class="gender-group-label">1º Interveniente</span>
+        <div class="btn-group btn-group-sm" role="group" aria-label="Gênero do 1º interveniente">
+            <input type="radio" class="btn-check" name="first_party_gender"
+                   id="first-party-masculine" value="masculine" form="contract-form" checked>
+            <label class="btn btn-outline-primary" for="first-party-masculine">Masculino</label>
+            <input type="radio" class="btn-check" name="first_party_gender"
+                   id="first-party-feminine" value="feminine" form="contract-form">
+            <label class="btn btn-outline-primary" for="first-party-feminine">Feminino</label>
+        </div>
+    </div>
+
+    <div class="gender-group">
+        <span class="gender-group-label">2º Interveniente</span>
+        <div class="btn-group btn-group-sm" role="group" aria-label="Gênero do 2º interveniente">
+            <input type="radio" class="btn-check" name="second_party_gender"
+                   id="second-party-masculine" value="masculine" form="contract-form" checked>
+            <label class="btn btn-outline-primary" for="second-party-masculine">Masculino</label>
+            <input type="radio" class="btn-check" name="second_party_gender"
+                   id="second-party-feminine" value="feminine" form="contract-form">
+            <label class="btn btn-outline-primary" for="second-party-feminine">Feminino</label>
+        </div>
+    </div>
+
+    <button type="submit" form="contract-form" class="btn btn-primary">
+        <i class="bi bi-file-earmark-pdf"></i> Gerar PDF
+    </button>
+</div>

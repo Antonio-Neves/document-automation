@@ -122,6 +122,33 @@
     flex-shrink: 0;
 }
 
+.contract-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    max-width: 100%;
+}
+
+.contract-actions > .btn-primary {
+    margin-left: 0.75rem;
+}
+
+.gender-group {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.gender-group-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
 .content-header-title {
     margin: 0;
     margin-right: auto;
@@ -158,8 +185,26 @@
     }
 
     .content-header {
+        flex-wrap: wrap;
         gap: 0.5rem;
         padding: 0.5rem 0.75rem;
+    }
+
+    .content-header-actions {
+        max-width: 100%;
+    }
+
+    .contract-actions {
+        justify-content: flex-start;
+        gap: 0.75rem;
+    }
+
+    .contract-actions > .btn-primary {
+        margin-left: 0.25rem;
+    }
+
+    .gender-group {
+        flex-wrap: wrap;
     }
 
     .content-header-toggle {

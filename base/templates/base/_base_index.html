@@ -19,7 +19,9 @@
                         </button>
                         <h1 class="content-header-title">{{ page_title|default:'Página Inicial' }}</h1>
                         <div class="content-header-actions">
-                            {% block header_actions %}{% endblock %}
+                            {% block header_actions %}
+                            {% include 'base/_contract_header_actions.html' %}
+                            {% endblock %}
                         </div>
                     </header>
                     <div class="container-fluid py-4 content-body">

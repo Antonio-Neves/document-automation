@@ -19,14 +19,15 @@ original pages can go in `utils/pages_photos/`.
 
 Create `dashboard/templates/dashboard/<type>.html`:
 
-- Extend `base/_base_index.html`, fill `{% block title %}`,
-  `{% block body_content %}`, and — for the action button —
-  `{% block header_actions %}`.
+- Extend `base/_base_index.html` and fill `{% block title %}` and
+  `{% block body_content %}`. The shared content header already renders the
+  action controls (the two gender groups and **Gerar PDF**); do **not** define
+  `header_actions`.
 - Wrap everything in a `<form method="post" id="contract-form">{% csrf_token %}
-  ... </form>`.
-- Do **not** put the submit button at the end of the form. Put it in the shared
-  content header's action block, targeting the form by id:
-  `<button type="submit" form="contract-form" class="btn btn-primary">Gerar PDF</button>`.
+  ... </form>`. The shared header controls target this id with
+  `form="contract-form"`.
+- If a future page is not a document form, opt out of the shared actions with
+  `{% block header_actions %}{% endblock %}`.
 - Root content in `<div class="contract" id="contract-<type>">`.
 - Each clause: `<div class="clause" id="clause-N">` with
   `<h2 class="clause-title">` and a checkbox
@@ -45,6 +46,9 @@ Create `dashboard/templates/dashboard/<type>.html`:
   entity (see the field-prefix table in
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md)).
 - Input widths in `ch` units matching the original document's underscore count.
+- For a non-contract document, adapt the root class/id and decide whether it
+  should inherit the shared header actions or opt out with an empty
+  `header_actions` block. The gender tag remains available either way.
 
 ## Step 3 — Create the PDF template
 
@@ -66,6 +70,18 @@ Create `dashboard/templates/dashboard/<type>_pdf.html`:
 - Fill every field with `{{ fields.<name>|fill:<width> }}`.
 - Wrap each optional block in `{% if fields.include_... %}` — whole clauses,
   signatures, optional inner details, and alternative variants alike.
+- For party-related text, use the shared gender tag with explicit
+  `masculino|feminino` pairs:
+  `{% gender first_party_gender "do VENDEDOR|da VENDEDORA" %}` and
+  `{% gender second_party_gender "ao COMPRADOR|à COMPRADORA" %}`.
+  Write the whole phrase inside the pair, preserve capitalization, and do not
+  put spaces around `|`.
+- If the reference `.docx`/`.txt` uses conversion markers,
+  `{masculino|feminino}` maps to `first_party_gender` and
+  `[masculino|feminino]` maps to `second_party_gender`.
+- Spouse and object terms stay neutral unless explicitly marked; do not infer
+  grammar automatically. See
+  [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md#gender-selection-in-document-pdfs).
 
 ## Step 4 — Add the CBV
 
@@ -131,8 +147,10 @@ section.
 ## Checklist
 
 - [ ] Reference original in `contract_files/models/`
-- [ ] Page template with `{% csrf_token %}` form, clauses, signatures
-- [ ] PDF template with `fill` filters and `{% if %}` exclusion blocks
+- [ ] Page template with `{% csrf_token %}` form, clauses, signatures; no
+      `header_actions` block (inherits the shared actions)
+- [ ] PDF template with `fill` filters, `{% if %}` exclusion blocks, and
+      `{% gender %}` pairs for party-related text
 - [ ] CBV in `dashboard/views.py`
 - [ ] URL in `dashboard/urls.py` (name = template name)
 - [ ] Sidebar entry

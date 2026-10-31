@@ -11,22 +11,22 @@
     <h1 class="contract-title">INSTRUMENTO PARTICULAR DE COMPRA E VENDA E CESSÃO DEFINITIVA DE DIREITOS POSSESSÓRIOS</h1>
 
     <p>
-        Pelo presente instrumento particular, de um lado, como VENDEDOR(A)/CEDENTE:<br>
+        Pelo presente instrumento particular, de um lado, como {% gender first_party_gender "VENDEDOR/CEDENTE|VENDEDORA/CEDENTE" %}:<br>
         {{ fields.seller_name|fill:52 }},
         {{ fields.seller_nationality|fill:20 }},
         {{ fields.seller_marital_status|fill:20 }},
         {% if fields.include_seller_marital_regime %}sob o regime de {{ fields.seller_marital_regime|fill:20 }}, {% endif %}
         {{ fields.seller_profession|fill:20 }},
-        inscrito(a) no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
-        portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
-        residente e domiciliado(a) em {{ fields.seller_address|fill:70 }}
+        {% gender first_party_gender "inscrito|inscrita" %} no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
+        {% gender first_party_gender "portador|portadora" %} do RG nº {{ fields.seller_rg|fill:20 }},
+        residente e {% gender first_party_gender "domiciliado|domiciliada" %} em {{ fields.seller_address|fill:70 }}
         {{ fields.seller_city|fill:20 }},
         {{ fields.seller_state|fill:20 }}.
     </p>
 
     {% if fields.include_seller_spouse %}
     <p>
-        CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br>
+        CÔNJUGE {% gender first_party_gender "DO VENDEDOR/CEDENTE|DA VENDEDORA/CEDENTE" %}:<br>
         {{ fields.seller_spouse_name|fill:52 }},
         {{ fields.seller_spouse_nationality|fill:20 }},
         {{ fields.seller_spouse_marital_status|fill:20 }},
@@ -40,14 +40,14 @@
     {% endif %}
 
     <p>
-        E, de outro lado, como COMPRADOR(A)/CESSIONÁRIO(A):<br>
+        E, de outro lado, como {% gender second_party_gender "COMPRADOR/CESSIONÁRIO|COMPRADORA/CESSIONÁRIA" %}:<br>
         {{ fields.buyer_name|fill:52 }},
         {{ fields.buyer_nationality|fill:20 }},
         {{ fields.buyer_marital_status|fill:20 }},
         {{ fields.buyer_profession|fill:20 }},
-        inscrito(a) no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
-        portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
-        residente e domiciliado(a) em {{ fields.buyer_address|fill:70 }}
+        {% gender second_party_gender "inscrito|inscrita" %} no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
+        {% gender second_party_gender "portador|portadora" %} do RG nº {{ fields.buyer_rg|fill:20 }},
+        residente e {% gender second_party_gender "domiciliado|domiciliada" %} em {{ fields.buyer_address|fill:70 }}
         {{ fields.buyer_city|fill:20 }},
         {{ fields.buyer_state|fill:20 }}.
     </p>
@@ -85,18 +85,18 @@
         </p>
         {% endif %}
         <p>
-            <strong>Parágrafo primeiro.</strong> O(A) VENDEDOR(A)/CEDENTE declara que o imóvel objeto deste instrumento não possui
+            <strong>Parágrafo primeiro.</strong> {% gender first_party_gender "O VENDEDOR/CEDENTE|A VENDEDORA/CEDENTE" %} declara que o imóvel objeto deste instrumento não possui
             matrícula individualizada nem escritura pública registrada no Cartório de Registro de Imóveis,
-            circunstância da qual o(a) COMPRADOR(A)/CESSIONÁRIO(A) declara estar expressamente ciente.
+            circunstância da qual {% gender second_party_gender "o COMPRADOR/CESSIONÁRIO|a COMPRADORA/CESSIONÁRIA" %} declara estar expressamente ciente.
         </p>
         <p>
             <strong>Parágrafo segundo.</strong> Em razão da situação documental descrita, o presente instrumento tem por objeto a
             alienação e cessão definitiva, integral e irrevogável dos direitos possessórios efetivamente detidos
-            pelo(a) VENDEDOR(A)/CEDENTE sobre o imóvel, não constituindo, por si só, transferência de propriedade
+            {% gender first_party_gender "pelo VENDEDOR/CEDENTE|pela VENDEDORA/CEDENTE" %} sobre o imóvel, não constituindo, por si só, transferência de propriedade
             imobiliária registrada.
         </p>
         <p>
-            <strong>Parágrafo terceiro.</strong> O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara conhecer a localização, dimensões, limites
+            <strong>Parágrafo terceiro.</strong> {% gender second_party_gender "O COMPRADOR/CESSIONÁRIO|A COMPRADORA/CESSIONÁRIA" %} declara conhecer a localização, dimensões, limites
             físicos e estado atual do imóvel, aceitando-o nas condições em que se encontra.
         </p>
     </div>
@@ -106,11 +106,11 @@
     <div class="clause">
         <h2 class="clause-title">CLÁUSULA SEGUNDA - DA ORIGEM E LEGITIMIDADE DA POSSE</h2>
         <p>
-            O(A) VENDEDOR(A)/CEDENTE declara, sob sua responsabilidade, que exerce a posse do imóvel e possui
+            {% gender first_party_gender "O VENDEDOR/CEDENTE|A VENDEDORA/CEDENTE" %} declara, sob sua responsabilidade, que exerce a posse do imóvel e possui
             legitimidade para ceder os direitos possessórios objeto deste contrato. Declara, ainda, que, até a
             presente data e ressalvadas as informações expressamente consignadas neste instrumento, não realizou
             anteriormente venda, cessão, promessa de venda, promessa de cessão ou qualquer outro negócio
-            incompatível com os direitos ora transmitidos ao(à) COMPRADOR(A)/CESSIONÁRIO.
+            incompatível com os direitos ora transmitidos {% gender second_party_gender "ao COMPRADOR/CESSIONÁRIO|à COMPRADORA/CESSIONÁRIA" %}.
         </p>
     </div>
     {% endif %}
@@ -119,8 +119,8 @@
     <div class="clause">
         <h2 class="clause-title">CLÁUSULA TERCEIRA - DO PREÇO E DA FORMA DE PAGAMENTO</h2>
         <p>
-            Pela presente compra e venda e cessão definitiva dos direitos possessórios, o(a)
-            COMPRADOR(A)/CESSIONÁRIO(A) pagará ao(à) VENDEDOR(A)/CEDENTE o valor de
+            Pela presente compra e venda e cessão definitiva dos direitos possessórios,
+            {% gender second_party_gender "o COMPRADOR/CESSIONÁRIO|a COMPRADORA/CESSIONÁRIA" %} pagará {% gender first_party_gender "ao VENDEDOR/CEDENTE|à VENDEDORA/CEDENTE" %} o valor de
             R$ {{ fields.price|fill:20 }} ({{ fields.price_in_words|fill:60 }}){% if fields.include_clause_3_delivery %}, acrescido da entrega de {{ fields.price_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.price_delivery_value|fill:20 }}{% endif %}{% if fields.include_clause_3_full_payment %}, como pagamento integral efetuado no ato da celebração deste contrato{% endif %}.
         </p>
         {% if fields.include_clause_3_1 %}
@@ -134,8 +134,7 @@
             do adimplemento.
         </p>
         <p>
-            <strong>Parágrafo único.</strong> Após o recebimento integral do preço, o(a) VENDEDOR(A)/CEDENTE dará ao(à)
-            COMPRADOR(A)/CESSIONÁRIO(A), plena, geral, rasa, irrevogável e irretratável quitação do valor
+            <strong>Parágrafo único.</strong> Após o recebimento integral do preço, {% gender first_party_gender "o VENDEDOR/CEDENTE|a VENDEDORA/CEDENTE" %} dará {% gender second_party_gender "ao COMPRADOR/CESSIONÁRIO|à COMPRADORA/CESSIONÁRIA" %}, plena, geral, rasa, irrevogável e irretratável quitação do valor
             contratado, nada mais podendo reclamar a esse título.
         </p>
     </div>
@@ -145,9 +144,9 @@
     <div class="clause">
         <h2 class="clause-title">CLÁUSULA QUARTA - DA TRANSFERÊNCIA DA POSSE</h2>
         <p>
-            Com a assinatura deste instrumento e o pagamento integral do preço, o(a) VENDEDOR(A)/CEDENTE transfere
-            ao(à) COMPRADOR(A)/CESSIONÁRIO(A) a posse e os direitos possessórios que exerce sobre o imóvel descrito
-            na Cláusula Primeira. A partir da imissão na posse, o(a) COMPRADOR(A)/CESSIONÁRIO(A) poderá usar, ocupar,
+            Com a assinatura deste instrumento e o pagamento integral do preço, {% gender first_party_gender "o VENDEDOR/CEDENTE|a VENDEDORA/CEDENTE" %} transfere
+            {% gender second_party_gender "ao COMPRADOR/CESSIONÁRIO|à COMPRADORA/CESSIONÁRIA" %} a posse e os direitos possessórios que exerce sobre o imóvel descrito
+            na Cláusula Primeira. A partir da imissão na posse, {% gender second_party_gender "o COMPRADOR/CESSIONÁRIO|a COMPRADORA/CESSIONÁRIA" %} poderá usar, ocupar,
             conservar e realizar benfeitorias no imóvel, observadas as limitações legais e administrativas
             aplicáveis.
         </p>
@@ -167,12 +166,12 @@
 
     {% if fields.include_clause_6 %}
     <div class="clause">
-        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESPONSABILIDADE DO(A) VENDEDOR(A)/CEDENTE</h2>
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESPONSABILIDADE {% gender first_party_gender "DO VENDEDOR/CEDENTE|DA VENDEDORA/CEDENTE" %}</h2>
         <p>
-            O(A) VENDEDOR(A)/CEDENTE responsabiliza-se pela legitimidade dos direitos possessórios que declara
-            possuir e ceder. Caso seja comprovada a existência de alienação ou cessão anterior realizada pelo(a)
-            próprio(a) VENDEDOR(A)/CEDENTE sobre o mesmo objeto e incompatível com os direitos transmitidos neste
-            contrato, ficam preservados ao(à) COMPRADOR(A)/CESSIONÁRIO(A) os direitos de exigir a restituição das
+            {% gender first_party_gender "O VENDEDOR/CEDENTE|A VENDEDORA/CEDENTE" %} responsabiliza-se pela legitimidade dos direitos possessórios que declara
+            possuir e ceder. Caso seja comprovada a existência de alienação ou cessão anterior realizada
+            {% gender first_party_gender "pelo próprio VENDEDOR/CEDENTE|pela própria VENDEDORA/CEDENTE" %} sobre o mesmo objeto e incompatível com os direitos transmitidos neste
+            contrato, ficam preservados {% gender second_party_gender "ao COMPRADOR/CESSIONÁRIO|à COMPRADORA/CESSIONÁRIA" %} os direitos de exigir a restituição das
             quantias pagas, perdas e danos e demais medidas cabíveis na forma da legislação aplicável.
         </p>
     </div>
@@ -182,7 +181,7 @@
     <div class="clause">
         <h2 class="clause-title">CLÁUSULA SÉTIMA - DA SITUAÇÃO REGISTRAL E DA REGULARIZAÇÃO</h2>
         <p>
-            O(A) COMPRADOR(A)/CESSIONÁRIO(A) declara estar plenamente informado de que a presente contratação
+            {% gender second_party_gender "O COMPRADOR/CESSIONÁRIO|A COMPRADORA/CESSIONÁRIA" %} declara estar plenamente informado de que a presente contratação
             envolve direitos possessórios, diante da inexistência de matrícula individualizada e título de
             propriedade registrado apresentado para o imóvel. O presente instrumento não substitui eventual escritura
             pública, registro imobiliário, procedimento de regularização fundiária, usucapião ou outro título
@@ -197,9 +196,9 @@
         <h2 class="clause-title">CLÁUSULA OITAVA - DOS TRIBUTOS, TAXAS E ENCARGOS</h2>
         <p>
             Tributos, taxas e demais encargos incidentes sobre o imóvel e relativos a período anterior à entrega da
-            posse serão de responsabilidade do(a) VENDEDOR(A)/CEDENTE quando decorrentes de obrigação a ela
-            imputável. Os encargos incidentes após a transferência da posse serão de responsabilidade do(a)
-            COMPRADOR(A)/CESSIONÁRIO(A), ressalvadas as obrigações que, por lei, sejam atribuídas de forma diversa.
+            posse serão de responsabilidade {% gender first_party_gender "do VENDEDOR/CEDENTE|da VENDEDORA/CEDENTE" %} quando decorrentes de obrigação a ela
+            imputável. Os encargos incidentes após a transferência da posse serão de responsabilidade
+            {% gender second_party_gender "do COMPRADOR/CESSIONÁRIO|da COMPRADORA/CESSIONÁRIA" %}, ressalvadas as obrigações que, por lei, sejam atribuídas de forma diversa.
         </p>
     </div>
     {% endif %}
@@ -232,7 +231,7 @@
         <h2 class="clause-title">CLÁUSULA DÉCIMA PRIMEIRA - DAS BENFEITORIAS</h2>
         <p>
             Após a efetiva transferência da posse, as construções, cercas, instalações, melhorias e demais
-            benfeitorias realizadas pelo(a) COMPRADOR(A)/CESSIONÁRIO(A) correrão por sua conta e responsabilidade,
+            benfeitorias realizadas {% gender second_party_gender "pelo COMPRADOR/CESSIONÁRIO|pela COMPRADORA/CESSIONÁRIA" %} correrão por sua conta e responsabilidade,
             observadas as exigências urbanísticas, ambientais e administrativas eventualmente aplicáveis.
         </p>
     </div>
@@ -273,7 +272,7 @@
         <div class="signature-columns">
             {% if fields.include_signature_seller %}
             <div class="signature">
-                <p>VENDEDOR(A)/CEDENTE:<br><br>
+                <p>{% gender first_party_gender "VENDEDOR/CEDENTE|VENDEDORA/CEDENTE" %}:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>
@@ -282,7 +281,7 @@
 
             {% if fields.include_signature_seller_spouse %}
             <div class="signature">
-                <p>CÔNJUGE DO(A) VENDEDOR(A)/CEDENTE:<br><br>
+                <p>CÔNJUGE {% gender first_party_gender "DO VENDEDOR/CEDENTE|DA VENDEDORA/CEDENTE" %}:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>
@@ -293,7 +292,7 @@
         <div class="signature-columns">
             {% if fields.include_signature_buyer %}
             <div class="signature">
-                <p>COMPRADOR(A)/CESSIONÁRIO(A):<br><br>
+                <p>{% gender second_party_gender "COMPRADOR/CESSIONÁRIO|COMPRADORA/CESSIONÁRIA" %}:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>

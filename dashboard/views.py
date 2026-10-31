@@ -26,10 +26,15 @@ class ContractPdfView(TemplateView):
             key: value.strip()
             for key, value in request.POST.items()
         }
+        context = {
+            'fields': fields,
+            'first_party_gender': self._normalize_gender(fields.get('first_party_gender')),
+            'second_party_gender': self._normalize_gender(fields.get('second_party_gender')),
+        }
 
         html_string = render_to_string(
             self.pdf_template_name,
-            {'fields': fields},
+            context,
             request=request,
         )
         pdf_bytes = HTML(
@@ -45,6 +50,12 @@ class ContractPdfView(TemplateView):
         response = HttpResponse(pdf_bytes, content_type='application/pdf')
         response['Content-Disposition'] = f'attachment; filename="{filename}"'
         return response
+
+    @staticmethod
+    def _normalize_gender(value):
+        if (value or '').strip().lower() == 'feminine':
+            return 'feminine'
+        return 'masculine'
 
     def _pdf_filename(self):
         timestamp = timezone.localtime().strftime('%Y%m%d_%H%M')

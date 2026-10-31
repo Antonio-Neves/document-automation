@@ -2,9 +2,8 @@
 
 This chapter describes how document pages work end to end. The whole pipeline —
 one class-based view, one page template, one PDF template, one route — is common
-to every document type, and the vehicle purchase and sale contract ("Contrato
-Particular de Compra e Venda de Veículo Automotor") is the simplest reference
-for it. A document type may add its own variations on top of the common pattern:
+to every document type, and the simplest document type is the reference for it.
+A document type may add its own variations on top of the common pattern:
 alternative sections, optional sub-blocks, and extra signature rows. The
 authoritative list of types is the index in
 [README.md](README.md#implemented-document-types); this chapter documents the
@@ -40,19 +39,21 @@ form is plain HTML inside the template.
 Every document type uses **two sibling templates**:
 
 1. **Page template** (`contract_sale_vehicle_complete.html`) — what the user sees.
-   It renders the contract layout with real form controls:
+   It renders the document layout with real form controls:
    - `<input type="text" name="...">` for single-line fields,
    - `<textarea name="..." rows="2">` for long free-text fields,
    - `<input type="checkbox" class="clause-check|signature-check">` bound to a
      `{% if fields.include_... %}` block in the PDF template. A checked box
      (the default for clauses and signatures) keeps the block — *opt-out*; an
      unchecked box omits it — *opt-in*, used for optional sub-blocks.
-   Field `name` attributes are in English and are the contract between the form
-   and the PDF template (e.g. `seller_name`, `vehicle_plate`, `price`).
-   The page also fills `{% block header_actions %}` in the shared content
-   header (`base/_base_index.html`) with the **Gerar PDF** submit button; the
-   button references the form via `form="contract-form"` because the header sits
-   outside the form.
+   Field `name` attributes are in English and are the interface between the
+   form and the PDF template (e.g. `seller_name`, `vehicle_plate`, `price`).
+   The shared content header (`base/_base_index.html`) already renders the
+   action controls: the gender toggles and the **Gerar PDF** submit button.
+   Page templates therefore do not define `header_actions`; the dashboard
+   overrides the block with an empty one to hide the controls. The submit
+   button and the radio inputs reference the form via `form="contract-form"`
+   because the header sits outside the form.
 
 2. **PDF template** (`contract_sale_vehicle_complete_pdf.html`) — pure print HTML, no
    form controls. It receives `fields` (a dict of POST values) and fills them
@@ -77,9 +78,16 @@ def post(self, request, *args, **kwargs):
     from weasyprint import HTML
 
     fields = {key: value.strip() for key, value in request.POST.items()}
+    context = {
+        'fields': fields,
+        'first_party_gender': self._normalize_gender(
+            fields.get('first_party_gender')),
+        'second_party_gender': self._normalize_gender(
+            fields.get('second_party_gender')),
+    }
 
     html_string = render_to_string(
-        self.pdf_template_name, {'fields': fields}, request=request)
+        self.pdf_template_name, context, request=request)
 
     pdf_bytes = HTML(
         string=html_string,
@@ -99,11 +107,71 @@ def post(self, request, *args, **kwargs):
 Notes:
 
 - The import of `weasyprint` is inside the method (lazy import).
+- `_normalize_gender()` returns `feminine` only when that exact value is sent;
+  anything else (including a missing value) falls back to `masculine`.
 - `base_url` is the absolute root URL so WeasyPrint can resolve relative
   resources (e.g. fonts/images) during rendering.
 - The PDF is both **downloaded** (attachment response) and **saved** to
   `contract_files/created_contracts/`. This is the only allowed persistence.
 - No data from the form is ever stored in a database or in a session.
+
+## Gender selection in document PDFs
+
+Document PDFs can vary party-related text by grammatical gender. This is a
+shared capability, not a per-document implementation: all current and future
+document types share the same controls, tag, and fallback rules. Each PDF
+template opts into the tag for the party-related text that needs it.
+
+- The shared header (`base/_base_index.html`) renders two radio groups from
+  `base/_contract_header_actions.html`:
+  - **1º Interveniente** → `first_party_gender`
+  - **2º Interveniente** → `second_party_gender`
+- Each group accepts `masculine` or `feminine`; `masculine` is checked by
+  default.
+- The dashboard hides the controls by overriding the block:
+  `{% block header_actions %}{% endblock %}`. Any future page that is not a
+  document form can do the same.
+- The radio inputs use `form="contract-form"` so they submit with the form even
+  though the header is outside it.
+- `ContractPdfView.post()` normalizes both values and passes
+  `first_party_gender` and `second_party_gender` to the PDF template.
+
+PDF templates use the `gender` tag from `contract_filters.py`:
+
+```django
+{% gender first_party_gender "do VENDEDOR|da VENDEDORA" %}
+{% gender second_party_gender "ao COMPRADOR|à COMPRADORA" %}
+```
+
+Rules:
+
+- The pair is always `masculino|feminino`; the left side is used for
+  masculine, the right side for feminine.
+- Write the whole phrase inside the pair, including articles and prepositions
+  (e.g. `do VENDEDOR|da VENDEDORA`, not `do|da`).
+- Do not put spaces around `|`.
+- Preserve the original capitalization of each occurrence.
+- A pair without `|` is returned unchanged; an empty feminine side, a missing
+  gender, or an invalid gender falls back to the masculine side.
+- There is no grammar inference: the feminine text must be written explicitly.
+  This is what keeps the result predictable across hundreds of documents.
+- Text about the spouse stays neutral (`inscrito(a)`, `portador(a)`,
+  `residente e domiciliado(a)`), because the spouse's gender is independent of
+  the first party's gender.
+- Text about objects stays neutral (e.g. `o(a) {{ vehicle_type }}`,
+  `avaliado(a)`, `recebido(a)`).
+
+When the source text comes from a `.docx`/`.txt` reference, use the conversion
+markers:
+
+- `{masculino|feminino}` → `first_party_gender`
+- `[masculino|feminino]` → `second_party_gender`
+
+The markers are not Django syntax; they are only a convention for converting
+the reference text into the `{% gender ... %}` calls in the PDF template.
+
+Per-document work is limited to the pairs in that document's `*_pdf.html`.
+The controls, the tag, the normalization, and the CSS live in one shared place.
 
 ## PDF file naming
 
@@ -135,7 +203,9 @@ def fill(value, width=20):
 
 Used everywhere in the PDF template as `{{ fields.<name>|fill:<width> }}`.
 An empty field renders as a run of underscores (the "print-empty" style) so the
-client can fill the printed contract by hand; a filled field renders its value.
+client can fill the printed document by hand; a filled field renders its value.
+The same module also defines the `gender` tag used by document PDFs (see
+[Gender selection in document PDFs](#gender-selection-in-document-pdfs)).
 
 ## Optional sections and checkboxes
 
@@ -176,6 +246,7 @@ All form fields are snake_case English names, grouped by entity:
 | `known_*` | Disclosed debts/defects | `known_debts`, `known_defects` |
 | `forum_*` | Jurisdiction clause | `forum_city`, `forum_state` |
 | `include_*` | Checkboxes for optional blocks | `include_clause_1`, `include_clause_1_land_complement`, `include_clause_3_delivery`, `include_signature_seller_spouse` |
+| `first_party_gender` / `second_party_gender` | Shared header gender selection, not document data | `masculine`, `feminine` |
 
 > Note: the vehicle `delivery_*` prefix (handover of the vehicle) is distinct
 > from the `*_delivery_*` fields inside a price/payment prefix

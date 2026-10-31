@@ -19,6 +19,9 @@ codebase. All documentation is written in English (US), as required by
   filled from an in-memory form and rendered with WeasyPrint.
 - Every document type uses two sibling templates (a page form and a standalone
   PDF template) and one class-based view.
+- Document PDFs support optional gender selection for party-related text via
+  shared header controls and explicit `masculino|feminino` pairs. Spouse and
+  object terms stay neutral.
 - The document types implemented so far are listed in the single index below;
   new types are added following
   [06-adding-a-new-document-type.md](06-adding-a-new-document-type.md).

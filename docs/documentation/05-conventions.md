@@ -71,10 +71,13 @@ exist (e.g. "pagamento", not "payment"), keep established borrowings
 
 - New CSS goes in a new scoped section at the end of `my_styles.css`
   (pattern: `.contract`, `.contract-pdf`).
-- Contract page conventions (ids `#clause-N`, `#signature-seller`,
+- Document page conventions (ids `#clause-N`, `#signature-seller`,
   `#signature-seller-spouse`, etc., `ch`-based input widths) are described in
   [03-dashboard-and-contract-flow.md](03-dashboard-and-contract-flow.md).
-- Contract content: Arial only, left-aligned, no law citations, no fixed
+- Gender-aware PDF text uses the shared `{% gender ... %}` tag with explicit
+  `masculino|feminino` pairs. Never infer grammar automatically. Spouse and
+  object terms stay neutral unless explicitly marked.
+- Document content: Arial only, left-aligned, no law citations, no fixed
   percentages, dates DD/MM/YYYY, currency R$.
 - PDF templates must wrap the signature area (place date plus every signature
   row) in `<div class="signatures">`, so pagination never splits it across

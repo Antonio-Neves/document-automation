@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Gender selection for document PDFs: shared **1º Interveniente** and
+  **2º Interveniente** controls, with masculine/feminine options and a
+  masculine default.
+- Shared `{% gender %}` template tag with explicit `masculino|feminino` pairs,
+  deterministic fallback to masculine, and no grammar inference.
+- Tests for the gender tag and gender normalization.
+- Initial gender-aware conversion of a document PDF template; the remaining
+  templates are tracked in the roadmap.
+
+### Changed
+
+- Document action controls now come from the shared base header by default;
+  pages opt out with `header_actions` instead of repeating the include.
+- Increased the spacing between the gender controls and the **Gerar PDF**
+  button.
+- Generalized the documentation to describe gender selection as a
+  document-level capability, not a per-contract implementation.
+
 ## [1.0.0] - 2026-10-15
 
 ### Added

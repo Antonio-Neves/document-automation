@@ -12,3 +12,19 @@ def fill(value, width=20):
     if value:
         return value
     return '_' * width
+
+
+@register.simple_tag
+def gender(value, pair):
+    """Return the masculine or feminine side of a 'masculine|feminine' pair."""
+
+    masculine, separator, feminine = pair.partition('|')
+    if not separator:
+        return pair
+
+    masculine = masculine.strip()
+    feminine = feminine.strip()
+    if not feminine:
+        return masculine
+
+    return feminine if (value or '').strip().lower() == 'feminine' else masculine

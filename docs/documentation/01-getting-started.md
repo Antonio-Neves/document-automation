@@ -78,7 +78,8 @@ directly.
 ## Quick smoke test
 
 1. Run the server and open `/contract-sale-vehicle-complete/`.
-2. Fill in a few fields, leave the checkboxes checked.
+2. Fill in a few fields, choose the gender options, and leave the checkboxes
+   checked.
 3. Click **Gerar PDF**.
 4. A PDF is downloaded and a copy is saved under
    `contract_files/created_contracts/`.
