@@ -1,10 +1,10 @@
-﻿CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL
+﻿INSTRUMENTO PARTICULAR DE COMPRA E VENDA DE IMÓVEL
 Pelo presente instrumento particular, de um lado, como {VENDEDOR|VENDEDORA}:
 NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: _____________________________, sob o regime de: ________________________,  profissão: ______________________________,  {inscrito|inscrita} no CPF sob o nº: ________________________, {portador|portadora} do RG nº: ____________________, residente e {domiciliado|domiciliada} em ______________________________________________________________________________ município: ____________________, estado: ____________________.
-CÔNJUGE ANUENTE {DO VENDEDOR|DA VENDEDORA}:
+CÔNJUGE {DO VENDEDOR|DA VENDEDORA}:
 NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: _____________________________,  profissão: ___________________, inscrito(a) no CPF sob o nº: ________________________, portador(a) do RG nº: ____________________, residente e domiciliado(a) em   ______________________________________________________________________________ município: ____________________, estado: ____________________.
 E, de outro lado, como [COMPRADOR|COMPRADORA]:
-NOME COMPLETO: _____________________________________________________________, Nacionalidade: __________________________, Estado Civil: __________________________, Profissão: ___________________, [inscrito|inscrita] no CPF sob o nº: ______________________, [portador|portadora] do RG nº: ____________________, residente e [domiciliado|domiciliada] em   ______________________________________________________________________________ município: ____________________, estado: ____________________.
+NOME COMPLETO: _____________________________________________________________, nacionalidade: __________________________, estado civil: __________________________, profissão: ___________________, [inscrito|inscrita] no CPF sob o nº: ______________________, [portador|portadora] do RG nº: ____________________, residente e [domiciliado|domiciliada] em   ______________________________________________________________________________ município: ____________________, estado: ____________________.
 Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
 CLÁUSULA PRIMEIRA – DO OBJETO E DA IDENTIFICAÇÃO DO IMÓVEL
 Imóvel constituído por, quantidade: _______ (__________) tipo: _________________, identificado como ___________ nº ________, da Quadra nº ________, integrante do Loteamento/Desmembramento denominado __________________________________________, situado em  __________________________________________________________________, nº ________, Complemento: _________________________ Bairro/Setor ______________________________, Município: __________________________________, Estado: ____________________________, CEP ________, com as seguintes características: ______________________________________________________________________________, frente medindo ______ metros, confrontando com _____________________________________, fundos medindo ______ metros, confrontando com ____________________________________, lado direito medindo ______ metros, confrontando com _________________________________, lado esquerdo medindo ______ metros, confrontando com ______________________________,  Matrícula nº: ______________________________, registrada perante o Cartório de Registro de Imóveis de ________________________________ Estado: _________________________, Registro do título de propriedade: ______________________________, constante da matrícula acima indicada, inscrição imobiliária/cadastro municipal nº  ______________________________, perante o Município de __________________________________________, registro do loteamento/desmembramento nº ______________________________, perante o Cartório de Registro de Imóveis de __________________________________________, quando aplicável.
@@ -43,10 +43,10 @@ CLÁUSULA DÉCIMA TERCEIRA - DO FORO
 Fica eleito o Foro da Comarca de ___________________, Estado ___________________, para dirimir quaisquer controvérsias decorrentes deste instrumento, ressalvadas as hipóteses em que a legislação estabelecer competência inderrogável diversa.
 E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, juntamente com 2 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
 
-___________________ - ________________, ____ de __________________________ de 2026.
+___________________ - ________________, ____ de ______________________ de _______.
 
 
-{VENDEDOR|VENDEDORA}				CÔNJUGE ANUENTE {DO VENDEDOR|DA VENDEDORA}
+{VENDEDOR|VENDEDORA}				CÔNJUGE {DO VENDEDOR|DA VENDEDORA}
 ___________________________________		___________________________________
 Nome: ______________________________		Nome: ______________________________
 CPF: _______________________________		CPF: _______________________________
