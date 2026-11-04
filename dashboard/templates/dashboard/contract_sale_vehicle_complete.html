@@ -12,59 +12,65 @@
     <p>
         Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
         NOME COMPLETO: <input type="text" name="seller_name" style="width: 52ch">,<br>
-        Nacionalidade: <input type="text" name="seller_nationality" style="width: 20ch">, Estado Civil: <input type="text" name="seller_marital_status" style="width: 20ch">,<br>
-        Profissão: <input type="text" name="seller_profession" style="width: 20ch">, com o CPF nº <input type="text" name="seller_cpf" style="width: 20ch">,<br>
-        portador(a) do RG nº <input type="text" name="seller_rg" style="width: 20ch">, residente e domiciliado(a) na<br>
-        <input type="text" name="seller_address" style="width: 70ch"><br>
-        Município: <input type="text" name="seller_city" style="width: 20ch">, Estado: <input type="text" name="seller_state" style="width: 20ch">;
+        nacionalidade: <input type="text" name="seller_nationality" style="width: 20ch">, estado civil: <input type="text" name="seller_marital_status" style="width: 20ch">,<br>
+        profissão: <input type="text" name="seller_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="seller_cpf" style="width: 20ch">,<br>
+        portador(a) do RG nº <input type="text" name="seller_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="seller_address" style="width: 70ch"> município: <input type="text" name="seller_city" style="width: 20ch">, estado: <input type="text" name="seller_state" style="width: 20ch">.
     </p>
 
     <p>
         E, de outro lado, como COMPRADOR(A):<br>
         NOME COMPLETO: <input type="text" name="buyer_name" style="width: 52ch">,<br>
-        Nacionalidade: <input type="text" name="buyer_nationality" style="width: 20ch">, Estado civil: <input type="text" name="buyer_marital_status" style="width: 20ch">,<br>
-        Profissão: <input type="text" name="buyer_profession" style="width: 20ch">, com o CPF nº <input type="text" name="buyer_cpf" style="width: 20ch">,<br>
-        portador(a) do RG nº <input type="text" name="buyer_rg" style="width: 20ch">, residente e domiciliado(a) na<br>
-        <input type="text" name="buyer_address" style="width: 70ch"><br>
-        Município: <input type="text" name="buyer_city" style="width: 20ch">, Estado: <input type="text" name="buyer_state" style="width: 20ch">;
+        nacionalidade: <input type="text" name="buyer_nationality" style="width: 20ch">, estado civil: <input type="text" name="buyer_marital_status" style="width: 20ch">,<br>
+        profissão: <input type="text" name="buyer_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="buyer_cpf" style="width: 20ch">,<br>
+        portador(a) do RG nº <input type="text" name="buyer_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="buyer_address" style="width: 70ch"> município: <input type="text" name="buyer_city" style="width: 20ch">, estado: <input type="text" name="buyer_state" style="width: 20ch">.
     </p>
 
     <p>
         Têm entre si, de maneira justa e contratada, o presente CONTRATO PARTICULAR DE<br>
-        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regerá pelas cláusulas e condições seguintes.<br>
+        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regerá pelas cláusulas seguintes.<br>
     </p>
 
     <div class="clause" id="clause-1">
         <input type="checkbox" name="include_clause_1" value="1" class="clause-check" checked>
-        <h2 class="clause-title">1. DO VEÍCULO</h2>
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO VEÍCULO</h2>
         <p>
-            Este contrato tem como objeto, o(a)<br>
-            Tipo: <input type="text" name="vehicle_type" style="width: 15ch">, Marca: <input type="text" name="vehicle_brand" style="width: 16ch">, Modelo: <input type="text" name="vehicle_model" style="width: 17ch">,<br>
-            Ano de Fabricação: <input type="text" name="vehicle_manufacture_year" style="width: 8ch">, Cor: <input type="text" name="vehicle_color" style="width: 16ch">, Placa: <input type="text" name="vehicle_plate" style="width: 19ch">,<br>
-            Combustível: <input type="text" name="vehicle_fuel" style="width: 20ch">, RENAVAM: <input type="text" name="vehicle_renavam" style="width: 27ch">,<br>
-            Chassi: <input type="text" name="vehicle_chassis" style="width: 63ch">,<br>
-            Quilometragem no momento da venda: <input type="text" name="vehicle_mileage" style="width: 18ch"> km, de propriedade do(a) VENDEDOR(A).
+            Este contrato tem como objeto, de propriedade do(a) VENDEDOR(A) o veículo,<br>
+            Tipo: <input type="text" name="vehicle_type" style="width: 15ch">, marca: <input type="text" name="vehicle_brand" style="width: 16ch">, modelo: <input type="text" name="vehicle_model" style="width: 17ch">,<br>
+            ano de fabricação: <input type="text" name="vehicle_manufacture_year" style="width: 8ch">, cor: <input type="text" name="vehicle_color" style="width: 16ch">, placa: <input type="text" name="vehicle_plate" style="width: 19ch">,<br>
+            combustível: <input type="text" name="vehicle_fuel" style="width: 20ch">, RENAVAM: <input type="text" name="vehicle_renavam" style="width: 27ch">,<br>
+            chassi: <input type="text" name="vehicle_chassis" style="width: 63ch">,<br>
+            quilometragem indicada no momento da venda: <input type="text" name="vehicle_mileage" style="width: 18ch"> km.
         </p>
     </div>
 
     <div class="clause" id="clause-2">
         <input type="checkbox" name="include_clause_2" value="1" class="clause-check" checked>
-        <h2 class="clause-title">2. DO PREÇO E PAGAMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DO PREÇO E PAGAMENTO</h2>
         <p>
-            O preço certo e ajustado da venda é de R$ <input type="text" name="price" style="width: 30ch"><br>
-            (<input type="text" name="price_in_words" style="width: 68ch">).<br>
-            O pagamento será realizado da seguinte forma: <input type="text" name="payment_terms" style="width: 31ch">.<br>
-            O(A) VENDEDOR(A) somente dará quitação integral após a efetiva compensação de<br>
-            todos os valores ajustados.
+            Pela presente compra e venda, o(a) COMPRADOR(A) pagará ao(à) VENDEDOR(A) o preço certo e ajustado de
+            R$ <input type="text" name="price" style="width: 30ch"> (<input type="text" name="price_in_words" style="width: 68ch">),
+            acrescido da entrega de <input type="text" name="price_delivery_item" style="width: 40ch">, avaliado(a) em
+            R$ <input type="text" name="price_delivery_value" style="width: 20ch">, como pagamento integral efetuado no ato da celebração deste contrato.
+        </p>
+        <p>
+            O pagamento será realizado de forma parcelada, a título de entrada/sinal,
+            R$ <input type="text" name="down_payment" style="width: 14ch">,
+            mais a entrega de pela entrega de <input type="text" name="payment_delivery_item" style="width: 40ch">, avaliado(a) em
+            R$ <input type="text" name="payment_delivery_value" style="width: 16ch">, recebido(a) como parte do pagamento,
+            e o saldo remanescente de R$ <input type="text" name="balance" style="width: 16ch">, será pago em <input type="text" name="installments_count" style="width: 8ch"> parcelas de
+            R$ <input type="text" name="installment_value" style="width: 16ch">, vencendo a primeira em <input type="text" name="first_due_date" style="width: 16ch">, e as demais no mesmo dia
+            dos meses subsequentes.
         </p>
     </div>
 
     <div class="clause" id="clause-3">
         <input type="checkbox" name="include_clause_3" value="1" class="clause-check" checked>
-        <h2 class="clause-title">3. DA ENTREGA DO VEÍCULO</h2>
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DA ENTREGA DO VEÍCULO</h2>
         <p>
             O veículo será entregue ao(à) COMPRADOR(A) em <input type="text" name="delivery_day" style="width: 4ch">/<input type="text" name="delivery_month" style="width: 4ch">/<input type="text" name="delivery_year" style="width: 8ch">,
-            às: <input type="text" name="delivery_time" style="width: 6ch"> horas, em <input type="text" name="delivery_place" style="width: 19ch">/<input type="text" name="delivery_place_uf" style="width: 6ch">.<br>
+            às: <input type="text" name="delivery_time" style="width: 6ch"> horas, em <input type="text" name="delivery_place" style="width: 19ch">/<input type="text" name="delivery_place_uf" style="width: 6ch">,<br>
             Na entrega serão disponibilizados os documentos e acessórios existentes e expressamente combinados.
             A partir da efetiva entrega e quitação, o(a) COMPRADOR(A) assume a responsabilidade integral pelo veículo e suas consequências, ressalvadas as obrigações anteriores.
         </p>
@@ -72,7 +78,7 @@
 
     <div class="clause" id="clause-4">
         <input type="checkbox" name="include_clause_4" value="1" class="clause-check" checked>
-        <h2 class="clause-title">4. DOS DÉBITOS, MULTAS E RESTRIÇÕES</h2>
+        <h2 class="clause-title">CLÁUSULA QUARTA - DOS DÉBITOS, MULTAS E RESTRIÇÕES</h2>
         <p>
             O(A) VENDEDOR(A) declara que informará qualquer gravame, bloqueio judicial,
             administrativo ou financeiro, incidente sobre o veículo e responde por débitos,
@@ -88,7 +94,7 @@
 
     <div class="clause" id="clause-5">
         <input type="checkbox" name="include_clause_5" value="1" class="clause-check" checked>
-        <h2 class="clause-title">5. DO ESTADO DO VEÍCULO E DA VISTORIA</h2>
+        <h2 class="clause-title">CLÁUSULA QUINTA - DO ESTADO DO VEÍCULO E DA VISTORIA</h2>
         <p>
             O(A) COMPRADOR(A) declara que examinou o veículo e tomou conhecimento de seu
             estado de conservação e funcionamento.
@@ -108,7 +114,7 @@
 
     <div class="clause" id="clause-6">
         <input type="checkbox" name="include_clause_6" value="1" class="clause-check" checked>
-        <h2 class="clause-title">6. DA DOCUMENTAÇÃO E DA TRANSFERÊNCIA</h2>
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA DOCUMENTAÇÃO E DA TRANSFERÊNCIA</h2>
         <p>
             As partes se obrigam a fornecer e assinar os documentos necessários à transferência
             de propriedade, conforme o documento e procedimento aplicáveis ao veículo.
@@ -128,7 +134,7 @@
 
     <div class="clause" id="clause-7">
         <input type="checkbox" name="include_clause_7" value="1" class="clause-check" checked>
-        <h2 class="clause-title">7. DO INADIMPLEMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA SÉTIMA - DO INADIMPLEMENTO</h2>
         <p>
             O descumprimento de qualquer obrigação assumida neste contrato autoriza a parte<br>
             prejudicada a exigir o cumprimento da obrigação, a rescisão do contrato e, quando<br>
@@ -139,7 +145,7 @@
 
     <div class="clause" id="clause-8">
         <input type="checkbox" name="include_clause_8" value="1" class="clause-check" checked>
-        <h2 class="clause-title">8. DA PROPRIEDADE E ORIGEM</h2>
+        <h2 class="clause-title">CLÁUSULA OITAVA - DA PROPRIEDADE E ORIGEM</h2>
         <p>
             O(A) VENDEDOR(A) declara ser legítimo(a) proprietário(a) do veículo, possuir plenos poderes para vendê-lo
             e que o bem está livre de impedimentos legais, responsabilizando-se por eventuais restrições ou
@@ -149,9 +155,9 @@
 
     <div class="clause" id="clause-9">
         <input type="checkbox" name="include_clause_9" value="1" class="clause-check" checked>
-        <h2 class="clause-title">9. DO FORO</h2>
+        <h2 class="clause-title">CLÁUSULA NONA - DO FORO</h2>
         <p>
-            Fica eleito o foro da Comarca de <input type="text" name="forum_city" style="width: 29ch">, no Estado do<br>
+            Fica eleito o foro da Comarca de <input type="text" name="forum_city" style="width: 29ch">, no estado<br>
             <input type="text" name="forum_state" style="width: 18ch">, para dirimir questões decorrentes deste contrato, ressalvadas<br>
             as hipóteses em que a legislação estabeleça foro diverso.
         </p>
@@ -159,7 +165,7 @@
 
     <div class="clause" id="clause-10">
         <input type="checkbox" name="include_clause_10" value="1" class="clause-check" checked>
-        <h2 class="clause-title">10. DISPOSIÇÕES FINAIS</h2>
+        <h2 class="clause-title">CLÁUSULA DÉCIMA - DISPOSIÇÕES FINAIS</h2>
         <p>
             As partes declaram que leram este contrato, compreenderam suas condições e o
             assinam de livre e espontânea vontade, em 2 (duas) vias de igual teor e forma.<br>
@@ -179,7 +185,9 @@
             <p>Nome: ____________________________</p>
             <p>CPF: ___________________</p>
         </div>
+    </div>
 
+    <div class="signature-columns">
         <div class="signature" id="signature-buyer">
             <input type="checkbox" name="include_signature_buyer" value="1" class="signature-check" checked>
             <p>COMPRADOR(A): _____________________</p>

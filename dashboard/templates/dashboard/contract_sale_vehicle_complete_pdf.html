@@ -3,7 +3,7 @@
 {% load contract_filters static %}
 <head>
 <meta charset="utf-8">
-<title>Contrato Compra e Venda de Veículo Automotor</title>
+<title>Contrato Particular de Compra e Venda de Veículo Automotor</title>
 <link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
 </head>
 <body class="contract-pdf">
@@ -11,79 +11,86 @@
     <h1 class="contract-title">CONTRATO PARTICULAR DE COMPRA E VENDA DE VEÍCULO AUTOMOTOR</h1>
 
     <p>
-        Pelo presente instrumento particular, de um lado, como VENDEDOR(A):<br>
+        Pelo presente instrumento particular, de um lado, como {% gender first_party_gender "VENDEDOR|VENDEDORA" %}:<br>
         {{ fields.seller_name|fill:52 }},
         {{ fields.seller_nationality|fill:20 }},
         {{ fields.seller_marital_status|fill:20 }},
         {{ fields.seller_profession|fill:20 }},
-        inscrito(a) no CPF sob o nº {{ fields.seller_cpf|fill:20 }},
-        portador(a) do RG nº {{ fields.seller_rg|fill:20 }},
-        residente e domiciliado(a) em {{ fields.seller_address|fill:70 }},
+        {% gender first_party_gender "inscrito|inscrita" %} no CPF sob o nº {{ fields.seller_cpf|fill:20 }},
+        {% gender first_party_gender "portador|portadora" %} do RG nº {{ fields.seller_rg|fill:20 }},
+        residente e {% gender first_party_gender "domiciliado|domiciliada" %} em {{ fields.seller_address|fill:70 }},
         {{ fields.seller_city|fill:20 }},
-        {{ fields.seller_state|fill:20 }};
+        {{ fields.seller_state|fill:20 }}.
     </p>
 
     <p>
-        E, de outro lado, como COMPRADOR(A):<br>
+        E, de outro lado, como {% gender second_party_gender "COMPRADOR|COMPRADORA" %}:<br>
         {{ fields.buyer_name|fill:52 }},
         {{ fields.buyer_nationality|fill:20 }},
         {{ fields.buyer_marital_status|fill:20 }},
         {{ fields.buyer_profession|fill:20 }},
-        inscrito(a) no CPF sob o nº {{ fields.buyer_cpf|fill:20 }},
-        portador(a) do RG nº {{ fields.buyer_rg|fill:20 }},
-        residente e domiciliado(a) em {{ fields.buyer_address|fill:70 }}
+        {% gender second_party_gender "inscrito|inscrita" %} no CPF sob o nº {{ fields.buyer_cpf|fill:20 }},
+        {% gender second_party_gender "portador|portadora" %} do RG nº {{ fields.buyer_rg|fill:20 }},
+        residente e {% gender second_party_gender "domiciliado|domiciliada" %} em {{ fields.buyer_address|fill:70 }}
         {{ fields.buyer_city|fill:20 }},
-        {{ fields.buyer_state|fill:20 }};
+        {{ fields.buyer_state|fill:20 }}.
     </p>
 
     <p>
         Têm entre si, de maneira justa e contratada, o presente CONTRATO PARTICULAR DE
-        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regerá pelas cláusulas e condições seguintes.
+        COMPRA E VENDA DE VEÍCULO AUTOMOTOR, que se regerá pelas cláusulas seguintes.
     </p>
 
     {% if fields.include_clause_1 %}
     <div class="clause">
-        <h2 class="clause-title">1. DO VEÍCULO</h2>
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO VEÍCULO</h2>
         <p>
-            Este contrato tem como objeto, o(a)
-            {{ fields.vehicle_type|fill:15 }},
-            {{ fields.vehicle_brand|fill:16 }},
-            {{ fields.vehicle_model|fill:17 }},
-            Ano de fabricação: {{ fields.vehicle_manufacture_year|fill:8 }},
-            {{ fields.vehicle_color|fill:16 }},
-            Placa: {{ fields.vehicle_plate|fill:19 }},
-            Combustível: {{ fields.vehicle_fuel|fill:20 }},
+            Este contrato tem como objeto, de propriedade {% gender first_party_gender "do VENDEDOR|da VENDEDORA" %} o veículo,
+            Tipo: {{ fields.vehicle_type|fill:15 }},
+            marca: {{ fields.vehicle_brand|fill:16 }},
+            modelo: {{ fields.vehicle_model|fill:17 }},
+            ano de fabricação: {{ fields.vehicle_manufacture_year|fill:8 }},
+            cor: {{ fields.vehicle_color|fill:16 }},
+            placa: {{ fields.vehicle_plate|fill:19 }},
+            combustível: {{ fields.vehicle_fuel|fill:20 }},
             RENAVAM: {{ fields.vehicle_renavam|fill:27 }},
-            Chassi: {{ fields.vehicle_chassis|fill:63 }},
-            Quilometragem no momento da venda: {{ fields.vehicle_mileage|fill:18 }} km,
-            de propriedade do(a) VENDEDOR(a).
+            chassi: {{ fields.vehicle_chassis|fill:63 }},
+            quilometragem indicada no momento da venda: {{ fields.vehicle_mileage|fill:18 }} km.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_2 %}
     <div class="clause">
-        <h2 class="clause-title">2. DO PREÇO E PAGAMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DO PREÇO E PAGAMENTO</h2>
         <p>
-            O preço certo e ajustado da venda é de R$ {{ fields.price|fill:30 }},
-            ({{ fields.price_in_words|fill:68 }}).
-            O pagamento será realizado da seguinte forma: {{ fields.payment_terms|fill:31 }}.
-            O(A) VENDEDOR(A) somente dará quitação integral após a efetiva compensação de
-            todos os valores ajustados.
+            Pela presente compra e venda, {% gender second_party_gender "o COMPRADOR|a COMPRADORA" %} pagará {% gender first_party_gender "ao VENDEDOR|à VENDEDORA" %} o preço certo e ajustado de
+            R$ {{ fields.price|fill:30 }} ({{ fields.price_in_words|fill:68 }}),
+            acrescido da entrega de {{ fields.price_delivery_item|fill:40 }}, avaliado(a) em
+            R$ {{ fields.price_delivery_value|fill:20 }}, como pagamento integral efetuado no ato da celebração deste contrato.
+        </p>
+        <p>
+            O pagamento será realizado de forma parcelada, a título de entrada/sinal,
+            R$ {{ fields.down_payment|fill:14 }},
+            mais a entrega de pela entrega de {{ fields.payment_delivery_item|fill:40 }}, avaliado(a) em
+            R$ {{ fields.payment_delivery_value|fill:16 }}, recebido(a) como parte do pagamento,
+            e o saldo remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:8 }} parcelas de
+            R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia
+            dos meses subsequentes.
         </p>
     </div>
     {% endif %}
 
     {% if fields.include_clause_3 %}
     <div class="clause">
-        <h2 class="clause-title">3. DA ENTREGA DO VEÍCULO</h2>
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DA ENTREGA DO VEÍCULO</h2>
         <p>
-            O veículo será entregue ao(à) COMPRADOR(A)
+            O veículo será entregue {% gender second_party_gender "ao COMPRADOR|à COMPRADORA" %}
             em {{ fields.delivery_day|fill:4 }}/{{ fields.delivery_month|fill:4 }}/{{ fields.delivery_year|fill:8 }},
             às: {{ fields.delivery_time|fill:6 }} horas,
             em {{ fields.delivery_place|fill:19 }} / {{ fields.delivery_place_uf|fill:6 }},
             Na entrega serão disponibilizados os documentos e acessórios existentes e expressamente combinados.
-            A partir da efetiva entrega e quitação, o(a) COMPRADOR(A) assume a responsabilidade integral pelo veículo
+            A partir da efetiva entrega e quitação, {% gender second_party_gender "o COMPRADOR|a COMPRADORA" %} assume a responsabilidade integral pelo veículo
             e suas consequências, ressalvadas as obrigações anteriores.
         </p>
     </div>
@@ -91,17 +98,16 @@
 
     {% if fields.include_clause_4 %}
     <div class="clause">
-        <h2 class="clause-title">4. DOS DÉBITOS, MULTAS E RESTRIÇÕES</h2>
+        <h2 class="clause-title">CLÁUSULA QUARTA - DOS DÉBITOS, MULTAS E RESTRIÇÕES</h2>
         <p>
-            O(A) VENDEDOR(A) declara que informará qualquer gravame, bloqueio judicial,
+            {% gender first_party_gender "O VENDEDOR|A VENDEDORA" %} declara que informará qualquer gravame, bloqueio judicial,
             administrativo ou financeiro, incidente sobre o veículo e responde por débitos,
             multas, tributos e obrigações anteriores à entrega,
-            salvo aqueles expressamente assumidos pelo(a) COMPRADOR(A) neste contrato.
+            salvo aqueles expressamente assumidos {% gender second_party_gender "pelo COMPRADOR|pela COMPRADORA" %} neste contrato.
         </p>
         {% if fields.include_clause_4_1 %}
         <p>
-            Se houver qualquer débito ou restrição conhecido pelas partes e aceito pelo(a)
-            COMPRADOR(A), deverá ser descrito aqui: {{ fields.known_debts|fill:34 }}.
+            Se houver qualquer débito ou restrição conhecido pelas partes e aceito {% gender second_party_gender "pelo COMPRADOR|pela COMPRADORA" %}, deverá ser descrito aqui: {{ fields.known_debts|fill:34 }}.
         </p>
         {% endif %}
     </div>
@@ -109,9 +115,9 @@
 
     {% if fields.include_clause_5 %}
     <div class="clause">
-        <h2 class="clause-title">5. DO ESTADO DO VEÍCULO E DA VISTORIA</h2>
+        <h2 class="clause-title">CLÁUSULA QUINTA - DO ESTADO DO VEÍCULO E DA VISTORIA</h2>
         <p>
-            O(A) COMPRADOR(A) declara que examinou o veículo e tomou conhecimento de seu
+            {% gender second_party_gender "O COMPRADOR|A COMPRADORA" %} declara que examinou o veículo e tomou conhecimento de seu
             estado de conservação e funcionamento.
             A venda é realizada no estado em que o veículo se encontra, sem prejuízo da
             responsabilidade legal por vícios ocultos.
@@ -120,7 +126,7 @@
         {% if fields.include_clause_5_1 %}
         <p>
             Defeitos, avarias ou condições preexistentes, expressamente declaradas e aceitas
-            pelo(a) COMPRADOR(A): {{ fields.known_defects|fill:48 }}.
+            {% gender second_party_gender "pelo COMPRADOR|pela COMPRADORA" %}: {{ fields.known_defects|fill:48 }}.
         </p>
         {% endif %}
 
@@ -134,20 +140,20 @@
 
     {% if fields.include_clause_6 %}
     <div class="clause">
-        <h2 class="clause-title">6. DA DOCUMENTAÇÃO E DA TRANSFERÊNCIA</h2>
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA DOCUMENTAÇÃO E DA TRANSFERÊNCIA</h2>
         <p>
             As partes se obrigam a fornecer e assinar os documentos necessários à transferência
             de propriedade, conforme o documento e procedimento aplicáveis ao veículo.
         </p>
         <p>
-            O(A) COMPRADOR(A) ficará responsável por realizar a transferência de propriedade
-            dentro do prazo legal e por pagar as despesas que legalmente lhe couberem. Caso o(a)
-            COMPRADOR(A) não efetive a transferência no prazo legal, responderá integralmente
+            {% gender second_party_gender "O COMPRADOR|A COMPRADORA" %} ficará responsável por realizar a transferência de propriedade
+            dentro do prazo legal e por pagar as despesas que legalmente lhe couberem. Caso {% gender second_party_gender "o COMPRADOR|a COMPRADORA" %}
+            não efetive a transferência no prazo legal, responderá integralmente
             pelas multas, tributos e demais encargos cujos fatos geradores ocorram após a entrega
             do veículo.
         </p>
         <p>
-            O(A) VENDEDOR(A) deverá colaborar com os atos de transferência e comunicação de venda,
+            {% gender first_party_gender "O VENDEDOR|A VENDEDORA" %} deverá colaborar com os atos de transferência e comunicação de venda,
             servindo este contrato como prova do negócio jurídico e da data de entrega.
         </p>
     </div>
@@ -155,7 +161,7 @@
 
     {% if fields.include_clause_7 %}
     <div class="clause">
-        <h2 class="clause-title">7. DO INADIMPLEMENTO</h2>
+        <h2 class="clause-title">CLÁUSULA SÉTIMA - DO INADIMPLEMENTO</h2>
         <p>
             O descumprimento de qualquer obrigação assumida neste contrato autoriza a parte
             prejudicada a exigir o cumprimento da obrigação, a rescisão do contrato e, quando
@@ -167,9 +173,9 @@
 
     {% if fields.include_clause_8 %}
     <div class="clause">
-        <h2 class="clause-title">8. DA PROPRIEDADE E ORIGEM</h2>
+        <h2 class="clause-title">CLÁUSULA OITAVA - DA PROPRIEDADE E ORIGEM</h2>
         <p>
-            O(A) VENDEDOR(A) declara ser legítimo(a) proprietário(a) do veículo, possuir plenos poderes para vendê-lo
+            {% gender first_party_gender "O VENDEDOR|A VENDEDORA" %} declara ser {% gender first_party_gender "legítimo|legítima" %} {% gender first_party_gender "proprietário|proprietária" %} do veículo, possuir plenos poderes para vendê-lo
             e que o bem está livre de impedimentos legais, responsabilizando-se por eventuais restrições ou
             irregularidades documentais e de origem lícita anteriores à negociação.
         </p>
@@ -178,9 +184,9 @@
 
     {% if fields.include_clause_9 %}
     <div class="clause">
-        <h2 class="clause-title">9. DO FORO</h2>
+        <h2 class="clause-title">CLÁUSULA NONA - DO FORO</h2>
         <p>
-            Fica eleito o foro da Comarca de {{ fields.forum_city|fill:29 }}, no Estado do
+            Fica eleito o foro da Comarca de {{ fields.forum_city|fill:29 }}, no estado
             {{ fields.forum_state|fill:18 }}, para dirimir questões decorrentes deste contrato, ressalvadas
             as hipóteses em que a legislação estabeleça foro diverso.
         </p>
@@ -189,7 +195,7 @@
 
     {% if fields.include_clause_10 %}
     <div class="clause">
-        <h2 class="clause-title">10. DISPOSIÇÕES FINAIS</h2>
+        <h2 class="clause-title">CLÁUSULA DÉCIMA - DISPOSIÇÕES FINAIS</h2>
         <p>
             As partes declaram que leram este contrato, compreenderam suas condições e o
             assinam de livre e espontânea vontade, em 2 (duas) vias de igual teor e forma.<br>
@@ -209,16 +215,18 @@
         <div class="signature-columns">
             {% if fields.include_signature_seller %}
             <div class="signature">
-                <p>VENDEDOR(A):<br><br>
+                <p>{% gender first_party_gender "VENDEDOR|VENDEDORA" %}:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>
             </div>
             {% endif %}
+        </div>
 
+        <div class="signature-columns">
             {% if fields.include_signature_buyer %}
             <div class="signature">
-                <p>COMPRADOR(A):<br><br>
+                <p>{% gender second_party_gender "COMPRADOR|COMPRADORA" %}:<br><br>
                     _________________________________________</p>
                 <p>Nome: ___________________________________</p>
                 <p>CPF: ____________________________________</p>
