@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-04
+
 ### Added
 
 - Gender selection for document PDFs: shared **1º Interveniente** and
@@ -41,5 +43,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   WhiteNoise, PostgreSQL via `DATABASE_URL`).
 - Developer documentation under [`docs/documentation/`](docs/documentation/).
 
-[Unreleased]: https://gitlab.com/AntonioCalheirosNeves/document-automation/-/compare/v1.0.0...HEAD
+[Unreleased]: https://gitlab.com/AntonioCalheirosNeves/document-automation/-/compare/v1.1.0...HEAD
+[1.1.0]: https://gitlab.com/AntonioCalheirosNeves/document-automation/-/releases/v1.1.0
 [1.0.0]: https://gitlab.com/AntonioCalheirosNeves/document-automation/-/releases/v1.0.0
