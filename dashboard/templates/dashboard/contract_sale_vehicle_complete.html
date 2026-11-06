@@ -51,14 +51,22 @@
         <p>
             Pela presente compra e venda, o(a) COMPRADOR(A) pagará ao(à) VENDEDOR(A) o preço certo e ajustado de
             R$ <input type="text" name="price" style="width: 30ch"> (<input type="text" name="price_in_words" style="width: 68ch">),
-            acrescido da entrega de <input type="text" name="price_delivery_item" style="width: 40ch">, avaliado(a) em
-            R$ <input type="text" name="price_delivery_value" style="width: 20ch">, como pagamento integral efetuado no ato da celebração deste contrato.
+            <input type="checkbox" name="include_clause_2_delivery" value="1" class="clause-check"> acrescido da entrega de
+            <input type="text" name="price_delivery_item" style="width: 40ch">, avaliado(a) em
+            R$ <input type="text" name="price_delivery_value" style="width: 20ch">,
+            <input type="checkbox" name="include_clause_2_full_payment" value="1" class="clause-check" checked>
+            como pagamento integral efetuado no ato da celebração deste contrato.
         </p>
+        <input type="checkbox" name="include_clause_2_installments" value="1" class="clause-check">
         <p>
             O pagamento será realizado de forma parcelada, a título de entrada/sinal,
             R$ <input type="text" name="down_payment" style="width: 14ch">,
-            mais a entrega de pela entrega de <input type="text" name="payment_delivery_item" style="width: 40ch">, avaliado(a) em
+            <input type="checkbox" name="include_clause_2_delivery_more" value="1" class="clause-check"> mais a entrega de
+            <input type="checkbox" name="include_clause_2_delivery_by" value="1" class="clause-check"> pela entrega de
+            <input type="checkbox" name="include_clause_2_delivery_item" value="1" class="clause-check">
+            <input type="text" name="payment_delivery_item" style="width: 40ch">, avaliado(a) em
             R$ <input type="text" name="payment_delivery_value" style="width: 16ch">, recebido(a) como parte do pagamento,
+            <input type="checkbox" name="include_clause_2_balance" value="1" class="clause-check">
             e o saldo remanescente de R$ <input type="text" name="balance" style="width: 16ch">, será pago em <input type="text" name="installments_count" style="width: 8ch"> parcelas de
             R$ <input type="text" name="installment_value" style="width: 16ch">, vencendo a primeira em <input type="text" name="first_due_date" style="width: 16ch">, e as demais no mesmo dia
             dos meses subsequentes.

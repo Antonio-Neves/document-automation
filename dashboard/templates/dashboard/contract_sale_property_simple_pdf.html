@@ -94,7 +94,8 @@
         </p>
         {% if fields.include_clause_2_1 %}
         <p>
-            O pagamento será realizado de forma parcelada, a título de entrada/sinal,{% if fields.include_clause_2_down_payment %} R$ {{ fields.down_payment|fill:13 }},{% endif %}{% if fields.include_clause_2_delivery_more %} mais a entrega de{% endif %}{% if fields.include_clause_2_delivery_by %} pela entrega de{% endif %}{% if fields.include_clause_2_delivery_item %} {{ fields.payment_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.payment_delivery_value|fill:16 }}, recebido(a) como parte do pagamento,{% endif %} e o saldo remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:7 }} parcelas de R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia dos meses subsequentes.
+            O pagamento será realizado de forma parcelada, a título de entrada/sinal,
+            R$ {{ fields.down_payment|fill:13 }},{% if fields.include_clause_2_delivery_more %} mais a entrega de{% endif %}{% if fields.include_clause_2_delivery_by %} pela entrega de{% endif %}{% if fields.include_clause_2_delivery_item %} {{ fields.payment_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.payment_delivery_value|fill:16 }}, recebido(a) como parte do pagamento{% endif %}{% if fields.include_clause_2_balance %}, e o saldo remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:7 }} parcelas de R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia dos meses subsequentes{% endif %}.
         </p>
         {% endif %}
     </div>
