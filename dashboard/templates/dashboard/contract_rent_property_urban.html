@@ -1,0 +1,172 @@
+{% extends 'base/_base_index.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body_content %}
+<form method="post" id="contract-form">
+{% csrf_token %}
+<div class="contract" id="contract-rent-property-urban">
+
+    <h1 class="contract-title">CONTRATO DE LOCAÇÃO DE IMÓVEL RESIDENCIAL URBANO</h1>
+
+    <p>
+        LOCADOR(A) (Proprietário(a)):<br>
+        NOME COMPLETO: <input type="text" name="lessor_name" style="width: 52ch">,<br>
+        nacionalidade: <input type="text" name="lessor_nationality" style="width: 20ch">, estado civil: <input type="text" name="lessor_marital_status" style="width: 20ch">,<br>
+        profissão: <input type="text" name="lessor_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="lessor_cpf" style="width: 18ch">,<br>
+        portador(a) do RG nº: <input type="text" name="lessor_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="lessor_address" style="width: 70ch"> município: <input type="text" name="lessor_city" style="width: 20ch">, estado: <input type="text" name="lessor_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        LOCATÁRIO(A) (Inquilino(a)):<br>
+        NOME COMPLETO: <input type="text" name="lessee_name" style="width: 52ch">,<br>
+        nacionalidade: <input type="text" name="lessee_nationality" style="width: 20ch">, estado civil: <input type="text" name="lessee_marital_status" style="width: 20ch">,<br>
+        profissão: <input type="text" name="lessee_profession" style="width: 20ch">, inscrito(a) no CPF sob o nº: <input type="text" name="lessee_cpf" style="width: 18ch">,<br>
+        portador(a) do RG nº: <input type="text" name="lessee_rg" style="width: 20ch">, residente e domiciliado(a) em<br>
+        <input type="text" name="lessee_address" style="width: 70ch"> município: <input type="text" name="lessee_city" style="width: 20ch">, estado: <input type="text" name="lessee_state" style="width: 20ch">.
+    </p>
+
+    <p>
+        As partes acima identificadas firmam o presente contrato de locação residencial, conforme as cláusulas seguintes.
+    </p>
+
+    <div class="clause" id="clause-1">
+        <input type="checkbox" name="include_clause_1" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO IMÓVEL</h2>
+        <p>
+            O(A) LOCADOR(A) (Proprietário(a)) aluga ao(à) LOCATÁRIO(A) (Inquilino(a)) o imóvel residencial situado na
+            <input type="text" name="property_address" style="width: 70ch">,
+            Complemento: <input type="text" name="property_complement" style="width: 22ch">,
+            Bairro: <input type="text" name="property_neighborhood" style="width: 22ch">,
+            CEP: <input type="text" name="property_zip_code" style="width: 12ch">,
+            Município: <input type="text" name="property_city" style="width: 20ch">,
+            Estado: <input type="text" name="property_state" style="width: 16ch">,
+            <input type="checkbox" name="include_clause_1_characteristics" value="1" class="clause-check">
+            com as seguintes características: <textarea name="property_characteristics" rows="2" style="width: 70ch"></textarea>,
+        </p>
+    </div>
+
+    <div class="clause" id="clause-2">
+        <input type="checkbox" name="include_clause_2" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DO PRAZO</h2>
+        <p>
+            A locação terá prazo de <input type="text" name="lease_term_months" style="width: 6ch">
+            (<input type="text" name="lease_term_months_in_words" style="width: 9ch">) meses,
+            com início em <input type="text" name="lease_start_date" style="width: 16ch"> e término em
+            <input type="text" name="lease_end_date" style="width: 16ch">, observadas as regras legais aplicáveis
+            ao término e à prorrogação da locação.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-3">
+        <input type="checkbox" name="include_clause_3" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DO ALUGUEL E PAGAMENTO</h2>
+        <p>
+            O aluguel mensal será de R$ <input type="text" name="rent_amount" style="width: 12ch">
+            (<input type="text" name="rent_amount_in_words" style="width: 30ch">), com vencimento no dia
+            <input type="text" name="rent_due_day" style="width: 4ch"> de cada mês, referente ao respectivo mês anterior.
+        </p>
+        <p>
+            O pagamento será realizado por <input type="text" name="payment_method" style="width: 26ch">,
+            <input type="checkbox" name="include_clause_3_payment_key" value="1" class="clause-check" checked>
+            pela chave <input type="text" name="payment_key" style="width: 30ch">
+            <input type="checkbox" name="include_clause_3_or" value="1" class="clause-check" checked>
+            ou
+            <input type="checkbox" name="include_clause_3_bank_transfer" value="1" class="clause-check" checked>
+            para o banco <input type="text" name="bank_name" style="width: 24ch">,
+            agência <input type="text" name="bank_branch" style="width: 12ch">,
+            conta nº <input type="text" name="bank_account" style="width: 20ch">.
+            O comprovante servirá como prova do pagamento, sem prejuízo da confirmação do recebimento.
+        </p>
+        <p>
+            O primeiro aluguel, referente a <input type="text" name="first_rent_reference" style="width: 24ch">,
+            vencerá em <input type="text" name="first_rent_due_date" style="width: 16ch">.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-4">
+        <input type="checkbox" name="include_clause_4" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA QUARTA - DAS DESPESAS</h2>
+        <p>
+            O(A) LOCATÁRIO(A) (Inquilino(a)) será responsável pelas contas de consumo do período em que ocupar o
+            imóvel, incluindo energia elétrica, água, esgoto e serviços que contratar, como internet.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-5">
+        <input type="checkbox" name="include_clause_5" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA QUINTA - DA CONSERVAÇÃO DO IMÓVEL</h2>
+        <p>
+            O(A) LOCATÁRIO(A) (Inquilino(a)) deverá conservar o imóvel e devolvê-lo ao final da locação nas
+            condições em que o recebeu, exceto pelo desgaste natural decorrente do uso normal.
+        </p>
+        <p>
+            O(A) LOCATÁRIO(A) (Inquilino(a)) será responsável pelos danos que causar ao imóvel.
+            O(A) LOCADOR(A) (Proprietário(a)) será responsável pelos defeitos anteriores à locação e pelos reparos
+            que legalmente lhe couberem.
+        </p>
+        <p>
+            Qualquer alteração na estrutura do imóvel dependerá de autorização prévia e por escrito
+            do(a) LOCADOR(A) (Proprietário(a)).
+        </p>
+    </div>
+
+    <div class="clause" id="clause-6">
+        <input type="checkbox" name="include_clause_6" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESCISÃO</h2>
+        <p>
+            Se o(a) LOCATÁRIO(A) (Inquilino(a)) devolver o imóvel antes do término do prazo, pagará multa
+            equivalente a um aluguel mensal, reduzida proporcionalmente ao período já cumprido do contrato,
+            conforme a lei.
+        </p>
+        <p>
+            A multa não será devida nas hipóteses de isenção previstas em lei.
+        </p>
+        <p>
+            A parte que desejar encerrar a locação deverá comunicar a outra por escrito, com a antecedência
+            mínima de <input type="text" name="termination_notice_days" style="width: 6ch">
+            (<input type="text" name="termination_notice_days_in_words" style="width: 15ch">) dias da data
+            pretendida para a desocupação, respeitando os prazos e as condições legais aplicáveis.
+        </p>
+    </div>
+
+    <div class="clause" id="clause-7">
+        <input type="checkbox" name="include_clause_7" value="1" class="clause-check" checked>
+        <h2 class="clause-title">CLÁUSULA SÉTIMA - DO FORO</h2>
+        <p>
+            Fica eleito o foro da Comarca de <input type="text" name="forum_city" style="width: 24ch">, no estado
+            <input type="text" name="forum_state" style="width: 24ch">, para resolver questões decorrentes deste
+            contrato, respeitadas as regras legais de competência.
+        </p>
+    </div>
+
+    <p>
+        E, por estarem de acordo, as partes assinam este contrato em duas vias de igual teor.
+    </p>
+
+    <p class="contract-place-date">
+        ________________________________, ____ de __________________________ de _________
+    </p>
+
+    <div class="signature-columns">
+        <div class="signature" id="signature-lessor">
+            <input type="checkbox" name="include_signature_lessor" value="1" class="signature-check" checked>
+            <p>LOCADOR(A) (Proprietário(a)): ______________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+    <div class="signature-columns">
+        <div class="signature" id="signature-lessee">
+            <input type="checkbox" name="include_signature_lessee" value="1" class="signature-check" checked>
+            <p>LOCATÁRIO(A) (Inquilino(a)): ______________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+</div>
+</form>
+{% endblock %}

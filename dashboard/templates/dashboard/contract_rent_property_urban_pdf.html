@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load contract_filters static %}
+<head>
+<meta charset="utf-8">
+<title>Contrato de Locação de Imóvel Residencial Urbano</title>
+<link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
+</head>
+<body class="contract-pdf">
+
+    <h1 class="contract-title">CONTRATO DE LOCAÇÃO DE IMÓVEL RESIDENCIAL URBANO</h1>
+
+    <p>
+        {% gender first_party_gender "LOCADOR (Proprietário)|LOCADORA (Proprietária)" %}:
+        NOME COMPLETO: {{ fields.lessor_name|fill:52 }},
+        nacionalidade: {{ fields.lessor_nationality|fill:20 }},
+        estado civil: {{ fields.lessor_marital_status|fill:20 }},
+        profissão: {{ fields.lessor_profession|fill:20 }},
+        {% gender first_party_gender "inscrito|inscrita" %} no CPF sob o nº: {{ fields.lessor_cpf|fill:18 }},
+        {% gender first_party_gender "portador|portadora" %} do RG nº: {{ fields.lessor_rg|fill:20 }},
+        residente e {% gender first_party_gender "domiciliado|domiciliada" %} em
+        {{ fields.lessor_address|fill:70 }} município: {{ fields.lessor_city|fill:20 }},
+        estado: {{ fields.lessor_state|fill:20 }}.
+    </p>
+
+    <p>
+        {% gender second_party_gender "LOCATÁRIO (Inquilino)|LOCATÁRIA (Inquilina)" %}:
+        NOME COMPLETO: {{ fields.lessee_name|fill:52 }},
+        nacionalidade: {{ fields.lessee_nationality|fill:20 }},
+        estado civil: {{ fields.lessee_marital_status|fill:20 }},
+        profissão: {{ fields.lessee_profession|fill:20 }},
+        {% gender second_party_gender "inscrito|inscrita" %} no CPF sob o nº: {{ fields.lessee_cpf|fill:18 }},
+        {% gender second_party_gender "portador|portadora" %} do RG nº: {{ fields.lessee_rg|fill:20 }},
+        residente e {% gender second_party_gender "domiciliado|domiciliada" %} em
+        {{ fields.lessee_address|fill:70 }} município: {{ fields.lessee_city|fill:20 }},
+        estado: {{ fields.lessee_state|fill:20 }}.
+    </p>
+
+    <p>
+        As partes acima identificadas firmam o presente contrato de locação residencial, conforme as cláusulas seguintes.
+    </p>
+
+    {% if fields.include_clause_1 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA - DO IMÓVEL</h2>
+        <p>
+            {% gender first_party_gender "O LOCADOR (Proprietário)|A LOCADORA (Proprietária)" %} aluga
+            {% gender second_party_gender "ao LOCATÁRIO (Inquilino)|à LOCATÁRIA (Inquilina)" %} o imóvel residencial
+            situado na {{ fields.property_address|fill:70 }},
+            Complemento: {{ fields.property_complement|fill:22 }},
+            Bairro: {{ fields.property_neighborhood|fill:22 }},
+            CEP: {{ fields.property_zip_code|fill:12 }},
+            Município: {{ fields.property_city|fill:20 }},
+            Estado: {{ fields.property_state|fill:16 }}{% if fields.include_clause_1_characteristics %},
+            com as seguintes características: {{ fields.property_characteristics|fill:70 }}{% endif %}.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_2 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SEGUNDA - DO PRAZO</h2>
+        <p>
+            A locação terá prazo de {{ fields.lease_term_months|fill:6 }}
+            ({{ fields.lease_term_months_in_words|fill:9 }}) meses,
+            com início em {{ fields.lease_start_date|fill:16 }} e término em
+            {{ fields.lease_end_date|fill:16 }}, observadas as regras legais aplicáveis ao término e à prorrogação da locação.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_3 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA TERCEIRA - DO ALUGUEL E PAGAMENTO</h2>
+        <p>
+            O aluguel mensal será de R$ {{ fields.rent_amount|fill:12 }}
+            ({{ fields.rent_amount_in_words|fill:30 }}), com vencimento no dia
+            {{ fields.rent_due_day|fill:4 }} de cada mês, referente ao respectivo mês anterior.
+        </p>
+        <p>
+            O pagamento será realizado por {{ fields.payment_method|fill:26 }}{% if fields.include_clause_3_payment_key %},
+            pela chave {{ fields.payment_key|fill:30 }}{% endif %}{% if fields.include_clause_3_or %} ou{% endif %}{% if fields.include_clause_3_bank_transfer %} para o banco
+            {{ fields.bank_name|fill:24 }}, agência {{ fields.bank_branch|fill:12 }},
+            conta nº {{ fields.bank_account|fill:20 }}{% endif %}.
+            O comprovante servirá como prova do pagamento, sem prejuízo da confirmação do recebimento.
+        </p>
+        <p>
+            O primeiro aluguel, referente a {{ fields.first_rent_reference|fill:24 }},
+            vencerá em {{ fields.first_rent_due_date|fill:16 }}.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_4 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUARTA - DAS DESPESAS</h2>
+        <p>
+            {% gender second_party_gender "O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)" %} será responsável
+            pelas contas de consumo do período em que ocupar o imóvel, incluindo energia elétrica, água, esgoto
+            e serviços que contratar, como internet.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_5 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUINTA - DA CONSERVAÇÃO DO IMÓVEL</h2>
+        <p>
+            {% gender second_party_gender "O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)" %} deverá conservar
+            o imóvel e devolvê-lo ao final da locação nas condições em que o recebeu, exceto pelo desgaste
+            natural decorrente do uso normal.
+        </p>
+        <p>
+            {% gender second_party_gender "O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)" %} será responsável
+            pelos danos que causar ao imóvel.
+            {% gender first_party_gender "O LOCADOR (Proprietário)|A LOCADORA (Proprietária)" %} será responsável
+            pelos defeitos anteriores à locação e pelos reparos que legalmente lhe couberem.
+        </p>
+        <p>
+            Qualquer alteração na estrutura do imóvel dependerá de autorização prévia e por escrito
+            {% gender first_party_gender "do LOCADOR (Proprietário)|da LOCADORA (Proprietária)" %}.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_6 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SEXTA - DA RESCISÃO</h2>
+        <p>
+            Se {% gender second_party_gender "o LOCATÁRIO (Inquilino)|a LOCATÁRIA (Inquilina)" %} devolver o
+            imóvel antes do término do prazo, pagará multa equivalente a um aluguel mensal, reduzida
+            proporcionalmente ao período já cumprido do contrato, conforme a lei.
+        </p>
+        <p>
+            A multa não será devida nas hipóteses de isenção previstas em lei.
+        </p>
+        <p>
+            A parte que desejar encerrar a locação deverá comunicar a outra por escrito, com a antecedência
+            mínima de {{ fields.termination_notice_days|fill:6 }}
+            ({{ fields.termination_notice_days_in_words|fill:15 }}) dias da data pretendida para a desocupação,
+            respeitando os prazos e as condições legais aplicáveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_7 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SÉTIMA - DO FORO</h2>
+        <p>
+            Fica eleito o foro da Comarca de {{ fields.forum_city|fill:24 }}, no estado
+            {{ fields.forum_state|fill:24 }}, para resolver questões decorrentes deste contrato, respeitadas
+            as regras legais de competência.
+        </p>
+    </div>
+    {% endif %}
+
+    <p>
+        E, por estarem de acordo, as partes assinam este contrato em duas vias de igual teor.
+    </p>
+
+    <div class="signatures">
+        <p class="contract-place-date">
+            ________________________________, ____ de __________________________ de _________
+        </p>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_lessor %}
+            <div class="signature">
+                <p>{% gender first_party_gender "LOCADOR (Proprietário)|LOCADORA (Proprietária)" %}:<br><br>
+                    _________________________________________</p>
+                <p>Nome: {{ fields.lessor_name }}</p>
+                <p>CPF: {{ fields.lessor_cpf }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_lessee %}
+            <div class="signature">
+                <p>{% gender second_party_gender "LOCATÁRIO (Inquilino)|LOCATÁRIA (Inquilina)" %}:<br><br>
+                    _________________________________________</p>
+                <p>Nome: {{ fields.lessee_name }}</p>
+                <p>CPF: {{ fields.lessee_cpf }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
