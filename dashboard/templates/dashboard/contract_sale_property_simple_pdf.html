@@ -69,17 +69,17 @@
             CEP: {{ fields.property_land_zip_code|fill:12 }},
             Município: {{ fields.property_land_city|fill:20 }},
             Estado: {{ fields.property_land_state|fill:16 }},
-            composto por área medindo {{ fields.property_land_front_measure|fill:13 }} metros de frente por
-            {{ fields.property_land_length_measure|fill:9 }} metros de comprimento.
-            frente medindo {{ fields.property_land_boundary_front_measure|fill:6 }} metros,
+            {% if fields.include_clause_1_area %}composto por área medindo {{ fields.property_land_front_measure|fill:13 }} metros de frente por
+            {{ fields.property_land_length_measure|fill:9 }} metros de comprimento,{% endif %}
+            {% if fields.include_clause_1_boundaries %}frente medindo {{ fields.property_land_boundary_front_measure|fill:6 }} metros,
             confrontando com {{ fields.property_land_front_boundary|fill:28 }},
             fundos medindo {{ fields.property_land_back_measure|fill:6 }} metros,
             confrontando com {{ fields.property_land_back_boundary|fill:27 }},
             lado direito medindo {{ fields.property_land_right_measure|fill:6 }} metros,
             confrontando com {{ fields.property_land_right_boundary|fill:24 }},
             lado esquerdo medindo {{ fields.property_land_left_measure|fill:6 }} metros,
-            confrontando com {{ fields.property_land_left_boundary|fill:22 }},
-            com as seguintes características: {{ fields.property_land_contents|fill:70 }},
+            confrontando com {{ fields.property_land_left_boundary|fill:22 }},{% endif %}
+            {% if fields.include_clause_1_contents %}com as seguintes características: {{ fields.property_land_contents|fill:70 }},{% endif %}
             perfazendo área total de {{ fields.property_land_area|fill:12 }} m² ({{ fields.property_land_area_in_words|fill:35 }}).
         </p>
     </div>

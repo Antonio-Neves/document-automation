@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load contract_filters static %}
+<head>
+<meta charset="utf-8">
+<title>Instrumento Particular de Compra e Venda de Parte de Imóvel</title>
+<link rel="stylesheet" href="{% static 'base/css/my_styles.css' %}">
+</head>
+<body class="contract-pdf">
+
+    <h1 class="contract-title">INSTRUMENTO PARTICULAR DE COMPRA E VENDA DE PARTE DE IMÓVEL</h1>
+
+    <p>
+        Pelo presente instrumento particular, de um lado, como {% gender first_party_gender "VENDEDOR|VENDEDORA" %}:<br>
+        {{ fields.seller_name|fill:52 }},
+        {{ fields.seller_nationality|fill:20 }},
+        {{ fields.seller_marital_status|fill:20 }},
+        {% if fields.include_seller_marital_regime %}sob o regime de {{ fields.seller_marital_regime|fill:20 }}, {% endif %}
+        {{ fields.seller_profession|fill:20 }},
+        {% gender first_party_gender "inscrito|inscrita" %} no CPF sob o nº: {{ fields.seller_cpf|fill:20 }},
+        {% gender first_party_gender "portador|portadora" %} do RG nº {{ fields.seller_rg|fill:20 }},
+        residente e {% gender first_party_gender "domiciliado|domiciliada" %} em {{ fields.seller_address|fill:70 }}
+        município: {{ fields.seller_city|fill:20 }},
+        estado: {{ fields.seller_state|fill:20 }}.
+    </p>
+
+    {% if fields.include_seller_spouse %}
+    <p>
+        CÔNJUGE {% gender first_party_gender "DO VENDEDOR|DA VENDEDORA" %}:<br>
+        {{ fields.seller_spouse_name|fill:52 }},
+        {{ fields.seller_spouse_nationality|fill:20 }},
+        {{ fields.seller_spouse_marital_status|fill:20 }},
+        {{ fields.seller_spouse_profession|fill:20 }},
+        inscrito(a) no CPF sob o nº: {{ fields.seller_spouse_cpf|fill:20 }},
+        portador(a) do RG nº {{ fields.seller_spouse_rg|fill:20 }},
+        residente e domiciliado(a) em {{ fields.seller_spouse_address|fill:70 }}
+        município: {{ fields.seller_spouse_city|fill:20 }},
+        estado: {{ fields.seller_spouse_state|fill:20 }}.
+    </p>
+    {% endif %}
+
+    <p>
+        E, de outro lado, como {% gender second_party_gender "COMPRADOR|COMPRADORA" %}:<br>
+        {{ fields.buyer_name|fill:52 }},
+        {{ fields.buyer_nationality|fill:20 }},
+        {{ fields.buyer_marital_status|fill:20 }},
+        {{ fields.buyer_profession|fill:20 }},
+        {% gender second_party_gender "inscrito|inscrita" %} no CPF sob o nº: {{ fields.buyer_cpf|fill:20 }},
+        {% gender second_party_gender "portador|portadora" %} do RG nº {{ fields.buyer_rg|fill:20 }},
+        residente e {% gender second_party_gender "domiciliado|domiciliada" %} em {{ fields.buyer_address|fill:70 }}
+        município: {{ fields.buyer_city|fill:20 }},
+        estado: {{ fields.buyer_state|fill:20 }}.
+    </p>
+
+    <p>
+        Têm entre si justo e contratado o presente instrumento, mediante as cláusulas e condições seguintes.
+    </p>
+
+    {% if fields.include_clause_1 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA PRIMEIRA – DO OBJETO:</h2>
+        <p>
+            {% gender first_party_gender "O VENDEDOR|A VENDEDORA" %} declara ser {% gender first_party_gender "legítimo|legítima" %}
+            {% gender first_party_gender "proprietário|proprietária" %} de quantidade:
+            {{ fields.property_land_quantity|fill:6 }} ({{ fields.property_land_quantity_in_words|fill:9 }})
+            imóvel, tipo: {{ fields.property_land_type|fill:20 }},
+            situado em {{ fields.property_land_address|fill:70 }}
+            no município de {{ fields.property_land_city|fill:20 }}
+            no estado {{ fields.property_land_state|fill:20 }}.
+        </p>
+        {% if fields.include_clause_1_registration %}
+        <p>
+            Devidamente matriculado em área maior sob o nº {{ fields.property_land_registration_number|fill:20 }},
+            no livro {{ fields.property_land_registration_book|fill:10 }},
+            folha {{ fields.property_land_registration_page|fill:10 }},
+            no Cartório de Registro de Imóveis do Município de {{ fields.property_land_registry_office_city|fill:25 }}
+            no estado {{ fields.property_land_registry_office_state|fill:20 }}.
+        </p>
+        {% endif %}
+        <p>
+            É objeto desta negociação uma parte deste imóvel, com as seguintes medidas:
+        </p>
+        {% if fields.include_clause_1_boundaries %}
+        <p>
+            Frente medindo {{ fields.property_part_front_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_part_front_boundary|fill:28 }},
+            fundos medindo {{ fields.property_part_back_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_part_back_boundary|fill:27 }},
+            lado direito medindo {{ fields.property_part_right_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_part_right_boundary|fill:24 }},
+            lado esquerdo medindo {{ fields.property_part_left_measure|fill:6 }} metros,
+            confrontando com {{ fields.property_part_left_boundary|fill:22 }}.
+        </p>
+        {% endif %}
+        {% if fields.include_clause_1_front_length %}
+        <p>
+            Frente medindo {{ fields.property_part_width_measure|fill:6 }}m
+            ({{ fields.property_part_width_measure_in_words|fill:20 }}) por
+            {{ fields.property_part_depth_measure|fill:6 }}m
+            ({{ fields.property_part_depth_measure_in_words|fill:20 }}) de comprimento.
+        </p>
+        {% endif %}
+        {% if fields.include_clause_1_contents %}
+        <p>
+            Com as seguintes características: {{ fields.property_part_contents|fill:70 }}.
+        </p>
+        {% endif %}
+        <p>
+            Perfazendo uma área total de {{ fields.property_part_area|fill:10 }}m²
+            ({{ fields.property_part_area_in_words|fill:30 }}).
+        </p>
+        <p>
+            A presente compra e venda refere-se exclusivamente à parcela de terreno acima descrita, integrante do
+            imóvel de propriedade {% gender first_party_gender "do VENDEDOR|da VENDEDORA" %}, não abrangendo as demais áreas do imóvel original.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_2 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA SEGUNDA – DO PREÇO E DA FORMA DE PAGAMENTO:</h2>
+        <p>
+            Pela presente compra e venda {% gender second_party_gender "o COMPRADOR|a COMPRADORA" %} pagará
+            {% gender first_party_gender "ao VENDEDOR|à VENDEDORA" %} o valor de
+            R$ {{ fields.price|fill:12 }} ({{ fields.price_in_words|fill:49 }}){% if fields.include_clause_2_delivery %}, acrescido da entrega de {{ fields.price_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.price_delivery_value|fill:20 }}{% endif %}{% if fields.include_clause_2_full_payment %}, como pagamento integral efetuado no ato da celebração deste contrato{% endif %}.
+        </p>
+        {% if fields.include_clause_2_1 %}
+        <p>
+            O pagamento será realizado de forma parcelada, a título de entrada/sinal,
+            R$ {{ fields.down_payment|fill:13 }},{% if fields.include_clause_2_delivery_more %} mais a entrega de{% endif %}{% if fields.include_clause_2_delivery_by %} pela entrega de{% endif %}{% if fields.include_clause_2_delivery_item %} {{ fields.payment_delivery_item|fill:40 }}, avaliado(a) em R$ {{ fields.payment_delivery_value|fill:16 }}, recebido(a) como parte do pagamento{% endif %}{% if fields.include_clause_2_balance %}, e o saldo remanescente de R$ {{ fields.balance|fill:16 }}, será pago em {{ fields.installments_count|fill:7 }} parcelas de R$ {{ fields.installment_value|fill:16 }}, vencendo a primeira em {{ fields.first_due_date|fill:16 }}, e as demais no mesmo dia dos meses subsequentes{% endif %}.
+        </p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_3 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA TERCEIRA – DA TRANSFERÊNCIA DA POSSE:</h2>
+        <p>
+            Com a assinatura deste instrumento e o pagamento integral do preço, {% gender first_party_gender "o VENDEDOR|a VENDEDORA" %} transfere
+            {% gender second_party_gender "ao COMPRADOR|à COMPRADORA" %} a posse da parte do imóvel descrita na Cláusula Primeira.
+        </p>
+        <p>
+            A partir da imissão na posse, {% gender second_party_gender "o COMPRADOR|a COMPRADORA" %} poderá usar, ocupar, conservar e realizar
+            benfeitorias no imóvel, observadas as limitações legais e administrativas aplicáveis.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_4 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUARTA – DA IRREVOGABILIDADE E IRRETRATABILIDADE:</h2>
+        <p>
+            Todos os compromissos assumidos neste contrato são de caráter IRREVOGÁVEL e IRRETRATÁVEL, obrigando as
+            partes, seus herdeiros e sucessores a qualquer título fazer sempre boa e valiosa a presente cessão,
+            ficando sujeito às penalidades da lei.
+        </p>
+    </div>
+    {% endif %}
+
+    {% if fields.include_clause_5 %}
+    <div class="clause">
+        <h2 class="clause-title">CLÁUSULA QUINTA – DO FORO:</h2>
+        <p>
+            O foro deste contrato é da Comarca de {{ fields.forum_city|fill:24 }}, no estado
+            {{ fields.forum_state|fill:24 }}, renunciando as partes quaisquer outro por mais privilegiado que seja.
+        </p>
+    </div>
+    {% endif %}
+
+    <p>
+        E, por estarem justas e contratadas, as partes assinam o presente em 02 (duas) vias de igual teor e forma, na presença de 2 (duas) testemunhas.
+    </p>
+
+    <div class="signatures">
+        <p class="contract-place-date">
+            ________________________________, ____ de __________________________ de _______
+        </p>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_seller %}
+            <div class="signature">
+                <p>{% gender first_party_gender "VENDEDOR|VENDEDORA" %}:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_signature_seller_spouse %}
+            <div class="signature">
+                <p>CÔNJUGE {% gender first_party_gender "DO VENDEDOR|DA VENDEDORA" %}:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_signature_buyer %}
+            <div class="signature">
+                <p>{% gender second_party_gender "COMPRADOR|COMPRADORA" %}:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_witness_1 %}
+            <div class="signature">
+                <p>TESTEMUNHA 1:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_witness_2 %}
+            <div class="signature">
+                <p>TESTEMUNHA 2:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
