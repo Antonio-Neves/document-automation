@@ -287,8 +287,8 @@
             <div class="signature">
                 <p>{% gender first_party_gender "VENDEDOR|VENDEDORA" %}:<br><br>
                     _________________________________________</p>
-                <p>Nome: ___________________________________</p>
-                <p>CPF: ____________________________________</p>
+                <p>Nome: {{ fields.seller_name }}</p>
+                <p>CPF: {{ fields.seller_cpf }}</p>
             </div>
             {% endif %}
 
@@ -296,8 +296,8 @@
             <div class="signature">
                 <p>CÔNJUGE {% gender first_party_gender "DO VENDEDOR|DA VENDEDORA" %}:<br><br>
                     _________________________________________</p>
-                <p>Nome: ___________________________________</p>
-                <p>CPF: ____________________________________</p>
+                <p>Nome: {{ fields.seller_spouse_name }}</p>
+                <p>CPF: {{ fields.seller_spouse_cpf }}</p>
             </div>
             {% endif %}
         </div>
@@ -307,8 +307,8 @@
             <div class="signature">
                 <p>{% gender second_party_gender "COMPRADOR|COMPRADORA" %}:<br><br>
                     _________________________________________</p>
-                <p>Nome: ___________________________________</p>
-                <p>CPF: ____________________________________</p>
+                <p>Nome: {{ fields.buyer_name }}</p>
+                <p>CPF: {{ fields.buyer_cpf }}</p>
             </div>
             {% endif %}
 
