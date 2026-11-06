@@ -70,6 +70,24 @@
             </ul>
         </li>
 
+        <li class="nav-item mt-4">
+            <span class="nav-topic">
+                <i class="bi bi-key"></i>
+                Aluguel
+            </span>
+
+            <ul class="nav flex-column sidebar-submenu">
+                <li class="nav-item">
+                    <a class="nav-link{% if current == 'contract_rent_property_urban' %} active{% endif %}"
+                       href="{% url 'contract_rent_property_urban' %}">
+                        <i class="bi bi-house"></i>
+                        Imóvel Urbano
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
 {#        <li class="nav-item mt-4">#}
 {#            <a class="nav-link" href="{% url 'admin:index' %}">#}
 {#                <i class="bi bi-gear"></i>#}

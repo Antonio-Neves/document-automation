@@ -95,3 +95,10 @@ class ContractSalePropertyPartView(ContractPdfView):
     pdf_template_name = 'dashboard/contract_sale_property_part_pdf.html'
     pdf_filename_prefix = 'contract_sale_property_part'
     page_title = 'Parte de Imóvel'
+
+
+class ContractRentPropertyUrbanView(ContractPdfView):
+    template_name = 'dashboard/contract_rent_property_urban.html'
+    pdf_template_name = 'dashboard/contract_rent_property_urban_pdf.html'
+    pdf_filename_prefix = 'contract_rent_property_urban'
+    page_title = 'Locação de Imóvel Urbano'

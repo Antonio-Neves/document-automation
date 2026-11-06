@@ -44,6 +44,7 @@ back to this table instead of re-listing the types.
 | `contract_sale_property_deed` | `/contract-sale-property-deed/` | `ContractSalePropertyDeedView` | Imóvel Registrado |
 | `contract_sale_property_simple` | `/contract-sale-property-simple/` | `ContractSalePropertySimpleView` | Imóvel Simples |
 | `contract_sale_property_part` | `/contract-sale-property-part/` | `ContractSalePropertyPartView` | Parte de Imóvel |
+| `contract_rent_property_urban` | `/contract-rent-property-urban/` | `ContractRentPropertyUrbanView` | Imóvel Urbano |
 
 Each type has a page template `<type>.html` and a PDF template `<type>_pdf.html`
 under `dashboard/templates/dashboard/`. The browser tab shows the view's

@@ -1,6 +1,7 @@
 from django.urls import path
 
 from .views import (
+    ContractRentPropertyUrbanView,
     ContractSalePropertyCompleteView,
     ContractSalePropertyDeedView,
     ContractSalePropertyPartView,
@@ -35,5 +36,10 @@ urlpatterns = [
         'contract-sale-property-part/',
         ContractSalePropertyPartView.as_view(),
         name='contract_sale_property_part',
+    ),
+    path(
+        'contract-rent-property-urban/',
+        ContractRentPropertyUrbanView.as_view(),
+        name='contract_rent_property_urban',
     ),
 ]

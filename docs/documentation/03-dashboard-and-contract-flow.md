@@ -241,7 +241,14 @@ All form fields are snake_case English names, grouped by entity:
 | `vehicle_*` | Vehicle description | `vehicle_type`, `vehicle_plate`, `vehicle_renavam` |
 | `property_land_*` | Property object — land | `property_land_address`, `property_land_area`, `property_land_front_measure` |
 | `property_built_*` | Property object — built property | `property_built_address`, `property_built_area`, `property_built_contents` |
+| `property_*` | Rental property object | `property_address`, `property_complement`, `property_characteristics` |
+| `lessor_*` | Lessor (landlord) identification | `lessor_name`, `lessor_cpf`, `lessor_city` |
+| `lessee_*` | Lessee (tenant) identification | `lessee_name`, `lessee_rg`, `lessee_profession` |
+| `lease_*` | Lease term | `lease_term_months`, `lease_start_date`, `lease_end_date` |
+| `rent_*` | Rent amount and due day | `rent_amount`, `rent_amount_in_words`, `rent_due_day` |
+| `termination_*` | Early-termination notice | `termination_notice_days`, `termination_notice_days_in_words` |
 | `price_*` / `payment_*` | Price and payment | `price`, `price_in_words`, `down_payment`, `price_delivery_item`, `payment_delivery_item`, `payment_delivery_value`, `installments_count`, `first_due_date` |
+| `bank_*` | Bank transfer data | `bank_name`, `bank_branch`, `bank_account` |
 | `delivery_*` | Vehicle delivery data (handover of the vehicle) | `delivery_day`, `delivery_time`, `delivery_place` |
 | `known_*` | Disclosed debts/defects | `known_debts`, `known_defects` |
 | `forum_*` | Jurisdiction clause | `forum_city`, `forum_state` |
