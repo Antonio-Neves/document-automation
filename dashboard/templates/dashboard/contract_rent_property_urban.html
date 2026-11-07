@@ -37,7 +37,9 @@
         <p>
             O(A) LOCADOR(A) (Proprietário(a)) aluga ao(à) LOCATÁRIO(A) (Inquilino(a)) o imóvel residencial situado na
             <input type="text" name="property_address" style="width: 70ch">,
+            <input type="checkbox" name="include_clause_1_complement" value="1" class="clause-check">
             Complemento: <input type="text" name="property_complement" style="width: 22ch">,
+            <input type="checkbox" name="include_clause_1_neighborhood" value="1" class="clause-check">
             Bairro: <input type="text" name="property_neighborhood" style="width: 22ch">,
             CEP: <input type="text" name="property_zip_code" style="width: 12ch">,
             Município: <input type="text" name="property_city" style="width: 20ch">,
@@ -65,7 +67,11 @@
         <p>
             O aluguel mensal será de R$ <input type="text" name="rent_amount" style="width: 12ch">
             (<input type="text" name="rent_amount_in_words" style="width: 30ch">), com vencimento no dia
-            <input type="text" name="rent_due_day" style="width: 4ch"> de cada mês, referente ao respectivo mês anterior.
+            <input type="text" name="rent_due_day" style="width: 4ch"> de cada mês, referente ao
+            <input type="checkbox" name="include_clause_3_rent_reference_respective" value="1" class="clause-check" checked>
+            respectivo mês
+            <input type="checkbox" name="include_clause_3_rent_reference_previous" value="1" class="clause-check">
+            anterior.
         </p>
         <p>
             O pagamento será realizado por <input type="text" name="payment_method" style="width: 26ch">,
@@ -79,6 +85,7 @@
             conta nº <input type="text" name="bank_account" style="width: 20ch">.
             O comprovante servirá como prova do pagamento, sem prejuízo da confirmação do recebimento.
         </p>
+        <input type="checkbox" name="include_clause_3_first_rent" value="1" class="clause-check">
         <p>
             O primeiro aluguel, referente a <input type="text" name="first_rent_reference" style="width: 24ch">,
             vencerá em <input type="text" name="first_rent_due_date" style="width: 16ch">.
@@ -142,7 +149,9 @@
     </div>
 
     <p>
-        E, por estarem de acordo, as partes assinam este contrato em duas vias de igual teor.
+        E, por estarem justas e contratadas, as partes assinam o presente contrato em 02 (duas) vias de igual teor e forma,
+        <input type="checkbox" name="include_witness_mention" value="1" class="clause-check">
+        na presença de 2 (duas) testemunhas.
     </p>
 
     <p class="contract-place-date">
@@ -162,6 +171,22 @@
         <div class="signature" id="signature-lessee">
             <input type="checkbox" name="include_signature_lessee" value="1" class="signature-check" checked>
             <p>LOCATÁRIO(A) (Inquilino(a)): ______________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+    </div>
+
+    <div class="signature-columns">
+        <div class="signature" id="witness-1">
+            <input type="checkbox" name="include_witness_1" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 1: ___________________</p>
+            <p>Nome: ____________________________</p>
+            <p>CPF: ___________________</p>
+        </div>
+
+        <div class="signature" id="witness-2">
+            <input type="checkbox" name="include_witness_2" value="1" class="signature-check" checked>
+            <p>TESTEMUNHA 2: ___________________</p>
             <p>Nome: ____________________________</p>
             <p>CPF: ___________________</p>
         </div>

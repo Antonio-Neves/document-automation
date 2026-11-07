@@ -64,8 +64,8 @@
             {{ fields.property_land_quantity|fill:6 }} ({{ fields.property_land_quantity_in_words|fill:9 }}),
             tipo: {{ fields.property_land_type|fill:26 }},
             situado em {{ fields.property_land_address|fill:70 }},
-            Complemento: {{ fields.property_land_complement|fill:22 }},
-            Bairro: {{ fields.property_land_neighborhood|fill:22 }},
+            {% if fields.include_clause_1_complement %}Complemento: {{ fields.property_land_complement|fill:22 }},{% endif %}
+            {% if fields.include_clause_1_neighborhood %}Bairro: {{ fields.property_land_neighborhood|fill:22 }},{% endif %}
             CEP: {{ fields.property_land_zip_code|fill:12 }},
             Município: {{ fields.property_land_city|fill:20 }},
             Estado: {{ fields.property_land_state|fill:16 }},
@@ -138,7 +138,7 @@
     {% endif %}
 
     <p>
-        E, por estarem justas e contratadas, as partes assinam o presente em 02 (duas) vias de igual teor e forma, na presença de 2 (duas) testemunhas.
+        E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma{% if fields.include_witness_mention %}, na presença de 2 (duas) testemunhas{% endif %}.
     </p>
 
     <div class="signatures">

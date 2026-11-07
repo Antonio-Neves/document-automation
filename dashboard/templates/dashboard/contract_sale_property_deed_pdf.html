@@ -65,7 +65,7 @@
             {{ fields.property_land_type|fill:17 }}{% if fields.include_property_land_identifier %}, identificado como {{ fields.property_land_identifier|fill:11 }}{% endif %}{% if fields.include_property_land_number %}, nº {{ fields.property_land_number|fill:8 }}{% endif %}{% if fields.include_property_land_block %}, da Quadra nº {{ fields.property_land_block|fill:8 }}{% endif %}{% if fields.include_property_land_development %}, integrante do Loteamento/Desmembramento denominado {{ fields.property_land_development|fill:42 }}{% endif %},
             situado em {{ fields.property_land_address|fill:66 }}, nº {{ fields.property_land_address_number|fill:8 }},
             {% if fields.include_clause_1_complement %}Complemento: {{ fields.property_land_complement|fill:25 }},
-            {% endif %}Bairro/Setor: {{ fields.property_land_neighborhood|fill:30 }},
+            {% endif %}{% if fields.include_clause_1_neighborhood %}Bairro/Setor: {{ fields.property_land_neighborhood|fill:30 }},{% endif %}
             Município: {{ fields.property_land_city|fill:34 }}, Estado: {{ fields.property_land_state|fill:28 }},
             CEP: {{ fields.property_land_zip_code|fill:8 }},
             {% if fields.include_property_land_contents %}com as seguintes características: {{ fields.property_land_contents|fill:78 }},{% endif %}
@@ -159,8 +159,7 @@
     <div class="clause">
         <h2 class="clause-title">CLÁUSULA QUARTA - DA TRANSFERÊNCIA DA POSSE</h2>
         <p>
-            Com a assinatura deste instrumento e o pagamento integral do preço, ou na forma expressamente ajustada
-            entre as partes, {% gender first_party_gender "o VENDEDOR|a VENDEDORA" %} transfere {% gender second_party_gender "ao COMPRADOR|à COMPRADORA" %} a posse do imóvel descrito na Cláusula
+            Com a assinatura deste instrumento e o pagamento integral do preço{% if fields.include_clause_4_adjusted_payment %}, ou na forma expressamente ajustada entre as partes{% endif %}, {% gender first_party_gender "o VENDEDOR|a VENDEDORA" %} transfere {% gender second_party_gender "ao COMPRADOR|à COMPRADORA" %} a posse do imóvel descrito na Cláusula
             Primeira, passando {% gender second_party_gender "este|esta" %} a exercer, em relação ao imóvel, os poderes inerentes à posse, nos termos da
             legislação aplicável.
         </p>
@@ -274,7 +273,7 @@
 
     <p>
         E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
-        teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+        teor e forma{% if fields.include_witness_mention %}, na presença de 2 (duas) testemunhas{% endif %}.
     </p>
 
     <div class="signatures">

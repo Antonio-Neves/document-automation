@@ -47,8 +47,8 @@
             {% gender first_party_gender "O LOCADOR (Proprietário)|A LOCADORA (Proprietária)" %} aluga
             {% gender second_party_gender "ao LOCATÁRIO (Inquilino)|à LOCATÁRIA (Inquilina)" %} o imóvel residencial
             situado na {{ fields.property_address|fill:70 }},
-            Complemento: {{ fields.property_complement|fill:22 }},
-            Bairro: {{ fields.property_neighborhood|fill:22 }},
+            {% if fields.include_clause_1_complement %}Complemento: {{ fields.property_complement|fill:22 }},{% endif %}
+            {% if fields.include_clause_1_neighborhood %}Bairro: {{ fields.property_neighborhood|fill:22 }},{% endif %}
             CEP: {{ fields.property_zip_code|fill:12 }},
             Município: {{ fields.property_city|fill:20 }},
             Estado: {{ fields.property_state|fill:16 }}{% if fields.include_clause_1_characteristics %},
@@ -75,7 +75,7 @@
         <p>
             O aluguel mensal será de R$ {{ fields.rent_amount|fill:12 }}
             ({{ fields.rent_amount_in_words|fill:30 }}), com vencimento no dia
-            {{ fields.rent_due_day|fill:4 }} de cada mês, referente ao respectivo mês anterior.
+            {{ fields.rent_due_day|fill:4 }} de cada mês, referente ao {% if fields.include_clause_3_rent_reference_respective %}respectivo {% endif %}mês{% if fields.include_clause_3_rent_reference_previous %} anterior{% endif %}.
         </p>
         <p>
             O pagamento será realizado por {{ fields.payment_method|fill:26 }}{% if fields.include_clause_3_payment_key %},
@@ -84,10 +84,12 @@
             conta nº {{ fields.bank_account|fill:20 }}{% endif %}.
             O comprovante servirá como prova do pagamento, sem prejuízo da confirmação do recebimento.
         </p>
+        {% if fields.include_clause_3_first_rent %}
         <p>
             O primeiro aluguel, referente a {{ fields.first_rent_reference|fill:24 }},
             vencerá em {{ fields.first_rent_due_date|fill:16 }}.
         </p>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -155,7 +157,7 @@
     {% endif %}
 
     <p>
-        E, por estarem de acordo, as partes assinam este contrato em duas vias de igual teor.
+        E, por estarem justas e contratadas, as partes assinam o presente contrato em 02 (duas) vias de igual teor e forma{% if fields.include_witness_mention %}, na presença de 2 (duas) testemunhas{% endif %}.
     </p>
 
     <div class="signatures">
@@ -181,6 +183,26 @@
                     _________________________________________</p>
                 <p>Nome: {{ fields.lessee_name }}</p>
                 <p>CPF: {{ fields.lessee_cpf }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="signature-columns">
+            {% if fields.include_witness_1 %}
+            <div class="signature">
+                <p>TESTEMUNHA 1:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
+            </div>
+            {% endif %}
+
+            {% if fields.include_witness_2 %}
+            <div class="signature">
+                <p>TESTEMUNHA 2:<br><br>
+                    _________________________________________</p>
+                <p>Nome: ___________________________________</p>
+                <p>CPF: ____________________________________</p>
             </div>
             {% endif %}
         </div>

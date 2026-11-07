@@ -59,6 +59,7 @@
             situado em <input type="text" name="property_land_address" style="width: 66ch">, nº <input type="text" name="property_land_address_number" style="width: 8ch">,
             <input type="checkbox" name="include_clause_1_complement" value="1" class="clause-check">
             Complemento: <input type="text" name="property_land_complement" style="width: 25ch">
+            <input type="checkbox" name="include_clause_1_neighborhood" value="1" class="clause-check">
             Bairro/Setor <input type="text" name="property_land_neighborhood" style="width: 30ch">,
             Município: <input type="text" name="property_land_city" style="width: 34ch">, Estado: <input type="text" name="property_land_state" style="width: 28ch">,
             CEP <input type="text" name="property_land_zip_code" style="width: 8ch">,
@@ -165,8 +166,9 @@
         <input type="checkbox" name="include_clause_4" value="1" class="clause-check" checked>
         <h2 class="clause-title">CLÁUSULA QUARTA - DA TRANSFERÊNCIA DA POSSE</h2>
         <p>
-            Com a assinatura deste instrumento e o pagamento integral do preço, ou na forma expressamente ajustada
-            entre as partes, o(a) VENDEDOR(A) transfere ao(à) COMPRADOR(A) a posse do imóvel descrito na Cláusula
+            Com a assinatura deste instrumento e o pagamento integral do preço,
+            <input type="checkbox" name="include_clause_4_adjusted_payment" value="1" class="clause-check">
+            ou na forma expressamente ajustada entre as partes, o(a) VENDEDOR(A) transfere ao(à) COMPRADOR(A) a posse do imóvel descrito na Cláusula
             Primeira, passando este(a) a exercer, em relação ao imóvel, os poderes inerentes à posse, nos termos da
             legislação aplicável.
         </p>
@@ -270,7 +272,9 @@
 
     <p>
         E, por estarem justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
-        teor e forma, juntamente com 02 (duas) testemunhas, para que produza seus jurídicos e legais efeitos.
+        teor e forma,
+        <input type="checkbox" name="include_witness_mention" value="1" class="clause-check">
+        na presença de 2 (duas) testemunhas.
     </p>
 
     <p class="contract-place-date">
