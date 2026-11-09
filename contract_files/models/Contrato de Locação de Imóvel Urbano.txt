@@ -15,7 +15,8 @@ CLÁUSULA QUARTA - DAS DESPESAS
 [O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)] será responsável pelas contas de consumo do período em que ocupar o imóvel, incluindo energia elétrica, água, esgoto e serviços que contratar, como internet.
 CLÁUSULA QUINTA - DA CONSERVAÇÃO DO IMÓVEL
 [O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)] deverá conservar o imóvel e devolvê-lo ao final da locação nas condições em que o recebeu, exceto pelo desgaste natural decorrente do uso normal.
-[O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)] será responsável pelos danos que causar ao imóvel. {O LOCADOR (Proprietário)|A LOCADORA (Proprietária)} será responsável pelos defeitos anteriores à locação e pelos reparos que legalmente lhe couberem.
+[O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)] será responsável pelos danos que causar ao imóvel.
+{O LOCADOR (Proprietário)|A LOCADORA (Proprietária)} será responsável pelos defeitos anteriores à locação e pelos reparos que legalmente lhe couberem.
 Qualquer alteração na estrutura do imóvel dependerá de autorização prévia e por escrito {do LOCADOR (Proprietário)|da LOCADORA (Proprietária)}
 CLÁUSULA SEXTA - DA RESCISÃO
 Se [O LOCATÁRIO (Inquilino)|A LOCATÁRIA (Inquilina)] devolver o imóvel antes do término do prazo, pagará multa equivalente a um aluguel mensal, reduzida proporcionalmente ao período já cumprido do contrato, conforme a lei.
