@@ -194,7 +194,7 @@
 
     <div class="signatures">
         <p class="contract-place-date">
-            _________________________, ____ de __________________________ de _________
+            {{ fields.contract_place|fill:25 }}, {{ fields.contract_day|fill:4 }} de {{ fields.contract_month|fill:26 }} de {{ fields.contract_year|fill:9 }}
         </p>
 
         <div class="signature-columns">
