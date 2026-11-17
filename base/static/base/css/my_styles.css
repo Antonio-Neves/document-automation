@@ -306,6 +306,7 @@
 .contract .contract-place-date {
     margin-top: 24pt;
     margin-bottom: 12pt;
+    white-space: nowrap;
 }
 
 .contract .signature {
@@ -408,4 +409,5 @@
 .contract-pdf .contract-place-date {
     margin-top: 2em;
     break-after: avoid;
+    white-space: nowrap;
 }
